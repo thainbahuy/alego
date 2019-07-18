@@ -1,0 +1,10 @@
+#producer {
+    text-align: center;
+}
+.hero-fullscreen{
+    background-color: #f3f6f7;
+    background-size: 57px auto;
+    background-position: center center;
+    background-image: linear-gradient(to right,transparent 29px,rgba(0,0,0,.08) 29px,transparent 30px);
+    padding: 3rem 3.5rem;
+}
