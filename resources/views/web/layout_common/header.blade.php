@@ -12,22 +12,34 @@
             <a href="{{url('home')}}"
                class="ajax-link active">Home</a></li>
 
+{{--        <li class="">--}}
+{{--            <a href="#" class="ajax-link">Film</a>--}}
+{{--            <ul>--}}
+{{--                <li class="">--}}
+{{--                    <a href="../about-us/index.html">Wedding ceremony</a>--}}
+{{--                </li>--}}
+{{--                <li class="">--}}
+{{--                    <a href="../about-me/index.html">Pre-wedding</a>--}}
+{{--                </li>--}}
+{{--                <li class="">--}}
+{{--                    <a href="../about-me/index.html">TVC</a>--}}
+{{--                </li>--}}
+{{--                <li class="">--}}
+{{--                    <a href="../about-me/index.html">Event</a>--}}
+{{--                </li>--}}
+{{--            </ul>--}}
+{{--        </li>--}}
         <li class="">
-            <a href="#" class="ajax-link">Film</a>
-            <ul>
-                <li class="">
-                    <a href="../about-us/index.html">Wedding ceremony</a>
-                </li>
-                <li class="">
-                    <a href="../about-me/index.html">Pre-wedding</a>
-                </li>
-                <li class="">
-                    <a href="../about-me/index.html">TVC</a>
-                </li>
-                <li class="">
-                    <a href="../about-me/index.html">Event</a>
-                </li>
-            </ul>
+            <a href="{{url('about-us')}}" class="ajax-link">Wedding ceremony</a>
+        </li>
+        <li class="">
+            <a href="{{url('about-us')}}" class="ajax-link">Pre-wedding</a>
+        </li>
+        <li class="">
+            <a href="{{url('about-us')}}" class="ajax-link">TVC</a>
+        </li>
+        <li class="">
+            <a href="{{url('about-us')}}" class="ajax-link">Event</a>
         </li>
         <li class="">
             <a href="{{url('about-us')}}" class="ajax-link">About us</a>
