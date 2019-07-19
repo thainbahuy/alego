@@ -60,7 +60,7 @@
                title="HEAR MY HEART BURST AGAIN"></a>
             <figcaption>
                 <h5 class="item-title">
-                    <a href="#">HEAR MY HEART BURST AGAIN</a>
+                    <a href="#">HEAR MY HEART BURST AGAIN abc</a>
                 </h5>
                 <p class="text-links">
                     Art / Design
@@ -74,6 +74,20 @@
     @include('web.layout_common.footer')
 </footer>
 @include('web.layout_common.footerScript')
+<script src="{{asset('website/js/jquery_321/jquery-3.2.1.js')}}"></script>
+
+<script>
+    var URL = '{{url('')}}';
+    $(document).ready(function() {
+        var clone = $('.portfolio-item:last').clone();
+        console.log(clone.attr('data-background',URL+'/website/wp-content/uploads/sites/30/2018/03/21-1.jpg'));
+        $('.lightbox').append(clone);
+        setTimeout(function() {
+            window.dispatchEvent(new Event('resize'));
+        }, 300);
+
+    });
+</script>
 </body>
 
 </html>

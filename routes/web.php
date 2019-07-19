@@ -16,6 +16,7 @@ Route::get('/test', function () {
 });
 
 Route::get('/home', 'Website\HomeController@index');
+Route::get('/sub', 'Website\HomeController@subMenu');
 Route::get('/detail', 'Website\EventDetailController@index');
 Route::get('/about-us', 'Website\AboutUsController@index');
 Route::get('/contact-us', 'Website\ContactController@index');

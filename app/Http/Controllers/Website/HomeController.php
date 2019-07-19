@@ -9,6 +9,11 @@ class HomeController extends Controller
 {
     public function index()
     {
+        return view('web/first-home');
+    }
+
+    public function subMenu()
+    {
         return view('web/home');
     }
 }

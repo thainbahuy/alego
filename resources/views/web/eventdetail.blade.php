@@ -19,9 +19,13 @@
 <div id="preloader"></div>
 <main id="main">
     <section class="hero hero-fullscreen">
-        <div class="video-background" data-src="https://www.youtube.com/embed/knW7-x7Y7RE"
-             data-controls="true" data-autoplay="true" data-loop="true" data-volume="3">
-        </div>
+        {{--        <div class="video-background" data-src="https://www.youtube.com/embed/32sYGCOYJUM"--}}
+        {{--             data-controls="true" data-autoplay="true" data-loop="true" data-volume="3">--}}
+        {{--        </div>--}}
+        <iframe class="video-background" width="560" height="315" src="https://www.youtube.com/embed/knW7-x7Y7RE"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
     </section>
     <section class="bg-lines pt-13 pr-7 pl-7">
         <div class="container p-0">
@@ -60,7 +64,6 @@
             </div>
         </div>
     </section>
-
 
 
 </main>

@@ -29,48 +29,48 @@
     <section class="pt-13 pr-7 pb-13 pl-7">
         <div class="container p-0">
             <div class="row no-gutters">
-                <div class="columns col-sm-6"><h5>CONTACT INFO.</h5>
+                <div class="columns col-sm-12"><h5>CONTACT INFO.</h5>
                     <p class="small serif my-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br/>
                         Incidunt molestiae, sint distinctio consequatur in officia laboriosam eligendi.</p>
                     <div><b>MAIL:</b> alegostudio@gmail.com</div>
-                    <div><b>ADDRESS:</b> Verdzik Avenue 221B, Oslo, Norway</div>
+                    <div><b>ADDRESS:</b> 132 Le Loi, Hai Chau, Da Nang</div>
                     <div><b>TEL:</b> 0935011363</div>
                 </div>
-                <div class="columns col-sm-6">
-                    <div role="form" class="wpcf7" id="wpcf7-f558-p84-o1" lang="en-US" dir="ltr">
-                        <div class="screen-reader-response"></div>
-                        <form action="index.html#wpcf7-f558-p84-o1" method="post" class="wpcf7-form"
-                              novalidate="novalidate">
-                            <div style="display: none;">
-                                <input type="hidden" name="_wpcf7" value="558"/>
-                                <input type="hidden" name="_wpcf7_version" value="5.0.1"/>
-                                <input type="hidden" name="_wpcf7_locale" value="en_US"/>
-                                <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f558-p84-o1"/>
-                                <input type="hidden" name="_wpcf7_container_post" value="84"/>
-                            </div>
-                            <div class="mail-form-message d-none mb-5"></div>
-                            <p><span class="wpcf7-form-control-wrap your-subject"><input type="text" name="your-subject"
-                                                                                         value="" size="40"
-                                                                                         class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                                                                                         aria-required="true"
-                                                                                         aria-invalid="false"
-                                                                                         placeholder="Subject:"/></span><br/>
-                                <span class="wpcf7-form-control-wrap your-email"><input type="text" name="your-email"
-                                                                                        value="" size="40"
-                                                                                        class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
-                                                                                        aria-required="true"
-                                                                                        aria-invalid="false"
-                                                                                        placeholder="Email:"/></span><br/>
-                                <span class="wpcf7-form-control-wrap your-message"><textarea name="your-message"
-                                                                                             cols="40" rows="10"
-                                                                                             class="wpcf7-form-control wpcf7-textarea"
-                                                                                             aria-invalid="false"
-                                                                                             placeholder="Message:"></textarea></span><br/>
-                                <input type="submit" id="submit" value="send" class="button style-5 uppercase"></p>
-                            <div class="wpcf7-response-output wpcf7-display-none"></div>
-                        </form>
-                    </div>
-                </div>
+{{--                <div class="columns col-sm-6">--}}
+{{--                    <div role="form" class="wpcf7" id="wpcf7-f558-p84-o1" lang="en-US" dir="ltr">--}}
+{{--                        <div class="screen-reader-response"></div>--}}
+{{--                        <form action="index.html#wpcf7-f558-p84-o1" method="post" class="wpcf7-form"--}}
+{{--                              novalidate="novalidate">--}}
+{{--                            <div style="display: none;">--}}
+{{--                                <input type="hidden" name="_wpcf7" value="558"/>--}}
+{{--                                <input type="hidden" name="_wpcf7_version" value="5.0.1"/>--}}
+{{--                                <input type="hidden" name="_wpcf7_locale" value="en_US"/>--}}
+{{--                                <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f558-p84-o1"/>--}}
+{{--                                <input type="hidden" name="_wpcf7_container_post" value="84"/>--}}
+{{--                            </div>--}}
+{{--                            <div class="mail-form-message d-none mb-5"></div>--}}
+{{--                            <p><span class="wpcf7-form-control-wrap your-subject"><input type="text" name="your-subject"--}}
+{{--                                                                                         value="" size="40"--}}
+{{--                                                                                         class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"--}}
+{{--                                                                                         aria-required="true"--}}
+{{--                                                                                         aria-invalid="false"--}}
+{{--                                                                                         placeholder="Subject:"/></span><br/>--}}
+{{--                                <span class="wpcf7-form-control-wrap your-email"><input type="text" name="your-email"--}}
+{{--                                                                                        value="" size="40"--}}
+{{--                                                                                        class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"--}}
+{{--                                                                                        aria-required="true"--}}
+{{--                                                                                        aria-invalid="false"--}}
+{{--                                                                                        placeholder="Email:"/></span><br/>--}}
+{{--                                <span class="wpcf7-form-control-wrap your-message"><textarea name="your-message"--}}
+{{--                                                                                             cols="40" rows="10"--}}
+{{--                                                                                             class="wpcf7-form-control wpcf7-textarea"--}}
+{{--                                                                                             aria-invalid="false"--}}
+{{--                                                                                             placeholder="Message:"></textarea></span><br/>--}}
+{{--                                <input type="submit" id="submit" value="send" class="button style-5 uppercase"></p>--}}
+{{--                            <div class="wpcf7-response-output wpcf7-display-none"></div>--}}
+{{--                        </form>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
             </div>
         </div>
     </section>
@@ -92,10 +92,10 @@
     var fastwp = {
         "map34850": {
             "gmap_marker_title": ["FastWP HQ"],
-            "gmap_marker_addrs": [["44.434596", "26.080533"]],
+            "gmap_marker_addrs": [["50.434596", "50.080533"]],
             "gmap_marker_ct": ["Bucharest, Romania"],
             "gmap_marker": ["http:\/\/torola.fwp.fastwp.net\/wp-content\/themes\/torola\/assets\/img\/map-marker.png"],
-            "gmap_center": ["44.434596", "26.080533"],
+            "gmap_center": ["50.434596", "50.080533"],
             "gmap_style": "fastwp",
             "gmap_zoom": "8",
             "gmap_izoom": "12"
