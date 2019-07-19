@@ -20,13 +20,13 @@
                     <a href="#">Wedding ceremony</a>
                 </li>
                 <li class="">
-                    <a href="../about-me/index.html">Pre-wedding</a>
+                    <a href="#">Pre-wedding</a>
                 </li>
                 <li class="">
-                    <a href="../about-me/index.html">TVC</a>
+                    <a href="#">TVC</a>
                 </li>
                 <li class="">
-                    <a href="../about-me/index.html">Event</a>
+                    <a href="#">Event</a>
                 </li>
             </ul>
         </li>
@@ -37,12 +37,12 @@
                     <a href="{{url('about-us')}}">about us</a>
                 </li>
                 <li class="">
-                    <a href="../about-me/index.html">Price</a>
+                    <a href="#">Price</a>
                 </li>
             </ul>
         </li>
         <li class="">
-            <a href="#"
+            <a href="{{url('contact-us')}}"
                class="ajax-link">contact</a></li>
 
         <li class="">
@@ -50,12 +50,12 @@
             <a href="#" disabled class="ajax-link">Language</a>
             <ul>
                 <li class="">
-                    <a href="../about-us/index.html">
+                    <a href="#">
                         <div class="flag flag-us"> </div>english
                     </a>
                 </li>
                 <li class="">
-                    <a href="../about-me/index.html">
+                    <a href="#">
                         <div class="flag flag-vn"></div>viet nam
                     </a>
                 </li>

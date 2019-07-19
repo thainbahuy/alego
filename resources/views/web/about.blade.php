@@ -22,7 +22,7 @@
              data-overlay="black; .8">
         <div class="page-title-wrapper text-light">
             <h1 class="page-title "> ABOUT US</h1>
-            <p class="page-subtitle">You&#039;ll love our coffee, promise!</p>
+            <p class="page-subtitle">Alego Story - Realilty In A Dream</p>
         </div>
     </section>
     <a href="index.html#" class="scroll-down"><span></span></a>
@@ -58,6 +58,12 @@
             <div class="row no-gutters">
                 <div class="columns col-sm-6"><h5>SERVICES.</h5></div>
                 <div class="columns col-sm-6">
+                    <div data-animation="fade-in-bottom 1.2s .6s">
+                        <h5 class="uppercase">Pre-Wedding</h5>
+                        <p class="serif small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quae,
+                            totam mollitia sequi vero eum facilis harum rerum nobis, cum ut quaerat reprehenderit
+                            numquam quos, minus perspiciatis perferendis. Enim, perferendis.</p>
+                    </div>
                     <div data-animation="fade-in-bottom 1.2s .2s">
                         <h5 class="uppercase">Wedding ceremony</h5>
                         <p class="serif small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quae,
@@ -78,6 +84,7 @@
                             totam mollitia sequi vero eum facilis harum rerum nobis, cum ut quaerat reprehenderit
                             numquam quos, minus perspiciatis perferendis. Enim, perferendis.</p>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -104,7 +111,7 @@
                     <h2 data-animation="fade-in-bottom 800ms 200ms" class="m-0">Let&#039;s work together</h2>
                 </div>
                 <div class="col-auto">
-                    <a data-animation="fade-in-bottom 500ms 500ms" href="index.html#" class="button style-7 mb-0">Contact
+                    <a data-animation="fade-in-bottom 500ms 500ms" href="{{url('contact-us')}}" class="button style-7 mb-0">Contact
                         Us</a>
                 </div>
             </div>

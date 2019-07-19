@@ -20,16 +20,16 @@
     <section class="hero hero-fullscreen" data-background="#000">
         <div class="swiper" data-pagination="true">
             <figure class="swiper-slide"
-                    data-background="http://torola.fwp.fastwp.net/wp-content/uploads/sites/30/2018/03/1081.jpg"
-                    data-overlay="black; 0.6">
+                    data-background="{{asset('website/wp-content/uploads/sites/images/cover.png')}}"
+                    >
             </figure>
             <figure class="swiper-slide"
                     data-background="http://torola.fwp.fastwp.net/wp-content/uploads/sites/30/2018/03/1071.jpg"
-                    data-overlay="black; 0.6">
+                    >
             </figure>
         </div>
     </section>
-    <a href="index.html#" class="scroll-down"><span></span></a>
+{{--    <a href=".p-0" class="scroll-down"><span></span></a>--}}
 
     <section style="margin-top: 48px">
         <div class="container p-0">
@@ -41,11 +41,11 @@
                 <figcaption>
                     <div class="item-caption-inner">
                         <p class="text-links">
-                            Art / Design
+                            Ben Nguyen
                         </p>
                         <h3 class="bold uppercase">INFINITE BLACK SKIES</h3>
-                        <a href="fwp_project/infinite-black-skies/index.html" class="button style-3 border-2">View
-                            Project</a>
+                        <a href="fwp_project/infinite-black-skies/index.html" class="button style-3 border-2">Watch
+                            Now</a>
                     </div>
                 </figcaption>
 
@@ -58,11 +58,11 @@
                 <figcaption>
                     <div class="item-caption-inner">
                         <p class="text-links">
-                            Art / Design
+                            Ben Nguyen
                         </p>
                         <h3 class="bold uppercase">We will stand tall</h3>
-                        <a href="fwp_project/we-will-stand-tall-6/index.html" class="button style-3 border-2">View
-                            Project</a>
+                        <a href="fwp_project/we-will-stand-tall-6/index.html" class="button style-3 border-2">Watch
+                            Now</a>
                     </div>
                 </figcaption>
 
@@ -75,11 +75,11 @@
                 <figcaption>
                     <div class="item-caption-inner">
                         <p class="text-links">
-                            Art / Design
+                            Ben Nguyen
                         </p>
                         <h3 class="bold uppercase">Feel the earth move</h3>
-                        <a href="fwp_project/feel-the-earth-move-5/index.html" class="button style-3 border-2">View
-                            Project</a>
+                        <a href="fwp_project/feel-the-earth-move-5/index.html" class="button style-3 border-2">Watch
+                            Now</a>
                     </div>
                 </figcaption>
 
@@ -92,15 +92,33 @@
                 <figcaption>
                     <div class="item-caption-inner">
                         <p class="text-links">
-                            Art / Design
+                            Ben Nguyen
                         </p>
                         <h3 class="bold uppercase">WHERE WORLDS COLLIDE</h3>
-                        <a href="fwp_project/where-worlds-collide/index.html" class="button style-3 border-2">View
-                            Project</a>
+                        <a href="fwp_project/where-worlds-collide/index.html" class="button style-3 border-2">Watch
+                            Now</a>
                     </div>
                 </figcaption>
 
             </figure>
+            <figure class="parallax-folio-item">
+
+                <div class="item-media background-parallax"
+                     data-background="http://torola.fwp.fastwp.net/wp-content/uploads/sites/30/2018/03/11-1.jpg"></div>
+
+                <figcaption>
+                    <div class="item-caption-inner">
+                        <p class="text-links">
+                            Ben Nguyen
+                        </p>
+                        <h3 class="bold uppercase">INFINITE BLACK SKIES</h3>
+                        <a href="fwp_project/infinite-black-skies/index.html" class="button style-3 border-2">Watch
+                            Now</a>
+                    </div>
+                </figcaption>
+
+            </figure>
+
         </div>
     </section>
     <section class="bg-lines cta pt-12 pb-12">
