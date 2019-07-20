@@ -611,8 +611,8 @@ h6 {
 }
 
 .light-navigation #footer {
-    background-color: #fff;
-    border-top: 1px solid rgba(0, 0, 0, .08)
+    background-color: rgb(34,35,37);
+    border-top: 1px solid rgba(0, 0, 0, .08);
 }
 
 .light-navigation #footer .text-links {
@@ -1077,7 +1077,7 @@ h6 {
 .text-links a {
     position: relative;
     text-decoration: none;
-    color: inherit
+    color: white;
 }
 
 .text-links a:after {
