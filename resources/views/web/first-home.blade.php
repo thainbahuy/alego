@@ -12,7 +12,7 @@
 </div>
 
 <header id="header">
-    @include('web.layout_common.header')
+    @include('web.layout_common.header',['data'=>$menu])
 </header>
 
 <div id="preloader"></div>
@@ -20,7 +20,7 @@
     <section class="hero hero-fullscreen" data-background="#000">
         <div class="swiper" data-pagination="true">
             <figure class="swiper-slide"
-                    data-background="{{asset('website/wp-content/uploads/sites/images/cover.png')}}"
+                    data-background="{{asset('website/images_upload/cover.png')}}"
                     >
             </figure>
             <figure class="swiper-slide"
@@ -32,7 +32,7 @@
 {{--    <a href=".p-0" class="scroll-down"><span></span></a>--}}
 
     <section style="margin-top: 48px">
-        <div class="container p-0">
+        <div id="event" class="container p-0">
             <figure class="parallax-folio-item">
 
                 <div class="item-media background-parallax"
@@ -43,14 +43,14 @@
                         <p class="text-links">
                             Ben Nguyen
                         </p>
-                        <h3 class="bold uppercase">INFINITE BLACK SKIES</h3>
+                        <h4 class="bold uppercase">INFINITE BLACK SKIES</h4>
                         <a href="fwp_project/infinite-black-skies/index.html" class="button style-3 border-2">Watch
                             Now</a>
                     </div>
                 </figcaption>
 
             </figure>
-            <figure class="parallax-folio-item tall">
+            <figure class="parallax-folio-item">
 
                 <div class="item-media background-parallax"
                      data-background="http://torola.fwp.fastwp.net/wp-content/uploads/sites/30/2018/03/51.jpg"></div>
@@ -60,14 +60,14 @@
                         <p class="text-links">
                             Ben Nguyen
                         </p>
-                        <h3 class="bold uppercase">We will stand tall</h3>
+                        <h4 class="bold uppercase">We will stand tall</h4>
                         <a href="fwp_project/we-will-stand-tall-6/index.html" class="button style-3 border-2">Watch
                             Now</a>
                     </div>
                 </figcaption>
 
             </figure>
-            <figure class="parallax-folio-item tall">
+            <figure class="parallax-folio-item">
 
                 <div class="item-media background-parallax"
                      data-background="http://torola.fwp.fastwp.net/wp-content/uploads/sites/30/2018/03/21-1.jpg"></div>
@@ -77,7 +77,7 @@
                         <p class="text-links">
                             Ben Nguyen
                         </p>
-                        <h3 class="bold uppercase">Feel the earth move</h3>
+                        <h4 class="bold uppercase">Feel the earth move</h4>
                         <a href="fwp_project/feel-the-earth-move-5/index.html" class="button style-3 border-2">Watch
                             Now</a>
                     </div>
@@ -94,25 +94,8 @@
                         <p class="text-links">
                             Ben Nguyen
                         </p>
-                        <h3 class="bold uppercase">WHERE WORLDS COLLIDE</h3>
+                        <h4 class="bold uppercase">WHERE WORLDS COLLIDE</h4>
                         <a href="fwp_project/where-worlds-collide/index.html" class="button style-3 border-2">Watch
-                            Now</a>
-                    </div>
-                </figcaption>
-
-            </figure>
-            <figure class="parallax-folio-item">
-
-                <div class="item-media background-parallax"
-                     data-background="http://torola.fwp.fastwp.net/wp-content/uploads/sites/30/2018/03/11-1.jpg"></div>
-
-                <figcaption>
-                    <div class="item-caption-inner">
-                        <p class="text-links">
-                            Ben Nguyen
-                        </p>
-                        <h3 class="bold uppercase">INFINITE BLACK SKIES</h3>
-                        <a href="fwp_project/infinite-black-skies/index.html" class="button style-3 border-2">Watch
                             Now</a>
                     </div>
                 </figcaption>
@@ -140,6 +123,22 @@
 </footer>
 
 @include('web.layout_common.footerScript')
+<script src="{{asset('website/js/jquery_321/jquery-3.2.1.js')}}"></script>
+{{--<script>--}}
+{{--    var URL = '{{url('')}}';--}}
+{{--    $(document).ready(function() {--}}
+{{--        $('.parallax-folio-item').css('display','none');--}}
+{{--        $(".parallax-folio-item").slice(0, 2).show();--}}
+{{--        console.log($(".parallax-folio-item").length)--}}
+{{--        $(window).scroll(function() {--}}
+{{--            if($(window).scrollTop() + $(window).height() == $(document).height()) {--}}
+{{--                console.log($(".parallax-folio-item").length)--}}
+{{--                $(".parallax-folio-item").slice(0, 2).slideDown();--}}
+{{--            }--}}
+{{--        });--}}
 
+
+{{--    });--}}
+{{--</script>--}}
 </body>
 </html>
