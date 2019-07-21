@@ -21,35 +21,41 @@
         <div class="swiper" data-pagination="true">
             <figure class="swiper-slide"
                     data-background="{{asset('website/images_upload/cover.png')}}"
-                    >
+            >
             </figure>
             <figure class="swiper-slide"
                     data-background="http://torola.fwp.fastwp.net/wp-content/uploads/sites/30/2018/03/1071.jpg"
-                    >
+            >
             </figure>
         </div>
     </section>
-{{--    <a href=".p-0" class="scroll-down"><span></span></a>--}}
+    {{--    <a href=".p-0" class="scroll-down"><span></span></a>--}}
 
     <section style="margin-top: 48px">
         <div id="event" class="container p-0">
-        @foreach($listEvent as $item)
-            <figure class="parallax-folio-item">
-                <div class="item-media background-parallax"
-                     data-background="{{asset($item->image_cover)}}">
-                </div>
-                <figcaption>
-                    <div class="item-caption-inner">
-                        <p class="text-links">
-                            {{$item->author}}
-                        </p>
-                        <h4 class="bold uppercase">{{$item->name}}</h4>
-                        <a href="#" class="button style-3 border-2">Watch
-                            Now</a>
+            @foreach($listEvent as $item)
+                <figure class="parallax-folio-item">
+                    <div class="item-media background-parallax"
+                         data-background="{{asset($item->image_cover)}}">
                     </div>
-                </figcaption>
-            </figure>
-        @endforeach
+                    <figcaption>
+                        <div class="item-caption-inner">
+                            <p class="text-links">
+                                {{$item->author}}
+                            </p>
+                            <h4 class="bold uppercase">{{$item->name}}</h4>
+                            @php
+                                $str = str_replace(' ', '-', $item->name);
+                                $str = preg_replace('/[^A-Za-z0-9\-]/', '', $str);
+                                $str = preg_replace('/-+/', '-', $str);
+                                $str = $str.'.'.$item->id
+                            @endphp
+                            <a href="{{url($str)}}" class="button style-3 border-2">Watch
+                                Now</a>
+                        </div>
+                    </figcaption>
+                </figure>
+            @endforeach
         </div>
     </section>
     <section class="bg-lines cta pt-12 pb-12">

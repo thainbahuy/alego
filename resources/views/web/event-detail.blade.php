@@ -13,16 +13,16 @@
 </div>
 
 <header id="header">
-    @include('web.layout_common.header')
+    @include('web.layout_common.header',['data'=>$menu])
 </header>
 
 <div id="preloader"></div>
 <main id="main">
     <section class="hero hero-fullscreen">
-        {{--        <div class="video-background" data-src="https://www.youtube.com/embed/32sYGCOYJUM"--}}
-        {{--             data-controls="true" data-autoplay="true" data-loop="true" data-volume="3">--}}
-        {{--        </div>--}}
-        <iframe class="video-background" width="560" height="315" src="https://www.youtube.com/embed/knW7-x7Y7RE"
+{{--                <div class="video-background" data-src="{{$event[0]->video_link}}"--}}
+{{--                     data-controls="true" data-autoplay="true" data-loop="true" data-volume="3">--}}
+{{--                </div>--}}
+        <iframe class="video-background" width="560" height="315" src="{{$event[0]->video_link}}"
                 frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
@@ -31,16 +31,12 @@
         <div class="container p-0">
             <div class="row no-gutters">
                 <div class="columns col-sm-6">
-                    <h4 class="bold uppercase">KINH NGHIỆM CHỤP ẢNH CƯỚI PHONG CÁCH CỔ ĐIỂN ĐẸP LÃNG MẠN NHẸ NHÀNG</h4>
-                    {{--                    <p class="serif">Project subtitle</p>--}}
+                    <h4 class="bold uppercase">{{$event[0]->name}}</h4>
+                                        <p class="serif">{{$event[0]->author}}</p>
                 </div>
                 <div class="columns col-sm-6">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quae, totam mollitia sequi vero
-                        eum facilis harum rerum nobis, cum ut quaerat reprehenderit numquam quos, minus perspiciatis
-                        perferendis. Enim, perferendis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius
-                        quaerat, ea aspernatur debitis
-                        rerum repellat, optio corporis laborum. Enim ducimus, temporibus minus facilis. Quae ratione
-                        voluptatem porro voluptas tenetur vel.
+                    <p>
+                        {{$event[0]->description}}
                     </p>
                 </div>
             </div>
@@ -51,15 +47,15 @@
             <div class="row no-gutters" id="producer">
                 <div class="columns col-sm-4">
                     <h6 class="bold uppercase">Producer</h6>
-                    <p>Mercedes-Benz</p>
+                    <p>{{$event[0]->producer}}</p>
                 </div>
                 <div class="columns col-sm-4">
                     <h6 class="bold uppercase">Director</h6>
-                    <p>Mercedes-Benz</p>
+                    <p>{{$event[0]->director_photographer}}</p>
                 </div>
                 <div class="columns col-sm-4">
                     <h6 class="bold uppercase">Editor</h6>
-                    <p>Mercedes-Benz</p>
+                    <p>{{$event[0]->editor_designer}}</p>
                 </div>
             </div>
         </div>
