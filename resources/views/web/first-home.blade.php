@@ -33,75 +33,23 @@
 
     <section style="margin-top: 48px">
         <div id="event" class="container p-0">
+        @foreach($listEvent as $item)
             <figure class="parallax-folio-item">
-
                 <div class="item-media background-parallax"
-                     data-background="http://torola.fwp.fastwp.net/wp-content/uploads/sites/30/2018/03/11-1.jpg"></div>
-
+                     data-background="{{asset($item->image_cover)}}">
+                </div>
                 <figcaption>
                     <div class="item-caption-inner">
                         <p class="text-links">
-                            Ben Nguyen
+                            {{$item->author}}
                         </p>
-                        <h4 class="bold uppercase">INFINITE BLACK SKIES</h4>
-                        <a href="fwp_project/infinite-black-skies/index.html" class="button style-3 border-2">Watch
+                        <h4 class="bold uppercase">{{$item->name}}</h4>
+                        <a href="#" class="button style-3 border-2">Watch
                             Now</a>
                     </div>
                 </figcaption>
-
             </figure>
-            <figure class="parallax-folio-item">
-
-                <div class="item-media background-parallax"
-                     data-background="http://torola.fwp.fastwp.net/wp-content/uploads/sites/30/2018/03/51.jpg"></div>
-
-                <figcaption>
-                    <div class="item-caption-inner">
-                        <p class="text-links">
-                            Ben Nguyen
-                        </p>
-                        <h4 class="bold uppercase">We will stand tall</h4>
-                        <a href="fwp_project/we-will-stand-tall-6/index.html" class="button style-3 border-2">Watch
-                            Now</a>
-                    </div>
-                </figcaption>
-
-            </figure>
-            <figure class="parallax-folio-item">
-
-                <div class="item-media background-parallax"
-                     data-background="http://torola.fwp.fastwp.net/wp-content/uploads/sites/30/2018/03/21-1.jpg"></div>
-
-                <figcaption>
-                    <div class="item-caption-inner">
-                        <p class="text-links">
-                            Ben Nguyen
-                        </p>
-                        <h4 class="bold uppercase">Feel the earth move</h4>
-                        <a href="fwp_project/feel-the-earth-move-5/index.html" class="button style-3 border-2">Watch
-                            Now</a>
-                    </div>
-                </figcaption>
-
-            </figure>
-            <figure class="parallax-folio-item">
-
-                <div class="item-media background-parallax"
-                     data-background="http://torola.fwp.fastwp.net/wp-content/uploads/sites/30/2018/03/31.jpg"></div>
-
-                <figcaption>
-                    <div class="item-caption-inner">
-                        <p class="text-links">
-                            Ben Nguyen
-                        </p>
-                        <h4 class="bold uppercase">WHERE WORLDS COLLIDE</h4>
-                        <a href="fwp_project/where-worlds-collide/index.html" class="button style-3 border-2">Watch
-                            Now</a>
-                    </div>
-                </figcaption>
-
-            </figure>
-
+        @endforeach
         </div>
     </section>
     <section class="bg-lines cta pt-12 pb-12">
