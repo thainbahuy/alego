@@ -49,7 +49,7 @@
                                     'event' => str_slug($item->name)."-".$item->id,
                                 ];
                             @endphp
-                            <a class="button style-3 border-2" href="{{route('web.event-detail',$url)}}">Watch Now</a>
+                            <a class="button style-3 border-2" href="{{route('web.event-detail',$url)}}">@lang('Message.Watch now')</a>
                         </div>
                     </figcaption>
                 </figure>

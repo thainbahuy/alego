@@ -9,7 +9,7 @@
     <ul class="main-nav menu">
         <li class="">
             <a href="{{route('web.first-home')}}"
-               class="ajax-link">Home</a></li>
+               class="ajax-link">@lang('Message.Home')</a></li>
         @foreach($menu as $key => $values)
             <li class="">
                 <a href="#" class="ajax-link">{{$key}}</a>
@@ -30,32 +30,32 @@
             </li>
         @endforeach
         <li class="">
-            <a href="#" class="ajax-link">About</a>
+            <a href="#" class="ajax-link">@lang('Message.About')</a>
             <ul>
                 <li class="">
-                    <a href="{{url('about-us')}}">about us</a>
+                    <a href="{{url('about-us')}}">@lang('Message.About-us')</a>
                 </li>
                 <li class="">
-                    <a href="#">Price</a>
+                    <a href="#">@lang('Message.Price')</a>
                 </li>
             </ul>
         </li>
         <li class="">
             <a href="{{url('contact-us')}}"
-               class="ajax-link">contact</a></li>
+               class="ajax-link">@lang('Message.Contact')</a></li>
 
         <li class="">
         <li class="">
-            <a href="#" disabled class="ajax-link">Language</a>
+            <a href="#" disabled class="ajax-link">@lang('Message.Language')</a>
             <ul>
                 <li class="">
-                    <a href="#">
+                    <a href="{{route('language',['locale'=> 'en'])}}">
                         <div class="flag flag-us"></div>
                         english
                     </a>
                 </li>
                 <li class="">
-                    <a href="#">
+                    <a href="{{route('language',['locale'=> 'vn'])}}">
                         <div class="flag flag-vn"></div>
                         viet nam
                     </a>

@@ -11,9 +11,16 @@
 |
 */
 
+use Illuminate\Support\Facades\Session;
+
 Route::get('/test', function () {
     return view('welcome');
 });
+
+Route::get('language/{locale}', function ($locale){
+    Session::put('locale', $locale);
+    return redirect()->back();
+})->name('language');
 
 Route::get('/home', 'Website\HomeController@index')->name('web.first-home');
 Route::get('/', 'Website\HomeController@index');
