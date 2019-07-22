@@ -21,8 +21,8 @@ class HomeController extends Controller
     public function getEventByMenu($menu , $sub_menu)
     {
         $data['menu'] = $this->getMenu();
-        $sub_menu = explode('.',$sub_menu);
-        $data['listEvent'] = Event::getEventByIdSubMenu($sub_menu[1]);
+        $sub_menu = explode('-',$sub_menu);
+        $data['listEvent'] = Event::getEventByIdSubMenu($sub_menu[sizeof($sub_menu)-1]);
         return view('web/home',$data);
     }
 

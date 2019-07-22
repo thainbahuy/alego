@@ -12,9 +12,9 @@ class EventDetailController extends Controller
 {
     public function index($event)
     {
-        $event = explode('.',$event);
+        $event = explode('-',$event);
         $data['menu'] = $this->getMenu();
-        $data['event'] = Event::getEventById($event[1]);
+        $data['event'] = Event::getEventById($event[sizeof($event)-1]);
         return view('web.event-detail',$data);
     }
 

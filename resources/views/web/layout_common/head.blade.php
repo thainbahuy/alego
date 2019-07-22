@@ -3,6 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
     <meta name="description" content="Just another FWP Dev Demo Site Sites site">
     <link rel="pingback" href="http://torola.fwp.fastwp.net/xmlrpc.php"/>
+    <link rel="icon" href="{{asset('website/wp-content/uploads/sites/images/alego_logo.png')}}">
     <title>Alego Story</title>
     <link rel='dns-prefetch' href='../index.html'/>
     <link rel='dns-prefetch' href='http://maps.googleapis.com'/>

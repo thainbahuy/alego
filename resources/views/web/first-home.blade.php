@@ -45,13 +45,11 @@
                             </p>
                             <h4 class="bold uppercase">{{$item->name}}</h4>
                             @php
-                                $str = str_replace(' ', '-', $item->name);
-                                $str = preg_replace('/[^A-Za-z0-9\-]/', '', $str);
-                                $str = preg_replace('/-+/', '-', $str);
-                                $str = $str.'.'.$item->id
+                                $url= [
+                                    'event' => str_slug($item->name)."-".$item->id,
+                                ];
                             @endphp
-                            <a href="{{url('detail/'.$str)}}" class="button style-3 border-2">Watch
-                                Now</a>
+                            <a class="button style-3 border-2" href="{{route('web.event-detail',$url)}}">Watch Now</a>
                         </div>
                     </figcaption>
                 </figure>

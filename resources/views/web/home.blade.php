@@ -25,7 +25,12 @@
                    title="HEAR MY HEART BURST AGAIN"></a>
                 <figcaption>
                     <h5 class="item-title">
-                        <a href="#">{{$item->name}}</a>
+                        @php
+                            $url= [
+                                'event' => str_slug($item->name)."-".$item->id,
+                            ];
+                        @endphp
+                        <a href="{{route('web.event-detail',$url)}}">{{$item->name}}</a>
                     </h5>
                     <p class="text-links">
                         {{$item->author}}

@@ -8,7 +8,7 @@
 <nav class="navigation">
     <ul class="main-nav menu">
         <li class="">
-            <a href="{{url('home')}}"
+            <a href="{{route('web.first-home')}}"
                class="ajax-link">Home</a></li>
         @foreach($menu as $key => $values)
             <li class="">
@@ -16,13 +16,13 @@
                 <ul>
                     @foreach($values as $submenu)
                         @php
-                            $str = str_replace(' ', '-', $submenu->name);
-                            $str = preg_replace('/[^A-Za-z0-9\-]/', '', $str);
-                            $str = preg_replace('/-+/', '-', $str);
-                            $str = $str.'.'.$submenu->sub_menu_id
+                            $url= [
+                                'menu' => str_slug($key),
+                                'sub_menu' => str_slug($submenu->name).'-'.$submenu->sub_menu_id,
+                            ];
                         @endphp
                         <li class="">
-                            <a href="{{url($key.'/'.$str)}}">{{$submenu->name}}</a>
+                            <a href="{{route('web.menu.submenu',$url)}}">{{$submenu->name}}</a>
                         </li>
                     @endforeach
                 </ul>
