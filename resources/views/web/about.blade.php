@@ -45,9 +45,11 @@
                 <section class="row vc_custom_1521461082558">
                     <div class="columns col-sm-12"><h5>THE STORY</h5>
                         <hr class="separator-left">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A voluptatibus veniam, ipsum,
-                            molestias tempora expedita ducimus? Molestias amet asperiores corporis sint, placeat nihil
-                            tempora in quos maxime, magnam eum saepe.</p>
+                        <p>We take pride in our passion. We revel in our growth. As a team, we are in a relentless quest to raise the bar higher. We are a group of dedicated artists who thrive in your love stories, and we consider it a great honor to be a part of them.
+
+                            We believe that there is importance in every detail and we highlight the beauty that needs to be seen. Every story is worth sharing and that is PARADISE main obsession.
+
+                            We’re a group of passionate young people – photographers, videographers, designers, editors and stylists – working together to create beautiful masterpieces.</p>
                     </div>
                 </section>
             </div>
@@ -58,12 +60,13 @@
             <div class="row no-gutters">
                 <div class="columns col-sm-6"><h5>SERVICES.</h5></div>
                 <div class="columns col-sm-6">
-                    <div data-animation="fade-in-bottom 1.2s .6s">
+                    <div data-animation="fade-in-bottom 1.2s .2s">
                         <h5 class="uppercase">Pre-Wedding</h5>
                         <p class="serif small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quae,
                             totam mollitia sequi vero eum facilis harum rerum nobis, cum ut quaerat reprehenderit
                             numquam quos, minus perspiciatis perferendis. Enim, perferendis.</p>
                     </div>
+                    <hr class="separator-left my-6">
                     <div data-animation="fade-in-bottom 1.2s .2s">
                         <h5 class="uppercase">Wedding ceremony</h5>
                         <p class="serif small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quae,
