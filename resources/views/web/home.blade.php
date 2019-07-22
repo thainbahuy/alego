@@ -13,61 +13,26 @@
 </div>
 
 <header id="header">
-@include('web.layout_common.header')
+    @include('web.layout_common.header',['data'=>$menu])
 </header>
 
 <div id="preloader"></div>
 <main id="main" class="bg-lines">
     <div class="grid lightbox" data-columns="3" data-gutter="5" data-cell-ratio="5/4" data-filter="#folioFilter">
-        <figure class="portfolio-item art design" data-background="{{asset('website/wp-content/uploads/sites/30/2018/03/23.jpg')}}">
-            <a href="{{asset('website/wp-content/uploads/sites/30/2018/03/23.jpg')}}" class="lightbox-link"
-               title="HEAR MY HEART BURST AGAIN"></a>
-            <figcaption>
-                <h5 class="item-title">
-                    <a href="#">HEAR MY HEART BURST AGAIN</a>
-                </h5>
-                <p class="text-links">
-                    Ben Nguyen
-                </p>
-            </figcaption>
-        </figure>
-        <figure class="portfolio-item art design" data-background="{{asset('website/wp-content/uploads/sites/30/2018/03/91.jpg')}}">
-            <a href="{{asset('website/wp-content/uploads/sites/30/2018/03/91.jpg')}}" class="lightbox-link"
-               title="HEAR MY HEART BURST AGAIN"></a>
-            <figcaption>
-                <h5 class="item-title">
-                    <a href="#">HEAR MY HEART BURST AGAIN</a>
-                </h5>
-                <p class="text-links">
-                    Art / Design
-                </p>
-            </figcaption>
-        </figure>
-        <figure class="portfolio-item art design" data-background="{{asset('website/wp-content/uploads/sites/30/2018/03/91.jpg')}}">
-            <a href="{{asset('website/wp-content/uploads/sites/30/2018/03/91.jpg')}}" class="lightbox-link"
-               title="HEAR MY HEART BURST AGAIN"></a>
-            <figcaption>
-                <h5 class="item-title">
-                    <a href="#">HEAR MY HEART BURST AGAIN</a>
-                </h5>
-                <p class="text-links">
-                    Art / Design
-                </p>
-            </figcaption>
-        </figure>
-        <figure class="portfolio-item art design" data-background="{{asset('website/wp-content/uploads/sites/30/2018/03/91.jpg')}}">
-            <a href="{{asset('website/wp-content/uploads/sites/30/2018/03/91.jpg')}}" class="lightbox-link"
-               title="HEAR MY HEART BURST AGAIN"></a>
-            <figcaption>
-                <h5 class="item-title">
-                    <a href="#">HEAR MY HEART BURST AGAIN abc</a>
-                </h5>
-                <p class="text-links">
-                    Art / Design
-                </p>
-            </figcaption>
-        </figure>
-
+        @foreach($listEvent as $item)
+            <figure class="portfolio-item art design" data-background="{{asset($item->image_cover)}}">
+                <a href="{{asset('website/wp-content/uploads/sites/30/2018/03/23.jpg')}}" class="lightbox-link"
+                   title="HEAR MY HEART BURST AGAIN"></a>
+                <figcaption>
+                    <h5 class="item-title">
+                        <a href="#">{{$item->name}}</a>
+                    </h5>
+                    <p class="text-links">
+                        {{$item->author}}
+                    </p>
+                </figcaption>
+            </figure>
+        @endforeach
     </div>
 </main>
 <footer id="footer">
@@ -76,18 +41,18 @@
 @include('web.layout_common.footerScript')
 <script src="{{asset('website/js/jquery_321/jquery-3.2.1.js')}}"></script>
 
-<script>
-    var URL = '{{url('')}}';
-    $(document).ready(function() {
-        var clone = $('.portfolio-item:last').clone();
-        console.log(clone.attr('data-background',URL+'/website/wp-content/uploads/sites/30/2018/03/21-1.jpg'));
-        $('.lightbox').append(clone);
-        setTimeout(function() {
-            window.dispatchEvent(new Event('resize'));
-        }, 300);
+{{--<script>--}}
+{{--    var URL = '{{url('')}}';--}}
+{{--    $(document).ready(function() {--}}
+{{--        var clone = $('.portfolio-item:last').clone();--}}
+{{--        console.log(clone.attr('data-background',URL+'/website/wp-content/uploads/sites/30/2018/03/21-1.jpg'));--}}
+{{--        $('.lightbox').append(clone);--}}
+{{--        setTimeout(function() {--}}
+{{--            window.dispatchEvent(new Event('resize'));--}}
+{{--        }, 300);--}}
 
-    });
-</script>
+{{--    });--}}
+{{--</script>--}}
 </body>
 
 </html>

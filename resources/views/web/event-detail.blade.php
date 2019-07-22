@@ -22,7 +22,7 @@
 {{--                <div class="video-background" data-src="{{$event[0]->video_link}}"--}}
 {{--                     data-controls="true" data-autoplay="true" data-loop="true" data-volume="3">--}}
 {{--                </div>--}}
-        <iframe class="video-background" width="560" height="315" src="{{$event[0]->video_link}}"
+        <iframe style="width: 95%" class="video-background"  src="{{$event[0]->video_link}}"
                 frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>

@@ -17,11 +17,8 @@ Route::get('/test', function () {
 
 Route::get('/home', 'Website\HomeController@index');
 Route::get('/', 'Website\HomeController@index');
-Route::get('/{event}', 'Website\EventDetailController@index');
-
-
-
-
+Route::get('/detail/{event}', 'Website\EventDetailController@index');
+Route::get('/{menu}/{sub_menu}', 'Website\HomeController@getEventByMenu');
 
 
 

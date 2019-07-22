@@ -12,7 +12,7 @@
 </div>
 
 <header id="header">
-    @include('web.layout_common.header')
+    @include('web.layout_common.header',['data'=>$menu])
 </header>
 
 <div id="preloader"></div>

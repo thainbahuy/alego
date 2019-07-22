@@ -50,7 +50,7 @@
                                 $str = preg_replace('/-+/', '-', $str);
                                 $str = $str.'.'.$item->id
                             @endphp
-                            <a href="{{url($str)}}" class="button style-3 border-2">Watch
+                            <a href="{{url('detail/'.$str)}}" class="button style-3 border-2">Watch
                                 Now</a>
                         </div>
                     </figcaption>
@@ -65,7 +65,7 @@
                     <h2 data-animation="fade-in-bottom 800ms 200ms" class="m-0">Let&#039;s work together</h2>
                 </div>
                 <div class="col-auto">
-                    <a data-animation="fade-in-bottom 500ms 500ms" href="index.html#" class="button style-7 mb-0">Contact
+                    <a data-animation="fade-in-bottom 500ms 500ms" href="{{url('contact-us')}}" class="button style-7 mb-0">Contact
                         Us</a>
                 </div>
             </div>

@@ -15,8 +15,14 @@
                 <a href="#" class="ajax-link">{{$key}}</a>
                 <ul>
                     @foreach($values as $submenu)
+                        @php
+                            $str = str_replace(' ', '-', $submenu->name);
+                            $str = preg_replace('/[^A-Za-z0-9\-]/', '', $str);
+                            $str = preg_replace('/-+/', '-', $str);
+                            $str = $str.'.'.$submenu->sub_menu_id
+                        @endphp
                         <li class="">
-                            <a href="#">{{$submenu->name}}</a>
+                            <a href="{{url($key.'/'.$str)}}">{{$submenu->name}}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -24,7 +30,7 @@
             </li>
         @endforeach
         <li class="">
-            <a href="" class="ajax-link">About</a>
+            <a href="#" class="ajax-link">About</a>
             <ul>
                 <li class="">
                     <a href="{{url('about-us')}}">about us</a>
