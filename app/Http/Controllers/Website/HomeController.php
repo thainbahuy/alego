@@ -11,26 +11,36 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
+    private $eventModel, $subMenuModel,$menuModel;
+
+    function __construct(Event $eventModel, SubMenu $subMenuModel , Menu $menuModel)
+    {
+        $this->eventModel = $eventModel;
+        $this->subMenuModel = $subMenuModel;
+        $this->menuModel = $menuModel;
+    }
+
     public function index()
     {
         $data['menu'] = $this->getMenu();
-        $data['listEvent'] = Event::getAllEventForHomePage();
-        return view('web/first-home',$data);
+        $data['listEvent'] = $this->eventModel->getAllEventForHomePage(0);
+        return view('web/first-home', $data);
     }
 
-    public function getEventByMenu($menu , $sub_menu)
+    public function getEventByMenu($menu, $sub_menu)
     {
         $data['menu'] = $this->getMenu();
-        $sub_menu = explode('-',$sub_menu);
-        $data['listEvent'] = Event::getEventByIdSubMenu($sub_menu[sizeof($sub_menu)-1]);
-        return view('web/home',$data);
+        $sub_menu = explode('-', $sub_menu);
+        $data['listEvent'] = $this->eventModel->getEventByIdSubMenu($sub_menu[sizeof($sub_menu) - 1]);
+        return view('web/home', $data);
     }
 
-    private function getMenu () {
+    private function getMenu()
+    {
         $data = [];
-        $menu = Menu::getAllMenu();
-        foreach ($menu as $item){
-            $data[$item->name] = SubMenu::getAllSubMenu($item->menu_id);
+        $menu = $this->menuModel->getAllMenu();
+        foreach ($menu as $item) {
+            $data[$item->name] = $this->subMenuModel->getAllSubMenu($item->menu_id);
         }
         return $data;
 

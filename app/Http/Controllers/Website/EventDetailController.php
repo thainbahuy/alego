@@ -10,19 +10,29 @@ use Illuminate\Http\Request;
 
 class EventDetailController extends Controller
 {
-    public function index($event)
+    private $eventModel, $subMenuModel, $menuModel;
+
+    function __construct(Event $eventModel, SubMenu $subMenuModel, Menu $menuModel)
     {
-        $event = explode('-',$event);
-        $data['menu'] = $this->getMenu();
-        $data['event'] = Event::getEventById($event[sizeof($event)-1]);
-        return view('web.event-detail',$data);
+        $this->eventModel = $eventModel;
+        $this->subMenuModel = $subMenuModel;
+        $this->menuModel = $menuModel;
     }
 
-    private function getMenu () {
+    public function index($event)
+    {
+        $event = explode('-', $event);
+        $data['menu'] = $this->getMenu();
+        $data['event'] = $this->eventModel->getEventById($event[sizeof($event) - 1]);
+        return view('web.event-detail', $data);
+    }
+
+    private function getMenu()
+    {
         $data = [];
-        $menu = Menu::getAllMenu();
-        foreach ($menu as $item){
-            $data[$item->name] = SubMenu::getAllSubMenu($item->menu_id);
+        $menu =  $this->menuModel->getAllMenu();
+        foreach ($menu as $item) {
+            $data[$item->name] = $this->subMenuModel->getAllSubMenu($item->menu_id);
         }
         return $data;
 

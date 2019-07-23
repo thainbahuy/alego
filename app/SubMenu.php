@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\DB;
 
 class SubMenu extends Model
 {
-    //protected $table ='sub_menu';
+    protected $table ='sub_menu';
 
-    public static function getAllSubMenu($idMenu)
+    public function getAllSubMenu($idMenu)
     {
         return DB::table('sub_menu')->select('sub_menu_id','name')
             ->where('menu_id', $idMenu)
