@@ -1,7 +1,6 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
-    <meta name="description" content="Just another FWP Dev Demo Site Sites site">
     <link rel="pingback" href="http://torola.fwp.fastwp.net/xmlrpc.php"/>
     <link rel="icon" href="{{asset('website/wp-content/uploads/sites/images/alego_logo.png')}}">
     <title>Alego Story</title>
@@ -9,9 +8,6 @@
     <link rel='dns-prefetch' href='http://maps.googleapis.com'/>
     <link rel='dns-prefetch' href='http://fonts.googleapis.com'/>
     <link rel='dns-prefetch' href='http://s.w.org'/>
-    <link rel="alternate" type="application/rss+xml" title="Torola &raquo; Feed" href="../feed/index.rss"/>
-    <link rel="alternate" type="application/rss+xml" title="Torola &raquo; Comments Feed"
-          href="../comments/feed/index.rss"/>
     <script type="text/javascript">
         window._wpemojiSettings = {
             "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/11\/72x72\/",
@@ -102,7 +98,6 @@
           href="{{asset('website/wp-json/oembed/1.0/embed-url=http---torola.fwp.fastwp.net-home-grid-&amp;format=xml.xml')}}"/>
     <link rel="stylesheet" href="{{asset('website/flags/flags.css')}}">
     <!-- Start Drift By WP-Plugin: Drift -->
-    <div class="fb-customerchat" page_id="637034146378459"></div>
     <!-- end: Drift Code. -->
     <style type="text/css">
         .recentcomments a {
@@ -111,7 +106,6 @@
             margin: 0 !important;
         }
     </style>
-    <meta name="generator" content="Powered by Visual Composer - drag and drop page builder for WordPress."/>
     <!--[if lte IE 9]>
     <link rel="stylesheet" type="text/css"
           href="http://torola.fwp.fastwp.net/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css"

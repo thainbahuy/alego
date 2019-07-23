@@ -29,7 +29,7 @@
     <section class="bg-lines pt-13 pr-8 pb-13 pl-8">
         <div class="container p-0">
             <div class="row no-gutters">
-                <div class="columns col-sm-6 col-lg-6 col-md-6 vc_col-xs-12"><h5>ABOUT.</h5></div>
+                <div class="columns col-sm-6 col-lg-6 col-md-6 vc_col-xs-12"><h5>@lang('Message.About').</h5></div>
                 <div class="columns col-sm-6 col-lg-6 col-md-6 vc_col-xs-12"><p>Lorem ipsum dolor sit amet, consectetur
                         adipisicing elit. Eaque quae, totam mollitia sequi vero eum facilis harum rerum nobis, cum ut
                         quaerat reprehenderit numquam quos, minus perspiciatis perferendis. Enim, perferendis.</p>
@@ -58,7 +58,7 @@
     <section class="bg-lines pt-13 pr-7 pb-13 pl-7">
         <div class="container p-0">
             <div class="row no-gutters">
-                <div class="columns col-sm-6"><h5>SERVICES.</h5></div>
+                <div class="columns col-sm-6"><h5>@lang('Message.services').</h5></div>
                 <div class="columns col-sm-6">
                     <div data-animation="fade-in-bottom 1.2s .2s">
                         <h5 class="uppercase">Pre-Wedding</h5>
@@ -108,7 +108,7 @@
     </section>
 
     <section class="bg-lines cta pr-7 pb-13 pl-7">
-        <div class="container p-0"><h5 class="mb-8">SAY HELLO.</h5>
+        <div class="container p-0"><h5 class="mb-8"></h5>
             <div class="row no-gutters align-items-center p-5">
                 <div class="col-md">
                     <h2 data-animation="fade-in-bottom 800ms 200ms" class="m-0">Let&#039;s work together</h2>

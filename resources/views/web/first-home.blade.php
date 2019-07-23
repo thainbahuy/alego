@@ -30,7 +30,6 @@
         </div>
     </section>
     {{--    <a href=".p-0" class="scroll-down"><span></span></a>--}}
-
     <section style="margin-top: 48px">
         <div id="event" class="container p-0">
             @foreach($listEvent as $item)
@@ -43,7 +42,7 @@
                             <p class="text-links">
                                 {{$item->author}}
                             </p>
-                            <h4 class="bold uppercase">{{$item->name}}</h4>
+                            <h5 class="bold uppercase">{{$item->name}}</h5>
                             @php
                                 $url= [
                                     'event' => str_slug($item->name)."-".$item->id,

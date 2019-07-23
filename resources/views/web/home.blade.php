@@ -21,7 +21,7 @@
     <div class="grid lightbox" data-columns="3" data-gutter="5" data-cell-ratio="5/4" data-filter="#folioFilter">
         @foreach($listEvent as $item)
             <figure class="portfolio-item art design" data-background="{{asset($item->image_cover)}}">
-                <a href="{{asset('website/wp-content/uploads/sites/30/2018/03/23.jpg')}}" class="lightbox-link"
+                <a href="{{asset($item->image_cover)}}" class="lightbox-link"
                    title="HEAR MY HEART BURST AGAIN"></a>
                 <figcaption>
                     <h5 class="item-title">

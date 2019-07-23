@@ -21,21 +21,19 @@
              data-background="http://torola.fwp.fastwp.net/wp-content/uploads/sites/30/2018/03/211.jpg"
              data-overlay="black; .8">
         <div class="page-title-wrapper text-light">
-            <h1 class="page-title ">CONTACT US</h1>
-            <p class="page-subtitle">Let&#039;s talk about your next project!</p>
+            <h1 class="page-title ">Contact us</h1>
+{{--            <p class="page-subtitle">Let&#039;s talk about your next project!</p>--}}
         </div>
     </section>
     <a href="index.html#" class="scroll-down"><span></span></a>
     <section class="pt-13 pr-7 pb-13 pl-7">
         <div class="container p-0">
             <div class="row no-gutters">
-                <div class="columns col-sm-12"><h5>CONTACT INFO.</h5>
-                    <p class="small serif my-5">We are so happy you are interested in our services! We’d love to answer any questions, send you information & just get to know the two of you.
-                        We located in Danang, Vietnam but travel the world. Have a look at the travel list below to see if we’ll near you soon.
-                        Please fill out the contact form for our availability & pricing, then we’ll chat, then you can book us.</p>
-                    <div><b>MAIL:</b> alegostudio@gmail.com</div>
-                    <div><b>ADDRESS:</b> 132 Le Loi, Hai Chau, Da Nang</div>
-                    <div><b>TEL:</b> 0935011363</div>
+                <div class="columns col-sm-12"><h5>@lang('Message.contact-infor').</h5>
+                    <p class="small serif my-5">@lang('Message.contact-des')</p>
+                    <div><b>Mail:</b> alegostudio@gmail.com</div>
+                    <div><b>@lang('Message.address'):</b> 132 Le Loi, Hai Chau, Da Nang</div>
+                    <div><b>@lang('Message.tel'):</b> 0935011363</div>
                 </div>
                 {{--                <div class="columns col-sm-6">--}}
                 {{--                    <div role="form" class="wpcf7" id="wpcf7-f558-p84-o1" lang="en-US" dir="ltr">--}}
