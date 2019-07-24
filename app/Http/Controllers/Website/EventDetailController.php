@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Website;
 
-use App\Event;
+
 use App\Http\Controllers\Controller;
-use App\Menu;
-use App\SubMenu;
+
+use App\Web\Event;
+use App\Web\Menu;
+use App\Web\SubMenu;
 use Illuminate\Http\Request;
 
 class EventDetailController extends Controller
@@ -30,7 +32,7 @@ class EventDetailController extends Controller
     private function getMenu()
     {
         $data = [];
-        $menu =  $this->menuModel->getAllMenu();
+        $menu = $this->menuModel->getAllMenu();
         foreach ($menu as $item) {
             $data[$item->name] = $this->subMenuModel->getAllSubMenu($item->menu_id);
         }

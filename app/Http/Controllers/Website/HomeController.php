@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers\Website;
 
-use App\Event;
+
 use App\Http\Controllers\Controller;
-use App\Menu;
-use App\SubMenu;
+
+use App\Web\Event;
+use App\Web\Menu;
+use App\Web\SubMenu;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    private $eventModel, $subMenuModel,$menuModel;
+    private $eventModel, $subMenuModel, $menuModel;
 
-    function __construct(Event $eventModel, SubMenu $subMenuModel , Menu $menuModel)
+    function __construct(Event $eventModel, SubMenu $subMenuModel, Menu $menuModel)
     {
         $this->eventModel = $eventModel;
         $this->subMenuModel = $subMenuModel;
