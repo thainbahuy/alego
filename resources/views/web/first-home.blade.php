@@ -32,27 +32,7 @@
     {{--    <a href=".p-0" class="scroll-down"><span></span></a>--}}
     <section style="margin-top: 48px">
         <div id="event" class="container p-0">
-            @foreach($listEvent as $item)
-                <figure class="parallax-folio-item">
-                    <div class="item-media background-parallax"
-                         data-background="{{asset($item->image_cover)}}">
-                    </div>
-                    <figcaption>
-                        <div class="item-caption-inner">
-                            <p class="text-links">
-                                {{$item->author}}
-                            </p>
-                            <h5 class="bold uppercase">{{$item->name}}</h5>
-                            @php
-                                $url= [
-                                    'event' => str_slug($item->name)."-".$item->id,
-                                ];
-                            @endphp
-                            <a class="button style-3 border-2" href="{{route('web.event-detail',$url)}}">@lang('Message.Watch now')</a>
-                        </div>
-                    </figcaption>
-                </figure>
-            @endforeach
+            @include('data_event_home')
         </div>
     </section>
     <section class="bg-lines cta pt-12 pb-12">
@@ -62,7 +42,8 @@
                     <h2 data-animation="fade-in-bottom 800ms 200ms" class="m-0">Let&#039;s work together</h2>
                 </div>
                 <div class="col-auto">
-                    <a data-animation="fade-in-bottom 500ms 500ms" href="{{url('contact-us')}}" class="button style-7 mb-0">Contact
+                    <a data-animation="fade-in-bottom 500ms 500ms" href="{{url('contact-us')}}"
+                       class="button style-7 mb-0">Contact
                         Us</a>
                 </div>
             </div>
@@ -75,20 +56,50 @@
 
 @include('web.layout_common.footerScript')
 <script src="{{asset('website/js/jquery_321/jquery-3.2.1.js')}}"></script>
-{{--<script>--}}
-{{--    var URL = '{{url('')}}';--}}
-{{--    $(document).ready(function() {--}}
-{{--        $('.parallax-folio-item').css('display','none');--}}
-{{--        $(".parallax-folio-item").slice(0, 2).show();--}}
-{{--        console.log($(".parallax-folio-item").length)--}}
-{{--        $(window).scroll(function() {--}}
-{{--            if($(window).scrollTop() + $(window).height() == $(document).height()) {--}}
-{{--                console.log($(".parallax-folio-item").length)--}}
-{{--                $(".parallax-folio-item").slice(0, 2).slideDown();--}}
-{{--            }--}}
-{{--        });--}}
+<script>
+    var URL = '{{route('web.first-home')}}';
+    var indexPage = 2;
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+                loadMoreEvent(URL);
 
-{{--    });--}}
-{{--</script>--}}
+            }
+        });
+    });
+
+    function loadMoreEvent(urlAjax) {
+        $.ajax(
+            {
+                url: urlAjax,
+                type: "get",
+                data: {'page': indexPage},
+            })
+            .done(function (data) {
+                if ($.trim(data.html) != "") {
+                    $("#event").append(data.html);
+                    indexPage++
+                    loadLazyEventAfterAjax();
+
+                }
+            })
+            .fail(function (jqXHR, ajaxOptions, thrownError) {
+                alert('server not responding...');
+            });
+    }
+
+    function loadLazyEventAfterAjax() {
+        document.querySelectorAll(".background-parallax").forEach(function (e) {
+            e.classList.contains("lazy-load") ? new ScrollListener(e, {
+                onAppear: function () {
+                    new Parallax(e)
+                },
+                offsetTop: -200,
+                offsetBottom: -200
+            }) : new Parallax(e)
+        });
+        $('figcaption').addClass('visible');
+    }
+</script>
 </body>
 </html>

@@ -22,10 +22,15 @@ Route::get('language/{locale}', function ($locale){
     return redirect()->back();
 })->name('language');
 
+//home page
 Route::get('/home', 'Website\HomeController@index')->name('web.first-home');
-Route::get('/', 'Website\HomeController@index');
+Route::get('/', 'Website\HomeController@index')->name('web.first-home');
+
+//event detail page
 Route::get('/detail/{event}.html', 'Website\EventDetailController@index')->name('web.event-detail');
-Route::get('/{menu}/{sub_menu}', 'Website\HomeController@getEventByMenu')->name('web.menu.submenu');
+
+//event type page
+Route::get('/{menu}/{sub_menu}', 'Website\HomeController@loadEventByMenu')->name('web.menu.submenu');
 
 Route::get('/about-us', 'Website\AboutUsController@index');
 Route::get('/contact-us', 'Website\ContactController@index');

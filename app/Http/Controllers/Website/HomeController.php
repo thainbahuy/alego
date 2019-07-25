@@ -22,19 +22,33 @@ class HomeController extends Controller
         $this->menuModel = $menuModel;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $data['menu'] = $this->getMenu();
-        $data['listEvent'] = $this->eventModel->getAllEventForHomePage(0);
-        return view('web/first-home', $data);
+        $menu = $this->getMenu();
+
+        $listEvent = $this->eventModel->getAllEventForHomePage();
+
+        if ($request->ajax()) {
+            $view = view('data_event_home',compact('listEvent'))->render();
+            return response()->json(['html'=>$view]);
+        }
+
+        return view('web/first-home', compact('menu','listEvent'));
     }
 
-    public function getEventByMenu($menu, $sub_menu)
+    public function loadEventByMenu(Request $request ,$menu, $sub_menu)
     {
-        $data['menu'] = $this->getMenu();
+        $menu = $this->getMenu();
+
         $sub_menu = explode('-', $sub_menu);
-        $data['listEvent'] = $this->eventModel->getEventByIdSubMenu($sub_menu[sizeof($sub_menu) - 1]);
-        return view('web/home', $data);
+        $listEvent = $this->eventModel->getEventByIdSubMenu($sub_menu[sizeof($sub_menu) - 1]);
+
+        if ($request->ajax()) {
+            $view = view('data_event_type',compact('listEvent'))->render();
+            return response()->json(['html'=>$view]);
+        }
+
+        return view('web/home', compact('listEvent','menu'));
     }
 
     private function getMenu()

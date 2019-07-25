@@ -19,25 +19,7 @@
 <div id="preloader"></div>
 <main id="main" class="bg-lines">
     <div class="grid lightbox" data-columns="3" data-gutter="5" data-cell-ratio="5/4" data-filter="#folioFilter">
-        @foreach($listEvent as $item)
-            <figure class="portfolio-item art design" data-background="{{asset($item->image_cover)}}">
-                <a href="{{asset($item->image_cover)}}" class="lightbox-link"
-                   title="HEAR MY HEART BURST AGAIN"></a>
-                <figcaption>
-                    <h5 class="item-title">
-                        @php
-                            $url= [
-                                'event' => str_slug($item->name)."-".$item->id,
-                            ];
-                        @endphp
-                        <a href="{{route('web.event-detail',$url)}}">{{$item->name}}</a>
-                    </h5>
-                    <p class="text-links">
-                        {{$item->author}}
-                    </p>
-                </figcaption>
-            </figure>
-        @endforeach
+        @include('data_event_type')
     </div>
 </main>
 <footer id="footer">
@@ -46,18 +28,52 @@
 @include('web.layout_common.footerScript')
 <script src="{{asset('website/js/jquery_321/jquery-3.2.1.js')}}"></script>
 
-{{--<script>--}}
-{{--    var URL = '{{url('')}}';--}}
-{{--    $(document).ready(function() {--}}
-{{--        var clone = $('.portfolio-item:last').clone();--}}
-{{--        console.log(clone.attr('data-background',URL+'/website/wp-content/uploads/sites/30/2018/03/21-1.jpg'));--}}
-{{--        $('.lightbox').append(clone);--}}
-{{--        setTimeout(function() {--}}
-{{--            window.dispatchEvent(new Event('resize'));--}}
-{{--        }, 300);--}}
+<script>
+    var URL = window.location.href;
+    var indexPage = 2;
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            if ($(window).scrollTop() + $(window).height() == $(document).height()) {
+                loadMoreEvent(URL);
+                setTimeout(function () {
+                    window.dispatchEvent(new Event('resize'));
+                }, 100);
+            }
+        });
+    });
 
-{{--    });--}}
-{{--</script>--}}
+    function loadMoreEvent(urlAjax) {
+        $.ajax(
+            {
+                url: urlAjax,
+                type: "get",
+                data: {'page': indexPage},
+            })
+            .done(function (data) {
+                if ($.trim(data.html) != "") {
+                    $(".lightbox").append(data.html);
+                    indexPage++
+                }
+                $( ".portfolio-item" ).each(function( index ) {
+                    data_background = $(this).attr('data-background');
+                    $(this).css('background-image','url('+data_background+')');
+                });
+            })
+            .fail(function (jqXHR, ajaxOptions, thrownError) {
+                alert('server not responding...');
+            });
+
+
+
+
+    }
+
+
+</script>
+
+<script>
+
+</script>
 </body>
 
 </html>
