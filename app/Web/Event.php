@@ -27,6 +27,6 @@ class Event extends Model
         return DB::table($this->table)
             ->where('sub_menu_id',$id)
             ->select('id','name','image_cover','author')
-            ->paginate(2);
+            ->paginate(10);
     }
 }

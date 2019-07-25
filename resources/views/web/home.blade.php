@@ -37,7 +37,7 @@
                 loadMoreEvent(URL);
                 setTimeout(function () {
                     window.dispatchEvent(new Event('resize'));
-                }, 100);
+                }, 50);
             }
         });
     });
@@ -62,9 +62,6 @@
             .fail(function (jqXHR, ajaxOptions, thrownError) {
                 alert('server not responding...');
             });
-
-
-
 
     }
 
