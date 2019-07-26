@@ -1,9 +1,9 @@
 @foreach($listEvent as $item)
     <figure class="parallax-folio-item">
-        <div class="item-media background-parallax"
-             data-background="{{asset($item->image_cover)}}">
-        </div>
-{{--        <img class="item-media background-parallax" src="{{asset($item->image_cover)}}" alt="">--}}
+{{--        <div class="item-media background-parallax"--}}
+{{--             data-background="{{asset($item->image_cover)}}">--}}
+{{--        </div>--}}
+        <img class="item-media background-parallax"  src="{{asset($item->image_cover)}}" alt="image">
         <figcaption>
             <div class="item-caption-inner">
                 <p class="text-links">

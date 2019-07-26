@@ -9,11 +9,13 @@ class Event extends Model
 {
     protected $table = 'event';
 
+    private $limit = 10;
+
     public function getAllEventForHomePage(){
         return DB::table($this->table)
             ->where('show_home','1')
             ->select('id','name','image_cover','author')
-            ->paginate(10);
+            ->paginate($this->limit);
     }
 
     public function getEventById($id){
@@ -27,6 +29,6 @@ class Event extends Model
         return DB::table($this->table)
             ->where('sub_menu_id',$id)
             ->select('id','name','image_cover','author')
-            ->paginate(2);
+            ->paginate($this->limit);
     }
 }

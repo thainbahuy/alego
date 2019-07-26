@@ -35,9 +35,6 @@
         $(window).scroll(function () {
             if ($(window).scrollTop() + $(window).height() == $(document).height()) {
                 loadMoreEvent(URL);
-                setTimeout(function () {
-                    window.dispatchEvent(new Event('resize'));
-                }, 300);
             }
         });
     });
@@ -52,6 +49,8 @@
             .done(function (data) {
                 if ($.trim(data.html) != "") {
                     $(".lightbox").append(data.html);
+                    window.dispatchEvent(new Event('resize'));
+                    new AGA(".lightbox");
                     indexPage++
                 }
                 $( ".portfolio-item" ).each(function( index ) {
@@ -64,7 +63,6 @@
             });
 
     }
-
 
 </script>
 

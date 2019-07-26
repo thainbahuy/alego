@@ -29,7 +29,15 @@
             </figure>
         </div>
     </section>
-    {{--    <a href=".p-0" class="scroll-down"><span></span></a>--}}
+    <section class="py-lg-13 py-8">
+        <div class="container d-flex justify-content-center text-lg-center">
+            <div class="col-lg-8">
+                <p class="small uppercase bold mb-4 animated" style="animation: 1000ms ease 300ms 1 normal both running fade-in-bottom; opacity: 0;">Hello There.</p>
+                <h2 class="bold animated" style="animation: 1300ms ease 500ms 1 normal both running fade-in-bottom; opacity: 0;">We're just two lost Souls swimming in a Fish Bowl &amp; Winning Design Awards</h2>
+                <p class="small serif mt-5 animated" style="animation: 1500ms ease 400ms 1 normal both running fade-in-bottom; opacity: 0;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit, et, praesentium?<br> Odit perferendis error natus cum, laudantium ea!</p>
+            </div>
+        </div>
+    </section>
     <section style="margin-top: 48px">
         <div id="event" class="container p-0">
             @include('data_event_home')
