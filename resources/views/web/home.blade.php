@@ -37,7 +37,7 @@
                 loadMoreEvent(URL);
                 setTimeout(function () {
                     window.dispatchEvent(new Event('resize'));
-                }, 50);
+                }, 300);
             }
         });
     });
