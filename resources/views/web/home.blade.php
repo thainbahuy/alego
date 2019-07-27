@@ -34,12 +34,12 @@
     $(document).ready(function () {
         $(window).scroll(function () {
             if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-                loadMoreEvent(URL);
+                loadMoreEventType(URL);
             }
         });
     });
 
-    function loadMoreEvent(urlAjax) {
+    function loadMoreEventType(urlAjax) {
         $.ajax(
             {
                 url: urlAjax,

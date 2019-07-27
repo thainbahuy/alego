@@ -1,7 +1,7 @@
 @foreach($listEvent as $item)
     <figure class="portfolio-item art design" data-background="{{asset($item->image_cover)}}">
         <a href="{{asset($item->image_cover)}}" class="lightbox-link"
-           title="HEAR MY HEART BURST AGAIN"></a>
+           title="{{$item->name}}"></a>
         <figcaption>
             <h5 class="item-title">
                 @php

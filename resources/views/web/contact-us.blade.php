@@ -25,7 +25,7 @@
 {{--            <p class="page-subtitle">Let&#039;s talk about your next project!</p>--}}
         </div>
     </section>
-    <a href="index.html#" class="scroll-down"><span></span></a>
+    <a href="#no-gutters" class="scroll-down"><span></span></a>
     <section class="pt-13 pr-7 pb-13 pl-7">
         <div class="container p-0">
             <div class="row no-gutters">
