@@ -17,21 +17,31 @@ Route::get('/test', function () {
     return view('welcome');
 });
 
-Route::get('language/{locale}', function ($locale){
+Route::get('language/{locale}', function ($locale) {
     Session::put('locale', $locale);
     return redirect()->back();
 })->name('language');
 
-//home page
-Route::get('/home', 'Website\HomeController@index')->name('web.first-home');
-Route::get('/', 'Website\HomeController@index')->name('web.first-home');
 
-//event detail page
-Route::get('/detail/{event}.html', 'Website\EventDetailController@index')->name('web.event-detail');
+Route::namespace('Website')->group(function () {
+    //home page
+    Route::get('/home', 'HomeController@index')->name('web.first-home');
+    Route::get('/', 'HomeController@index')->name('web.first-home');
 
-//event type page
-Route::get('/{menu}/{sub_menu}', 'Website\HomeController@loadEventByMenu')->name('web.menu.submenu');
+    //event detail page
+    Route::get('/detail/{event}.html', 'EventDetailController@index')->name('web.event-detail');
 
-Route::get('/about-us', 'Website\AboutUsController@index');
-Route::get('/contact-us', 'Website\ContactController@index');
+    //event type page
+    Route::get('type/{menu}/{sub_menu}', 'HomeController@loadEventByMenu')->name('web.menu.submenu');
+
+    Route::get('/about-us', 'AboutUsController@index');
+    Route::get('/contact-us', 'ContactController@index');
+
+});
+
+Route::namespace('Admin')->prefix('admin')->group(function () {
+    Route::get('dashboard', 'HomeController@index')->name('admin.index');
+
+
+});
 

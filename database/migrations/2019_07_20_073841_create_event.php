@@ -15,7 +15,7 @@ class CreateEvent extends Migration
     {
         Schema::create('event', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('sub_menu_id')->unsigned();
+            $table->bigInteger('sub_menu_id')->unsigned()->nullable();
             $table->text('name');
             $table->text('author');
             $table->string('editor_designer',200);
@@ -25,7 +25,7 @@ class CreateEvent extends Migration
             $table->text('image_cover');
             $table->text('video_link');
             $table->integer('type');
-            $table->foreign('sub_menu_id')->references('sub_menu_id')->on('sub_menu')->onDelete('cascade');
+            $table->foreign('sub_menu_id')->references('sub_menu_id')->on('sub_menu')->onDelete('set null');
             $table->timestamps();
         });
     }

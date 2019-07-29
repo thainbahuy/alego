@@ -16,8 +16,8 @@ class CreateSubMenu extends Migration
         Schema::create('sub_menu', function (Blueprint $table) {
             $table->bigIncrements('sub_menu_id');
             $table->string('name', 100);
-            $table->bigInteger('menu_id')->unsigned();
-            $table->foreign('menu_id')->references('menu_id')->on('menu')->onDelete('cascade');
+            $table->bigInteger('menu_id')->unsigned()->nullable();
+            $table->foreign('menu_id')->references('menu_id')->on('menu')->onDelete('set null');
             $table->timestamps();
         });
     }
