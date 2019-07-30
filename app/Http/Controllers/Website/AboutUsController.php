@@ -3,12 +3,9 @@
 namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
-
-
-use App\Web\Event;
-use App\Web\Menu;
-use App\Web\SubMenu;
-use Illuminate\Http\Request;
+use App\Model\Web\Event;
+use App\Model\Web\Menu;
+use App\Model\Web\SubMenu;
 
 class AboutUsController extends Controller
 {

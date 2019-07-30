@@ -40,7 +40,7 @@ Route::namespace('Website')->group(function () {
 });
 
 Route::namespace('Admin')->prefix('admin')->group(function () {
-    Route::get('dashboard', 'HomeController@index')->name('admin.index');
+    Route::get('dashboard', 'DashboardController@index')->name('admin.index');
 
 
 });
