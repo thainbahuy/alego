@@ -28,4 +28,8 @@ class Event extends Model
             ->select('id','name','image_cover','author')
             ->get();
     }
+
+    public function deleteEventById($id){
+        return DB::table($this->table)->where('id',$id)->delete();
+    }
 }

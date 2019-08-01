@@ -86,7 +86,7 @@
                             </thead>
                             <tbody>
                             @foreach($listEvent as $item)
-                                <tr>
+                                <tr id="row{{$item->id}}">
                                     <td>
                                         <a href="#">{{$item->name}}</a>
                                     </td>
@@ -96,7 +96,7 @@
                                     </td>
                                     <td>{{$item->author}}</td>
                                     <td>
-                                        <button class="btn btn-danger">Delete</button>
+                                        <button onclick="deleteEvent('{{route('admin.index.delete')}}',{{$item->id}})" class="btn btn-danger">Delete</button>
                                     </td>
 
                                 </tr>
@@ -152,6 +152,7 @@
 
 @include('admin.layout_common.footerScript')
 
+<script src="{{asset('admin/js/event.js')}}"></script>
 </body>
 
 </html>
