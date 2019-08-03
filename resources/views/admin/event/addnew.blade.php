@@ -64,10 +64,17 @@
             </li>
             <li class="breadcrumb-item active">Add new</li>
         </ol>
-        <div class="alert alert-success alert-dismissible">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <strong>Success!</strong> Add New Event .
-        </div>
+        @if(session()->has('message-success'))
+            <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Success!</strong> Add New Event .
+            </div>
+        @elseif(session()->has('message-fail'))
+            <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Error!</strong> Add New Event .
+            </div>
+        @endif
         <form id="add_eventfilm_form" action="{{route('admin.event.addnew')}}" method="post">
             {{ csrf_field() }}
             <div class="card-body">
@@ -166,7 +173,8 @@
                             <div class="form-label-group">
                                 <span><b>Image cover name (Recommand :1600 × 1068)</b></span>
                                 <br>
-                                <input maxlength="255" type="text" id="image_cover" name="image_cover" class="form-control">
+                                <input readonly="readonly" maxlength="255" type="text" id="image_cover" name="image_cover" class="form-control">
+                                <button type="button" id="ckfinder_btn" class="btn btn-primary">Choose Image</button>
                             </div>
                             <label for="image_cover" generated="true" class="error label-error" style = "color : red"></label>
                         </div>
@@ -229,6 +237,34 @@
 <script src="{{asset('admin/js/jquery.validate.min.js')}}"
         type="text/javascript"></script>
 <script src="{{asset('admin/js/event.js')}}"></script>
+<script src = "{{asset('admin/js/ckfinder/ckfinder.js')}}"></script>
+<script>
+    var button1 = document.getElementById( 'ckfinder_btn' );
+
+    button1.onclick = function() {
+        selectFileWithCKFinder( 'image_cover' );
+    };
+
+    function selectFileWithCKFinder( elementId ) {
+        CKFinder.popup( {
+            chooseFiles: true,
+            width: 1000,
+            height: 700,
+            onInit: function( finder ) {
+                finder.on( 'files:choose', function( evt ) {
+                    var file = evt.data.files.first();
+                    var output = document.getElementById( elementId );
+                    output.value = file.getUrl();
+                } );
+
+                finder.on( 'file:choose:resizedImage', function( evt ) {
+                    var output = document.getElementById( elementId );
+                    output.value = evt.data.resizedUrl;
+                } );
+            }
+        } );
+    }
+</script>
 </body>
 
 </html>

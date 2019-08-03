@@ -91,7 +91,7 @@
                                         <a href="#">{{$item->name}}</a>
                                     </td>
                                     <td>
-                                        <img style="width: 500px ; height: 200px" class="img-thumbnail"
+                                        <img style="width: 300px ; height: 200px" class="img-thumbnail"
                                              src="{{asset($item->image_cover)}}" alt="img">
                                     </td>
                                     <td>{{$item->author}}</td>

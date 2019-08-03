@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Model\Admin\Event;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -29,7 +30,6 @@ class EventController extends Controller
 
     public function addNewEventFilm(Request $request)
     {
-
         $name = $request->get('name');
         $sub_menu = $request->get('sub_menu');
         $producer = $request->get('producer');
@@ -41,9 +41,20 @@ class EventController extends Controller
         $video_link = $request->get('video_link');
         if ($request->get('showhome') == null) {
             //insert tra ve true
-            //dd($this->event->addNewEventFilm($name, $sub_menu, $author, $editor, $director, $producer, $description, $image_cover, $video_link, 0));
+            if ($this->event->addNewEventFilm($name, $sub_menu, $author, $editor, $director,
+                    $producer, $description, $image_cover, $video_link, 0) == true) {
+                return redirect()->back()->with('message-success', 'Add New Event');
+
+            } else {
+                return redirect()->back()->with('message-fail', 'Add New Event Fail');
+            }
         } else {
-            //dd($this->event->addNewEventFilm($name, $sub_menu, $author, $editor, $director, $producer, $description, $image_cover, $video_link, 1));
+            if ($this->event->addNewEventFilm($name, $sub_menu, $author, $editor, $director,
+                    $producer, $description, $image_cover, $video_link, 1) == true) {
+                return redirect()->back()->with('message-success', 'Add New Event');
+            } else {
+                return redirect()->back()->with('message-fail', 'Add New Event Fail');
+            }
         }
 
     }

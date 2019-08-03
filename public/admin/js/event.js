@@ -1,3 +1,5 @@
+
+
 function deleteEvent(urlAjax, id) {
     $.ajax(
         {
