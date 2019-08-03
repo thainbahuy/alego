@@ -40,12 +40,14 @@ Route::namespace('Website')->group(function () {
 });
 
 Route::namespace('Admin')->prefix('admin')->group(function () {
-    Route::get('dashboard', 'DashboardController@index')->name('admin.index');
+    //route show view
+    Route::get('dashboard', 'DashboardController@index')->name('view.admin.index');
+    Route::get('event/addnew', 'DashboardController@showAddNewEvent')->name('view.admin.event.addnew');
 
 
-
-    //route ajax
+    //route ajax,controller
     Route::get('event/delete', 'EventController@deleteEventById')->name('admin.index.delete');
+    Route::post('event/addnew', 'EventController@addNewEventFilm')->name('admin.event.addnew');
 
 });
 

@@ -2,14 +2,15 @@
 
 /* @var $factory \Illuminate\Database\Eloquent\Factory */
 
-use App\Event;
+
 use App\Model;
+use App\Model\Web\Event;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
 $factory->define(Event::class, function (Faker $faker) {
     return [
-        'sub_menu_id' => 9,
+        'sub_menu_id' => 3,
         'name' => 'test event pre wedding name 123',
         'author' => $faker->name,
         'editor_designer' => $faker->name,

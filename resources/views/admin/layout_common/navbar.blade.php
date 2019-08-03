@@ -1,7 +1,7 @@
 <!-- Sidebar -->
 <ul class="sidebar navbar-nav">
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{route('view.admin.index')}}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
         </a>
@@ -13,7 +13,7 @@
             <span>Add new</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <a class="dropdown-item" href="#">Event</a>
+            <a class="dropdown-item" href="{{route('view.admin.event.addnew')}}">Event</a>
             <a class="dropdown-item" href="#">Navbar Menu</a>
             <a class="dropdown-item" href="#">Sub-Menu</a>
             <a class="dropdown-item" href="#">Team member</a>

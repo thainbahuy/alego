@@ -19,7 +19,32 @@ class EventController extends Controller
     public function deleteEventById(Request $request)
     {
         $id = $request->get('id');
-        $this->event->deleteEventById($id);
-        return response()->json('', Response::HTTP_OK);
+        if ($this->event->deleteEventById($id) == 1) {
+            return response()->json(['status' => 'success'], Response::HTTP_OK);
+        } else {
+            return response()->json(['status' => 'fail'], Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
+
+    }
+
+    public function addNewEventFilm(Request $request)
+    {
+
+        $name = $request->get('name');
+        $sub_menu = $request->get('sub_menu');
+        $producer = $request->get('producer');
+        $director = $request->get('director');
+        $editor = $request->get('editor');
+        $description = $request->get('description');
+        $author = $request->get('author');
+        $image_cover = $request->get('image_cover');
+        $video_link = $request->get('video_link');
+        if ($request->get('showhome') == null) {
+            //insert tra ve true
+            //dd($this->event->addNewEventFilm($name, $sub_menu, $author, $editor, $director, $producer, $description, $image_cover, $video_link, 0));
+        } else {
+            //dd($this->event->addNewEventFilm($name, $sub_menu, $author, $editor, $director, $producer, $description, $image_cover, $video_link, 1));
+        }
+
     }
 }

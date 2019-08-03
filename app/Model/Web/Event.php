@@ -15,6 +15,7 @@ class Event extends Model
         return DB::table($this->table)
             ->where('show_home','1')
             ->select('id','name','image_cover','author')
+            ->orderBy('id','desc')
             ->paginate($this->limit);
     }
 
