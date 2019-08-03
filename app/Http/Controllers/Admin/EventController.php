@@ -30,15 +30,16 @@ class EventController extends Controller
 
     public function addNewEventFilm(Request $request)
     {
-        $name = $request->get('name');
-        $sub_menu = $request->get('sub_menu');
-        $producer = $request->get('producer');
-        $director = $request->get('director');
-        $editor = $request->get('editor');
-        $description = $request->get('description');
-        $author = $request->get('author');
-        $image_cover = $request->get('image_cover');
-        $video_link = $request->get('video_link');
+        $name = trim($request->get('name'));
+        $sub_menu = trim($request->get('sub_menu'));
+        $producer = trim($request->get('producer'));
+        $director = trim($request->get('director'));
+        $editor = trim($request->get('editor'));
+        $description = trim($request->get('description'));
+        $author = trim($request->get('author'));
+        $image_cover = trim($request->get('image_cover'));
+        $video_link = trim($request->get('video_link'));
+
         if ($request->get('showhome') == null) {
             //insert tra ve true
             if ($this->event->addNewEventFilm($name, $sub_menu, $author, $editor, $director,

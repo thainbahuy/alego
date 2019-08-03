@@ -88,7 +88,7 @@
                             @foreach($listEvent as $item)
                                 <tr id="row{{$item->id}}">
                                     <td>
-                                        <a href="#">{{$item->name}}</a>
+                                        <a href="{{route('view.admin.event.edit',['id'=>$item->id])}}">{{$item->name}}</a>
                                     </td>
                                     <td>
                                         <img style="width: 300px ; height: 200px" class="img-thumbnail"

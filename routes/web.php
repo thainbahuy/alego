@@ -43,6 +43,7 @@ Route::namespace('Admin')->prefix('admin')->group(function () {
     //route show view
     Route::get('dashboard', 'DashboardController@index')->name('view.admin.index');
     Route::get('event/addnew', 'DashboardController@showAddNewEvent')->name('view.admin.event.addnew');
+    Route::get('event/edit/{id}', 'DashboardController@showEditEvent')->name('view.admin.event.edit');
 
 
     //route ajax,controller

@@ -21,8 +21,9 @@ class Event extends Model
     {
         return DB::table($this->table)
             ->where('id', $id)
-            ->select('id', 'name', 'video_link', 'description', 'editor_designer', 'director_photographer', 'producer', 'author')
-            ->get();
+            ->select('id', 'name', 'video_link', 'description', 'editor_designer',
+                'director_photographer', 'producer', 'author', 'show_home', 'image_cover')
+            ->first();
     }
 
 //    public function getEventByIdSubMenu($id){

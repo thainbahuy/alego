@@ -8,9 +8,9 @@ use App\Model\Admin\SubMenu;
 
 class DashboardController extends Controller
 {
-    private $event,$subMenu;
+    private $event, $subMenu;
 
-    public function __construct(Event $event,SubMenu $subMenu)
+    public function __construct(Event $event, SubMenu $subMenu)
     {
         $this->event = $event;
         $this->subMenu = $subMenu;
@@ -19,12 +19,21 @@ class DashboardController extends Controller
     public function index()
     {
         $listEvent = $this->event->getAllEvent();
-        return view('admin/index',compact('listEvent'));
+        return view('admin/index', compact('listEvent'));
     }
 
-    public function showAddNewEvent(){
+    public function showAddNewEvent()
+    {
         $listSubMenu = $this->subMenu->getAllSubMenu();
-        return view('admin/event/addnew',compact('listSubMenu'));
+        return view('admin/event/addnew', compact('listSubMenu'));
+    }
+
+    public function showEditEvent($id)
+    {
+        $listSubMenu = $this->subMenu->getAllSubMenu();
+        $event = $this->event->getEventById($id);
+        return view('admin/event/edit', compact('listSubMenu', 'event'));
+
     }
 
 }
