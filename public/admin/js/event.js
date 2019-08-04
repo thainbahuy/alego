@@ -16,9 +16,17 @@ function deleteEvent(urlAjax, id) {
 
 
 $("#add_eventfilm_form").validate({
+    onfocusout: false,
+    onkeyup: false,
+    focusInvalid: false,
     rules: {
         name: {
-            required: true,
+            required: {
+                depends: function() {
+                    $(this).val($.trim($(this).val()));
+                    return true;
+                },
+            },
             maxlength: 101,
             minlength: 5,
         },
@@ -26,27 +34,52 @@ $("#add_eventfilm_form").validate({
             required: true,
         },
         producer: {
-            required: true,
+            required: {
+                depends: function() {
+                    $(this).val($.trim($(this).val()));
+                    return true;
+                },
+            },
             maxlength: 30,
             minlength: 5,
         },
         director: {
-            required: true,
+            required: {
+                depends: function() {
+                    $(this).val($.trim($(this).val()));
+                    return true;
+                },
+            },
             maxlength: 30,
             minlength: 5,
         },
         editor: {
-            required: true,
+            required: {
+                depends: function() {
+                    $(this).val($.trim($(this).val()));
+                    return true;
+                },
+            },
             maxlength: 30,
             minlength: 5,
         },
         description: {
-            required: true,
+            required: {
+                depends: function() {
+                    $(this).val($.trim($(this).val()));
+                    return true;
+                },
+            },
             maxlength: 500,
             minlength: 5,
         },
         author: {
-            required: true,
+            required: {
+                depends: function() {
+                    $(this).val($.trim($(this).val()));
+                    return true;
+                },
+            },
             maxlength: 30,
             minlength: 5,
         },
@@ -54,7 +87,13 @@ $("#add_eventfilm_form").validate({
             required: true,
         },
         video_link: {
-            required: true,
+            required: {
+                depends: function() {
+                    $(this).val($.trim($(this).val()));
+                    return true;
+                },
+            },
+            url: true,
         },
     },
     submitHandler: function(form) {

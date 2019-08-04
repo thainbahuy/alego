@@ -101,7 +101,7 @@
                 </div>
                 <div class="form-group">
                     <div class="form-row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="form-label-group">
                                 <span><b>Sub-menu :</b></span>
                                 @foreach($listSubMenu as $item)
