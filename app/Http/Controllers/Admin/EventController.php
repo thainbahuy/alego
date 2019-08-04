@@ -59,4 +59,37 @@ class EventController extends Controller
         }
 
     }
+
+    public function updateEventFilm(Request $request)
+    {
+        $id = trim($request->get('id'));
+        $name = trim($request->get('name'));
+        $sub_menu = trim($request->get('sub_menu'));
+        $producer = trim($request->get('producer'));
+        $director = trim($request->get('director'));
+        $editor = trim($request->get('editor'));
+        $description = trim($request->get('description'));
+        $author = trim($request->get('author'));
+        $image_cover = trim($request->get('image_cover'));
+        $video_link = trim($request->get('video_link'));
+
+        if ($request->get('showhome') == null) {
+            //update tra ve 1
+            if ($this->event->updateEventFilm($id, $name, $sub_menu, $author, $editor, $director,
+                    $producer, $description, $image_cover, $video_link, 0) == 1) {
+                return redirect()->back()->with('message-success', 'Update Event');
+
+            } else {
+                return redirect()->back()->with('message-fail', 'Update Event Fail');
+            }
+        } else {
+            if ($this->event->updateEventFilm($id, $name, $sub_menu, $author, $editor, $director,
+                    $producer, $description, $image_cover, $video_link, 1) == 1) {
+                return redirect()->back()->with('message-success', 'Update New Event');
+            } else {
+                return redirect()->back()->with('message-fail', 'Update Event Fail');
+            }
+        }
+
+    }
 }

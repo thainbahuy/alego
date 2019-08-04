@@ -49,6 +49,7 @@ Route::namespace('Admin')->prefix('admin')->group(function () {
     //route ajax,controller
     Route::get('event/delete', 'EventController@deleteEventById')->name('admin.index.delete');
     Route::post('event/addnew', 'EventController@addNewEventFilm')->name('admin.event.addnew');
+    Route::post('event/editevent', 'EventController@updateEventFilm')->name('admin.event.edit');
 
 });
 

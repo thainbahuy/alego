@@ -67,22 +67,23 @@
         @if(session()->has('message-success'))
             <div class="alert alert-success alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <strong>Success!</strong> Add New Event .
+                <strong>Success!</strong> Update Event .
             </div>
         @elseif(session()->has('message-fail'))
             <div class="alert alert-danger alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <strong>Error!</strong> Add New Event .
+                <strong>Error!</strong> Update Event .
             </div>
         @endif
-        <form id="add_eventfilm_form" action="{{route('admin.event.addnew')}}" method="post">
+        <form id="add_eventfilm_form" action="{{route('admin.event.edit')}}" method="post">
             {{ csrf_field() }}
+            <input name="id" style="display: none" type="text" value="{{$event->id}}">
             <div class="card-body">
                 <div class="form-group">
                     <div class="form-row">
                         <div class="col-md-6">
                             <div class="form-label-group">
-                                <input type="checkbox" id="showhome" value="1" name="showhome" > Show in Home Page
+                                <input type="checkbox" @php if ($event->show_home == 1) echo 'checked'; @endphp id="showhome" value="1" name="showhome" > Show in Home Page
                             </div>
                             <label for="showhome" generated="true" class="error label-error" style = "color : red"></label>
                         </div>
@@ -105,7 +106,7 @@
                             <div class="form-label-group">
                                 <span><b>Sub-menu :</b></span>
                                 @foreach($listSubMenu as $item)
-                                    <input type="radio" id="sub_menu" value="{{$item->sub_menu_id}}" name="sub_menu" >{{$item->name}}
+                                    <input @php if ($item->sub_menu_id == $event->sub_menu_id) echo 'checked'; @endphp type="radio" id="sub_menu" value="{{$item->sub_menu_id}}" name="sub_menu" >{{$item->name}}
                                 @endforeach
                             </div>
                             <label for="sub_menu" generated="true" class="error label-error" style = "color : red"></label>
@@ -150,7 +151,7 @@
                         <div class="col-md-6">
                             <div class="form-label-group">
                                 <span><b>Description</b></span>
-                                <textarea value="{{$event->description}}" rows="10" name="description" id="description" class="form-control"></textarea>
+                                <textarea rows="10" name="description" id="description" class="form-control">{{$event->description}}</textarea>
                             </div>
                             <label for="description" generated="true" class="error label-error" style = "color : red"></label>
                         </div>
@@ -192,7 +193,7 @@
                     </div>
                 </div>
 
-                <button type="submit" id="btn_addNewFilm" class="btn btn-primary btn-block" >Add New</button>
+                <button type="submit" id="btn_addNewFilm" class="btn btn-primary btn-block" >Update</button>
             </div>
             <!-- </form> -->
 
