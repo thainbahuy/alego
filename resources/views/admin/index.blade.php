@@ -66,12 +66,74 @@
                 <li class="breadcrumb-item active">Overview</li>
             </ol>
 
-
-            <!-- DataTables Example -->
+            <!-- DataTables menu List -->
             <div class="card mb-3">
                 <div class="card-header">
                     <i class="fas fa-table"></i>
-                    Event List
+                    <b>Menu List</b>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTableMenu" width="100%" cellspacing="0">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($listMenu as $item)
+                                <tr>
+                                    <td>{{$item->name}}</td>
+                                    <td>
+                                        <button class="btn btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DataTables sub-menu List -->
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fas fa-table"></i>
+                    <b>Sub-Menu List</b>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTableSubMenu" width="100%" cellspacing="0">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Menu</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($listSubMenu as $item)
+                                <tr>
+                                    <td>{{$item->name}}</td>
+                                    <td>{{$item->menu}}</td>
+                                    <td>
+                                        <button class="btn btn-danger">Delete</button>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- DataTables Event List -->
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fas fa-table"></i>
+                    <b> Event List</b>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -80,13 +142,14 @@
                             <tr>
                                 <th>Name</th>
                                 <th>Cover</th>
-                                <th>author</th>
+                                <th>Author</th>
+                                <th>Sub-Menu</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($listEvent as $item)
-                                <tr id="row{{$item->id}}">
+                                <tr id="rowEvent{{$item->id}}">
                                     <td>
                                         <a href="{{route('view.admin.event.edit',['id'=>$item->id])}}">{{$item->name}}</a>
                                     </td>
@@ -95,8 +158,11 @@
                                              src="{{asset($item->image_cover)}}" alt="img">
                                     </td>
                                     <td>{{$item->author}}</td>
+                                    <td>{{$item->subMenu}}</td>
                                     <td>
-                                        <button onclick="deleteEvent('{{route('admin.index.delete')}}',{{$item->id}})" class="btn btn-danger">Delete</button>
+                                        <button onclick="deleteEvent('{{route('admin.index.delete')}}',{{$item->id}})"
+                                                class="btn btn-danger">Delete
+                                        </button>
                                     </td>
 
                                 </tr>

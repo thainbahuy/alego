@@ -7,7 +7,7 @@ function deleteEvent(urlAjax, id) {
             type: "get",
             data: {'id': id},
         }).done(function (response) {
-        $('#row' + id).remove();
+        $('#rowEvent' + id).remove();
     }).fail(function (response) {
         alert('server not responding...');
     })

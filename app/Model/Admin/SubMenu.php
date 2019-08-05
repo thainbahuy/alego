@@ -11,7 +11,9 @@ class SubMenu extends Model
 
     public function getAllSubMenu()
     {
-        return DB::table('sub_menu')->select('sub_menu_id', 'name')
+        return DB::table('sub_menu')
+            ->select('sub_menu_id', 'sub_menu.name','menu.name as menu')
+            ->join('menu','menu.menu_id','=','sub_menu.menu_id')
             ->get();
     }
 

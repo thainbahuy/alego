@@ -13,7 +13,8 @@ class Event extends Model
     public function getAllEvent()
     {
         return DB::table($this->table)
-            ->select('id', 'name', 'image_cover', 'author')
+            ->join('sub_menu','sub_menu.sub_menu_id','=','event.sub_menu_id')
+            ->select('id', 'event.name', 'image_cover', 'author','sub_menu.name as subMenu')
             ->get();
     }
 
