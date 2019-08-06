@@ -34,8 +34,6 @@
         src='{{asset('website/wp-content/themes/torola/assets/js/achtung.framework.js')}}'></script>
 <script type='text/javascript' src='{{asset('website/wp-content/themes/torola/assets/js/theme.js')}}'></script>
 <script type='text/javascript' src='{{asset('website/wp-content/themes/torola/assets/js/custom.js')}}'></script>
-<script type='text/javascript'
-        src='http://maps.googleapis.com/maps/api/js?key=AIzaSyBv5hQWPm9Yxto2Q7nqE7uyle6bScQ4vUY'></script>
 <script type='text/javascript' src='{{asset('website/wp-includes/js/wp-embed.min.js')}}'></script>
 <script type='text/javascript'
         src='{{asset('website/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js')}}'></script>
