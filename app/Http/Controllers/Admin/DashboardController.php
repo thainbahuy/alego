@@ -40,4 +40,17 @@ class DashboardController extends Controller
 
     }
 
+    public function showAddNewSubMenu(){
+        $listMenu = $this->menu->getAllMenu();
+        return view('admin/submenu/add',compact('listMenu'));
+    }
+
+    public function showEditSubMenu($id)
+    {
+        $listMenu = $this->menu->getAllMenu();
+        $subMenu = $this->subMenu->getSubMenuById($id);
+        return view('admin/submenu/edit', compact('listMenu', 'subMenu'));
+
+    }
+
 }

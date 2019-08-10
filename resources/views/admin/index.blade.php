@@ -114,11 +114,15 @@
                             </thead>
                             <tbody>
                             @foreach($listSubMenu as $item)
-                                <tr>
-                                    <td>{{$item->name}}</td>
+                                <tr id="rowSub{{$item->sub_menu_id}}">
+                                    <td>
+                                        <a href="{{route('view.admin.submenu.edit',$item->sub_menu_id)}}">
+                                            {{$item->name}}
+                                        </a>
+                                    </td>
                                     <td>{{$item->menu}}</td>
                                     <td>
-                                        <button class="btn btn-danger">Delete</button>
+                                        <button onclick="deleteSubMenu('{{route('admin.index.submenu.delete')}}',{{$item->sub_menu_id}})" class="btn btn-danger">Delete</button>
                                     </td>
                                 </tr>
                             @endforeach
@@ -219,6 +223,7 @@
 @include('admin.layout_common.footerScript')
 
 <script src="{{asset('admin/js/event.js')}}"></script>
+<script src="{{asset('admin/js/SubMenu.js')}}"></script>
 </body>
 
 </html>

@@ -15,7 +15,7 @@
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
             <a class="dropdown-item" href="{{route('view.admin.event.addnew')}}">Event</a>
             <a class="dropdown-item" href="#">Navbar Menu</a>
-            <a class="dropdown-item" href="#">Sub-Menu</a>
+            <a class="dropdown-item" href="{{route('view.admin.submenu.addnew')}}">Sub-Menu</a>
             <a class="dropdown-item" href="#">Team member</a>
             <a class="dropdown-item" href="#">Background</a>
 
