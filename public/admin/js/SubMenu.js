@@ -24,7 +24,7 @@ $("#add_submenu_form").validate({
                 },
             },
             maxlength: 50,
-            minlength: 5,
+            minlength: 3,
         },
         menu_id: {
             required: true,

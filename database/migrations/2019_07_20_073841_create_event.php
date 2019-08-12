@@ -25,7 +25,7 @@ class CreateEvent extends Migration
             $table->text('image_cover');
             $table->text('video_link');
             $table->integer('type');
-            $table->foreign('sub_menu_id')->references('sub_menu_id')->on('sub_menu')->onDelete('set null');
+            $table->foreign('sub_menu_id')->references('sub_menu_id')->on('sub_menu')->onDelete('cascade');
             $table->timestamps();
         });
     }

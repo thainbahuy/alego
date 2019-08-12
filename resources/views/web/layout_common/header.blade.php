@@ -36,13 +36,14 @@
                     <a href="{{url('about-us')}}">@lang('Message.About-us')</a>
                 </li>
                 <li class="">
+                    <a href="{{url('contact-us')}}"
+                       class="ajax-link">@lang('Message.Contact')</a></li>
+                <li class="">
                     <a href="#">@lang('Message.Price')</a>
                 </li>
             </ul>
         </li>
-        <li class="">
-            <a href="{{url('contact-us')}}"
-               class="ajax-link">@lang('Message.Contact')</a></li>
+
 
         <li class="">
         <li class="">

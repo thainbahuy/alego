@@ -17,7 +17,7 @@ class CreateSubMenu extends Migration
             $table->bigIncrements('sub_menu_id');
             $table->string('name', 100);
             $table->bigInteger('menu_id')->unsigned()->nullable();
-            $table->foreign('menu_id')->references('menu_id')->on('menu')->onDelete('set null');
+            $table->foreign('menu_id')->references('menu_id')->on('menu')->onDelete('cascade');
             $table->timestamps();
         });
     }

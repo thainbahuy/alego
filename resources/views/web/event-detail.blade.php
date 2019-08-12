@@ -32,7 +32,6 @@
             <div class="row no-gutters">
                 <div class="columns col-sm-6">
                     <h4 class="bold uppercase">{{$event[0]->name}}</h4>
-                                        <p class="serif">{{$event[0]->author}}</p>
                 </div>
                 <div class="columns col-sm-6">
                     <p>
