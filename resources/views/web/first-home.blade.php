@@ -64,50 +64,10 @@
 
 @include('web.layout_common.footerScript')
 <script src="{{asset('website/js/jquery_321/jquery-3.2.1.js')}}"></script>
+<script src="{{asset('website/js/first-home.js')}}"></script>
 <script>
     var URL = '{{route('web.first-home')}}';
-    var indexPage = 2;
-    $(document).ready(function () {
-        $(window).scroll(function () {
-            if ($(window).scrollTop() + $(window).height() == $(document).height()) {
-                loadMoreEvent(URL);
 
-            }
-        });
-    });
-
-    function loadMoreEvent(urlAjax) {
-        $.ajax(
-            {
-                url: urlAjax,
-                type: "get",
-                data: {'page': indexPage},
-            })
-            .done(function (data) {
-                if ($.trim(data.html) != "") {
-                    $("#event").append(data.html);
-                    indexPage++
-                    loadLazyEventAfterAjax();
-
-                }
-            })
-            .fail(function (jqXHR, ajaxOptions, thrownError) {
-                alert('server not responding...');
-            });
-    }
-
-    function loadLazyEventAfterAjax() {
-        document.querySelectorAll(".background-parallax").forEach(function (e) {
-            e.classList.contains("lazy-load") ? new ScrollListener(e, {
-                onAppear: function () {
-                    new Parallax(e)
-                },
-                offsetTop: -200,
-                offsetBottom: -200
-            }) : new Parallax(e)
-        });
-        $('figcaption').addClass('visible');
-    }
 </script>
 </body>
 </html>

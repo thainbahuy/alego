@@ -24,10 +24,9 @@ class HomeController extends Controller
     public function index(Request $request)
     {
         $menu = $this->getMenu();
-
-        $listEvent = $this->eventModel->getAllEventForHomePage();
-
+        $listEvent = [];
         if ($request->ajax()) {
+            $listEvent = $this->eventModel->getAllEventForHomePage();
             $view = view('data_event_home',compact('listEvent'))->render();
             return response()->json(['html'=>$view]);
         }
