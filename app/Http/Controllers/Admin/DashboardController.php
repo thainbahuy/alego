@@ -9,9 +9,9 @@ use App\Model\Admin\SubMenu;
 
 class DashboardController extends Controller
 {
-    private $event, $subMenu , $menu;
+    private $event, $subMenu, $menu;
 
-    public function __construct(Event $event, SubMenu $subMenu,Menu $menu)
+    public function __construct(Event $event, SubMenu $subMenu, Menu $menu)
     {
         $this->event = $event;
         $this->subMenu = $subMenu;
@@ -23,7 +23,7 @@ class DashboardController extends Controller
         $listEvent = $this->event->getAllEvent();
         $listMenu = $this->menu->getAllMenu();
         $listSubMenu = $this->subMenu->getAllSubMenu();
-        return view('admin/index', compact('listEvent','listMenu','listSubMenu'));
+        return view('admin/index', compact('listEvent', 'listMenu', 'listSubMenu'));
     }
 
     public function showAddNewEvent()
@@ -40,9 +40,10 @@ class DashboardController extends Controller
 
     }
 
-    public function showAddNewSubMenu(){
+    public function showAddNewSubMenu()
+    {
         $listMenu = $this->menu->getAllMenu();
-        return view('admin/submenu/add',compact('listMenu'));
+        return view('admin/submenu/add', compact('listMenu'));
     }
 
     public function showEditSubMenu($id)
@@ -50,6 +51,18 @@ class DashboardController extends Controller
         $listMenu = $this->menu->getAllMenu();
         $subMenu = $this->subMenu->getSubMenuById($id);
         return view('admin/submenu/edit', compact('listMenu', 'subMenu'));
+
+    }
+
+    public function showAddNewMenu()
+    {
+        return view('admin/menu/add');
+    }
+
+    public function showEditMenu($id)
+    {
+        $menu = $this->menu->getMenuById($id);
+        return view('admin/menu/edit', compact('menu'));
 
     }
 

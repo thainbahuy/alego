@@ -15,3 +15,4 @@
 
 <!-- Custom styles for this template-->
 <link href="{{asset('admin/css/sb-admin.css')}}" rel="stylesheet">
+@routes()

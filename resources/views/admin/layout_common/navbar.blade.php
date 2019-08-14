@@ -14,7 +14,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
             <a class="dropdown-item" href="{{route('view.admin.event.addnew')}}">Event</a>
-            <a class="dropdown-item" href="#">Navbar Menu</a>
+            <a class="dropdown-item" href="{{route('view.admin.menu.add')}}">Menu</a>
             <a class="dropdown-item" href="{{route('view.admin.submenu.addnew')}}">Sub-Menu</a>
             <a class="dropdown-item" href="#">Team member</a>
             <a class="dropdown-item" href="#">Background</a>
@@ -22,22 +22,12 @@
         </div>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-            {{--                <i class="fas fa-fw fa-chart-area"></i>--}}
-            <span>Navbar Menu</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-            {{--                <i class="fas fa-fw fa-table"></i>--}}
-            <span>Sub-Menu</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="#">
             {{--                <i class="fas fa-fw fa-table"></i>--}}
             <span>Team member</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="#">
             {{--                <i class="fas fa-fw fa-table"></i>--}}
             <span>Background</span></a>
     </li>

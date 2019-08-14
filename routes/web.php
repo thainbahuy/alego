@@ -46,6 +46,8 @@ Route::namespace('Admin')->prefix('admin')->group(function () {
     Route::get('event/edit/{id}', 'DashboardController@showEditEvent')->name('view.admin.event.edit');
     Route::get('submenu/addnew', 'DashboardController@showAddNewSubMenu')->name('view.admin.submenu.addnew');
     Route::get('submenu/edit/{id}', 'DashboardController@showEditSubMenu')->name('view.admin.submenu.edit');
+    Route::get('menu/addnew', 'DashboardController@showAddNewMenu')->name('view.admin.menu.add');
+    Route::get('menu/edit/{id}', 'DashboardController@showEditMenu')->name('view.admin.menu.edit');
 
 
     //route ajax,controller
@@ -58,6 +60,13 @@ Route::namespace('Admin')->prefix('admin')->group(function () {
     Route::get('submenu/delete', 'SubMenuController@deleteSubMenu')->name('admin.index.submenu.delete');
     Route::post('submenu/addnew', 'SubMenuController@addNewSubMenu')->name('admin.submenu.add');
     Route::post('submenu/editsubmenu', 'SubMenuController@updateSubMenu')->name('admin.submenu.edit');
+
+
+    //menu
+    Route::get('menu/delete', 'MenuController@deleteMenuById')->name('admin.index.menu.delete');
+    Route::post('menu/addnew', 'MenuController@addNewMenu')->name('admin.menu.add');
+    Route::post('menu/edit', 'MenuController@editMenuById')->name('admin.menu.edit');
+
 
 });
 

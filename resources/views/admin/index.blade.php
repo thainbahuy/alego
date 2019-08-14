@@ -77,16 +77,18 @@
                         <table class="table table-bordered" id="dataTableMenu" width="100%" cellspacing="0">
                             <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Action</th>
+                                <th class='text-center'>Name</th>
+                                <th class='text-center'>Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($listMenu as $item)
-                                <tr>
-                                    <td>{{$item->name}}</td>
-                                    <td>
-                                        <button class="btn btn-danger">Delete</button>
+                                <tr id="rowMenu{{$item->menu_id}}">
+                                    <td class='text-center'>
+                                        <a href="{{route('view.admin.menu.edit',['id'=>$item->menu_id])}}">{{$item->name}}</a>
+                                    </td>
+                                    <td class='text-center'>
+                                        <button onclick="deleteMenu('{{$item->menu_id}}')"  class="btn btn-danger">Delete</button>
                                     </td>
                                 </tr>
                             @endforeach
@@ -107,21 +109,21 @@
                         <table class="table table-bordered" id="dataTableSubMenu" width="100%" cellspacing="0">
                             <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Menu</th>
-                                <th>Action</th>
+                                <th class='text-center'>Name</th>
+                                <th class='text-center'>Menu</th>
+                                <th class='text-center'>Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($listSubMenu as $item)
                                 <tr id="rowSub{{$item->sub_menu_id}}">
-                                    <td>
+                                    <td class='text-center'>
                                         <a href="{{route('view.admin.submenu.edit',$item->sub_menu_id)}}">
                                             {{$item->name}}
                                         </a>
                                     </td>
-                                    <td>{{$item->menu}}</td>
-                                    <td>
+                                    <td class='text-center'>{{$item->menu}}</td>
+                                    <td class='text-center'>
                                         <button onclick="deleteSubMenu('{{route('admin.index.submenu.delete')}}',{{$item->sub_menu_id}})" class="btn btn-danger">Delete</button>
                                     </td>
                                 </tr>
@@ -144,26 +146,26 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Cover</th>
-                                <th>Author</th>
-                                <th>Sub-Menu</th>
-                                <th>Action</th>
+                                <th class='text-center'>Name</th>
+                                <th class='text-center'>Cover</th>
+                                <th class='text-center'>Author</th>
+                                <th class='text-center'>Sub-Menu</th>
+                                <th class='text-center'>Action</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($listEvent as $item)
                                 <tr id="rowEvent{{$item->id}}">
-                                    <td>
+                                    <td style="width: 25%;" class='text-center'>
                                         <a href="{{route('view.admin.event.edit',['id'=>$item->id])}}">{{$item->name}}</a>
                                     </td>
-                                    <td>
-                                        <img style="width: 300px ; height: 200px" class="img-thumbnail"
+                                    <td style="width: 25%;" class='text-center'>
+                                        <img class="img-thumbnail"
                                              src="{{asset($item->image_cover)}}" alt="img">
                                     </td>
-                                    <td>{{$item->author}}</td>
-                                    <td>{{$item->subMenu}}</td>
-                                    <td>
+                                    <td  style="width: 25%;" class='text-center'>{{$item->author}}</td>
+                                    <td style="width: 25%;" class='text-center'>{{$item->subMenu}}</td>
+                                    <td style="width: 25%;" class='text-center'>
                                         <button onclick="deleteEvent('{{route('admin.index.delete')}}',{{$item->id}})"
                                                 class="btn btn-danger">Delete
                                         </button>
@@ -241,7 +243,9 @@
 </div>
 
 @include('admin.layout_common.footerScript')
-
+<script src="{{asset('admin/js/event.js')}}"></script>
+<script src="{{asset('')}}admin/js/SubMenu.js"></script>
+<script src="{{asset('')}}admin/js/Menu.js"></script>
 </body>
 
 </html>
