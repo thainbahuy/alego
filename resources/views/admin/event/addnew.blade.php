@@ -169,11 +169,16 @@
                 </div>
                 <div class="form-group">
                     <div class="form-row">
+                        <div id="thumbnail">
+                            <div class="pDiv">
+                                <img class="imgKLIK5" src="">
+                            </div>
+                        </div>
                         <div class="col-md-6">
                             <div class="form-label-group">
-                                <span><b>Image cover name (Recommand :1600 × 1068)</b></span>
+                                <span><b>Image cover name</b></span>
                                 <br>
-                                <input readonly="readonly" maxlength="255" type="text" id="image_cover" name="image_cover" class="form-control">
+                                <input readonly  maxlength="500" type="text" id="image_cover" name="image_cover" class="form-control">
                                 <button type="button" id="ckfinder_btn" class="btn btn-primary">Choose Image</button>
                             </div>
                             <label for="image_cover" generated="true" class="error label-error" style = "color : red"></label>
@@ -238,6 +243,16 @@
         type="text/javascript"></script>
 <script src="{{asset('admin/js/event.js')}}"></script>
 <script src = "{{asset('admin/js/ckfinder/ckfinder.js')}}"></script>
+<style>
+    img {
+        width:30%;
+        float: left;
+    }
+    .pDiv {
+        float:left;
+        width:100%
+    }
+</style>
 <script>
     var button1 = document.getElementById( 'ckfinder_btn' );
 
@@ -255,6 +270,8 @@
                     var file = evt.data.files.first();
                     var output = document.getElementById( elementId );
                     output.value = file.getUrl();
+                    //preview
+                    $(".imgKLIK5").attr("src", output.value);
                 } );
 
                 finder.on( 'file:choose:resizedImage', function( evt ) {
@@ -264,6 +281,8 @@
             }
         } );
     }
+
+
 </script>
 </body>
 

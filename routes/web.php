@@ -42,12 +42,17 @@ Route::namespace('Website')->group(function () {
 Route::namespace('Admin')->prefix('admin')->group(function () {
     //route show view
     Route::get('dashboard', 'DashboardController@index')->name('view.admin.index');
+
     Route::get('event/addnew', 'DashboardController@showAddNewEvent')->name('view.admin.event.addnew');
     Route::get('event/edit/{id}', 'DashboardController@showEditEvent')->name('view.admin.event.edit');
+
     Route::get('submenu/addnew', 'DashboardController@showAddNewSubMenu')->name('view.admin.submenu.addnew');
     Route::get('submenu/edit/{id}', 'DashboardController@showEditSubMenu')->name('view.admin.submenu.edit');
+
     Route::get('menu/addnew', 'DashboardController@showAddNewMenu')->name('view.admin.menu.add');
     Route::get('menu/edit/{id}', 'DashboardController@showEditMenu')->name('view.admin.menu.edit');
+
+    Route::get('background', 'BackgroundController@index')->name('view.admin.background.list_background');
 
 
     //route ajax,controller

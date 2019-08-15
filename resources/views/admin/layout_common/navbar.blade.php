@@ -27,7 +27,7 @@
             <span>Team member</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{route('view.admin.background.list_background')}}">
             {{--                <i class="fas fa-fw fa-table"></i>--}}
             <span>Background</span></a>
     </li>
