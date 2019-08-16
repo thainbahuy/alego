@@ -17,7 +17,7 @@
             <a class="dropdown-item" href="{{route('view.admin.menu.add')}}">Menu</a>
             <a class="dropdown-item" href="{{route('view.admin.submenu.addnew')}}">Sub-Menu</a>
             <a class="dropdown-item" href="#">Team member</a>
-            <a class="dropdown-item" href="#">Background</a>
+            <a class="dropdown-item" href="{{route('view.admin.background.add')}}">Background</a>
 
         </div>
     </li>

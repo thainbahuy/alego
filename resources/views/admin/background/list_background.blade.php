@@ -19,15 +19,6 @@
 
     <!-- Navbar Search -->
     <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for..." aria-label="Search"
-                   aria-describedby="basic-addon2">
-            <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
-        </div>
     </form>
 
     <!-- Navbar -->
@@ -84,7 +75,7 @@
                             </thead>
                             <tbody>
                             @foreach($listBackground as $item)
-                                <tr>
+                                <tr id="rowBackground{{$item->id}}">
                                     <td style="width: 50%" class='text-center'>
                                         <img class="img-thumbnail"
                                              src="{{asset($item->image_link)}}" alt="img">
@@ -93,7 +84,7 @@
                                         {{$item->position}}
                                     </td>
                                     <td class='text-center'>
-                                        <button class="btn btn-danger">Delete</button>
+                                        <button onclick="showModelDeleteEvent('{{$item->id}}')" class="btn btn-danger">Delete</button>
                                     </td>
                                 </tr>
                             @endforeach
@@ -162,17 +153,15 @@
                 Are you sure want to delete this ?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                <button type="button" class="btn btn-primary">Yes</button>
+                <button type="button"  class="btn btn-secondary" data-dismiss="modal">No</button>
+                <button type="button" id="delete_btn" class="btn btn-primary">Yes</button>
             </div>
         </div>
     </div>
 </div>
 
 @include('admin.layout_common.footerScript')
-<script src="{{asset('admin/js/event.js')}}"></script>
-<script src="{{asset('')}}admin/js/SubMenu.js"></script>
-<script src="{{asset('')}}admin/js/Menu.js"></script>
+<script src="{{asset('admin/js/background.js')}}"></script>
 </body>
 
 </html>

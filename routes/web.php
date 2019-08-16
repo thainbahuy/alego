@@ -53,7 +53,9 @@ Route::namespace('Admin')->prefix('admin')->group(function () {
     Route::get('menu/edit/{id}', 'DashboardController@showEditMenu')->name('view.admin.menu.edit');
 
     Route::get('background', 'BackgroundController@index')->name('view.admin.background.list_background');
-
+    Route::get('background/addnew', 'BackgroundController@showAddNewBackground')->name('view.admin.background.add');
+    Route::post('background/addnew', 'BackgroundController@addNewBackground')->name('admin.background.add');
+    Route::get('background/delete', 'BackgroundController@deleteBackgroundId')->name('admin.background.add.delete');
 
     //route ajax,controller
     //Event

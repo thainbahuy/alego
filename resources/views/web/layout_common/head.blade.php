@@ -5,20 +5,7 @@
     <title>Alego Story</title>
     <link rel='dns-prefetch' href='http://maps.googleapis.com'/>
     <link rel='dns-prefetch' href='http://fonts.googleapis.com'/>
-{{--    <style type="text/css">--}}
-{{--        img.wp-smiley,--}}
-{{--        img.emoji {--}}
-{{--            display: inline !important;--}}
-{{--            border: none !important;--}}
-{{--            box-shadow: none !important;--}}
-{{--            height: 1em !important;--}}
-{{--            width: 1em !important;--}}
-{{--            margin: 0 .07em !important;--}}
-{{--            vertical-align: -0.1em !important;--}}
-{{--            background: none !important;--}}
-{{--            padding: 0 !important;--}}
-{{--        }--}}
-{{--    </style>--}}
+
     <link rel='stylesheet' id='contact-form-7-css'
           href='{{asset('website/wp-content/plugins/contact-form-7/includes/css/styles.css')}}' type='text/css'
           media='all'/>
@@ -74,9 +61,5 @@
             text-indent: 0;
         }
     </style>
-{{--    <noscript>--}}
-{{--        <style type="text/css">.wpb_animate_when_almost_visible {--}}
-{{--                opacity: 1;--}}
-{{--            }</style>--}}
-{{--    </noscript>--}}
+
 

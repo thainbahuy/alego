@@ -17,4 +17,19 @@ class Background extends Model
             ->orderByDesc('id')
             ->get();
     }
+
+    public function addNewBackground($image_link, $position)
+    {
+        $background = new Background;
+        $background->position = $position;
+        $background->image_link = $image_link;
+        return $background->save();
+    }
+
+    public function deleteBackground($id)
+    {
+        return DB::table($this->table)
+            ->where('id', $id)
+            ->delete();
+    }
 }
