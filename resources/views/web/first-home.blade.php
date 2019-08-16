@@ -19,14 +19,11 @@
 <main id="main" class="bg-lines">
     <section class="hero hero-fullscreen" data-background="#000">
         <div class="swiper" data-pagination="true">
-            <figure class="swiper-slide"
-                    data-background="http://torola.fwp.fastwp.net/wp-content/uploads/sites/30/2018/03/1071.jpg"
-            >
-            </figure>
-            <figure class="swiper-slide"
-                    data-background="{{asset('website/images_upload/cover.png')}}"
-            >
-            </figure>
+            @foreach($listBackground as $item)
+                <figure class="swiper-slide"
+                        data-background="{{$item->image_link}}">
+                </figure>
+            @endforeach
         </div>
     </section>
     <section class="py-lg-13 py-8">

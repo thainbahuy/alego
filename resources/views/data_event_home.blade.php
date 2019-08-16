@@ -3,7 +3,7 @@
 {{--        <div class="item-media background-parallax"--}}
 {{--             data-background="{{asset($item->image_cover)}}">--}}
 {{--        </div>--}}
-        <img class="item-media background-parallax"  src="{{asset($item->image_cover)}}" alt="image">
+        <img class="item-media background-parallax"  src="{{$item->image_cover}}" alt="image">
         <figcaption>
             <div class="item-caption-inner">
                 <p class="text-links">

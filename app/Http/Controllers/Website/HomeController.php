@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Website;
 
 
 use App\Http\Controllers\Controller;
+use App\Model\Web\Background;
 use App\Model\Web\Event;
 use App\Model\Web\Menu;
 use App\Model\Web\SubMenu;
@@ -12,18 +13,20 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    private $eventModel, $subMenuModel, $menuModel;
+    private $eventModel, $subMenuModel, $menuModel,$background;
 
-    function __construct(Event $eventModel, SubMenu $subMenuModel, Menu $menuModel)
+    function __construct(Event $eventModel, SubMenu $subMenuModel, Menu $menuModel,Background $background)
     {
         $this->eventModel = $eventModel;
         $this->subMenuModel = $subMenuModel;
         $this->menuModel = $menuModel;
+        $this->background = $background;
     }
 
     public function index(Request $request)
     {
         $menu = $this->getMenu();
+        $listBackground = $this->background->getAllBackground();
         $listEvent = [];
         if ($request->ajax()) {
             $listEvent = $this->eventModel->getAllEventForHomePage();
@@ -31,7 +34,7 @@ class HomeController extends Controller
             return response()->json(['html'=>$view]);
         }
 
-        return view('web/first-home', compact('menu','listEvent'));
+        return view('web/first-home', compact('menu','listEvent','listBackground'));
     }
 
     public function loadEventByMenu(Request $request ,$menu, $sub_menu)

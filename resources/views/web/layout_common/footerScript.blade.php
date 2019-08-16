@@ -1,18 +1,4 @@
-<script type='text/javascript'>
-    /* <![CDATA[ */
-    var wpcf7 = {
-        "apiSettings": {
-            "root": "http:\/\/torola.fwp.fastwp.net\/wp-json\/contact-form-7\/v1",
-            "namespace": "contact-form-7\/v1"
-        },
-        "recaptcha": {
-            "messages": {
-                "empty": "Please verify that you are not a robot."
-            }
-        }
-    };
-    /* ]]> */
-</script>
+
 <script type='text/javascript'
         src='{{asset('website/wp-content/plugins/contact-form-7/includes/js/scripts.js')}}'></script>
 <script type='text/javascript' src='{{asset('website/wp-content/themes/torola/assets/js/Retina.js')}}'></script>
@@ -33,7 +19,7 @@
 <script type='text/javascript'
         src='{{asset('website/wp-content/themes/torola/assets/js/achtung.framework.js')}}'></script>
 <script type='text/javascript' src='{{asset('website/wp-content/themes/torola/assets/js/theme.js')}}'></script>
-<script type='text/javascript' src='{{asset('website/wp-content/themes/torola/assets/js/custom.js')}}'></script>
+{{--<script type='text/javascript' src='{{asset('website/wp-content/themes/torola/assets/js/custom.js')}}'></script>--}}
 <script type='text/javascript' src='{{asset('website/wp-includes/js/wp-embed.min.js')}}'></script>
 <script type='text/javascript'
         src='{{asset('website/wp-content/plugins/js_composer/assets/js/dist/js_composer_front.min.js')}}'></script>
