@@ -95,14 +95,16 @@
     <section class="text-light pt-13 pr-7 pb-13 pl-7" data-background="#101010">
         <div class="container p-0"><h5 class="mb-8">TEAM.</h5>
             <div class="row">
-                <div class="col-md-4" data-animation="fade-in-bottom 1.2s .2s"><img
-                        src="{{asset('website/wp-content/uploads/sites/30/2018/03/11.jpg')}}" alt="JORDAN">
-                    <h5 class="uppercase mt-5">JORDAN
-                        <small>Producer</small>
-                    </h5>
-                    <p class="opacity-05">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem officiis
-                        soluta.</p>
-                </div>
+                @foreach($listMember as $item)
+                    <div class="col-md-4" data-animation="fade-in-bottom 1.2s .2s"><img
+                            src="{{$item->avatar}}" alt="JORDAN">
+                        <h5 class="uppercase mt-5">{{$item->member_name}}
+                            <small>{{$item->role}}</small>
+                        </h5>
+    {{--                    <p class="opacity-05">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem officiis--}}
+    {{--                        soluta.</p>--}}
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>

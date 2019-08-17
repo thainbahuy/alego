@@ -54,8 +54,9 @@ Route::namespace('Admin')->prefix('admin')->group(function () {
 
     Route::get('background', 'BackgroundController@index')->name('view.admin.background.list_background');
     Route::get('background/addnew', 'BackgroundController@showAddNewBackground')->name('view.admin.background.add');
-    Route::post('background/addnew', 'BackgroundController@addNewBackground')->name('admin.background.add');
-    Route::get('background/delete', 'BackgroundController@deleteBackgroundId')->name('admin.background.add.delete');
+
+    Route::get('member', 'MemberController@index')->name('view.admin.member.list_member');
+    Route::get('member/addnew', 'MemberController@showAddMember')->name('view.admin.member.add');
 
     //route ajax,controller
     //Event
@@ -68,11 +69,18 @@ Route::namespace('Admin')->prefix('admin')->group(function () {
     Route::post('submenu/addnew', 'SubMenuController@addNewSubMenu')->name('admin.submenu.add');
     Route::post('submenu/editsubmenu', 'SubMenuController@updateSubMenu')->name('admin.submenu.edit');
 
-
     //menu
     Route::get('menu/delete', 'MenuController@deleteMenuById')->name('admin.index.menu.delete');
     Route::post('menu/addnew', 'MenuController@addNewMenu')->name('admin.menu.add');
     Route::post('menu/edit', 'MenuController@editMenuById')->name('admin.menu.edit');
+
+    //background
+    Route::post('background/addnew', 'BackgroundController@addNewBackground')->name('admin.background.add');
+    Route::get('background/delete', 'BackgroundController@deleteBackgroundId')->name('admin.background.add.delete');
+
+    //member
+    Route::post('member/addnew', 'MemberController@addNewMember')->name('admin.member.add');
+    Route::get('member/delete', 'MemberController@deleteBackgroundId')->name('admin.member.list_member.delete');
 
 
 });

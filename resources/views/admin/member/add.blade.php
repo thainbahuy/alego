@@ -4,7 +4,7 @@
 <head>
 
     @include('admin.layout_common.head')
-    <title>Background-Add New</title>
+    <title>Member-Add New</title>
 </head>
 
 <body id="page-top">
@@ -67,22 +67,22 @@
         @if(session()->has('message-success'))
             <div class="alert alert-success alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <strong>Success!</strong> Add New Background .
+                <strong>Success!</strong> Add New Member .
             </div>
         @elseif(session()->has('message-fail'))
             <div class="alert alert-danger alert-dismissible">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
-                <strong>Error!</strong> Add New Background .
+                <strong>Error!</strong> Add New Member .
             </div>
         @endif
-        <form id="background_form" action="{{route('admin.background.add')}}" method="post">
+        <form id="member_form" action="{{route('admin.member.add')}}" method="post">
             {{ csrf_field() }}
             <div class="card-body">
                 <div class="form-group">
                     <div class="form-row">
                         <div class="col-md-6">
                             <div class="row">
-                                <div class="col-md-2">
+                                <div class="col-md-3">
                                     <div class="form-label-group">
                                         <span><b>Position</b></span>
                                         <input type="number" min="1" max="1000" id="position" name="position" class="form-control" >
@@ -98,6 +98,32 @@
                 </div>
                 <div class="form-group">
                     <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <span><b>Name</b></span>
+                                <input type="text" value="{{old('name')}}" id="name" name="name" class="form-control" maxlength="100" >
+                            </div>
+                            @error('name')
+                                <label for="name" generated="true" class="error label-error" style = "color : red">{{$message}}</label>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <span><b>Role</b></span>
+                                <input type="text" value="{{old('role')}}" id="role" name="role" class="form-control" maxlength="100" >
+                            </div>
+                            @error('role')
+                                <label for="role" generated="true" class="error label-error" style = "color : red">{{$message}}</label>
+                            @enderror
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="form-row">
                         <div id="thumbnail">
                             <div class="pDiv">
                                 <img class="imgKLIK5" src="">
@@ -105,18 +131,18 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-label-group">
-                                <span><b>Background</b></span>
+                                <span><b>Avatar</b></span>
                                 <br>
-                                <input readonly  maxlength="500" type="text" id="image_cover" name="image_cover" class="form-control">
+                                <input readonly  maxlength="500" type="text" id="avatar" name="avatar" class="form-control">
                                 <button type="button" id="ckfinder_btn" class="btn btn-primary">Choose Image</button>
                             </div>
-                            @error('image_cover')
-                                <label for="image_cover" generated="true" class="error label-error" style = "color : red">{{$message}}</label>
+                            @error('avatar')
+                                <label for="avatar" generated="true" class="error label-error" style = "color : red">{{$message}}</label>
                             @enderror
                         </div>
                     </div>
                 </div>
-                <button type="submit" id="btn_addNewFilm" class="btn btn-primary btn-block" >Add New</button>
+                <button type="submit"  class="btn btn-primary btn-block" >Add New</button>
             </div>
             <!-- </form> -->
             <!-- /.container-fluid -->
@@ -156,7 +182,6 @@
 <script src="{{asset('admin/js/jquery.validate.min.js')}}"
         type="text/javascript"></script>
 <script src = "{{asset('admin/js/ckfinder/ckfinder.js')}}"></script>
-<script src="{{asset('admin/js/background.js')}}"></script>
 <style>
     img {
         width:30%;
@@ -171,7 +196,7 @@
     var button1 = document.getElementById( 'ckfinder_btn' );
 
     button1.onclick = function() {
-        selectFileWithCKFinder( 'image_cover' );
+        selectFileWithCKFinder( 'avatar' );
     };
 
     function selectFileWithCKFinder( elementId ) {

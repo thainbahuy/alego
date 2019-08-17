@@ -16,13 +16,13 @@
             <a class="dropdown-item" href="{{route('view.admin.event.addnew')}}">Event</a>
             <a class="dropdown-item" href="{{route('view.admin.menu.add')}}">Menu</a>
             <a class="dropdown-item" href="{{route('view.admin.submenu.addnew')}}">Sub-Menu</a>
-            <a class="dropdown-item" href="#">Team member</a>
+            <a class="dropdown-item" href="{{route('view.admin.member.add')}}">Team member</a>
             <a class="dropdown-item" href="{{route('view.admin.background.add')}}">Background</a>
 
         </div>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{route('view.admin.member.list_member')}}">
             {{--                <i class="fas fa-fw fa-table"></i>--}}
             <span>Team member</span></a>
     </li>
