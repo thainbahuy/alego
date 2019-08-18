@@ -1,7 +1,26 @@
-function deleteSubMenu(urlAjax, id) {
+
+$(document).ready(function () {
+
+    $('#delete_submenu_btn').on('click', function () {
+        let id = $(this).attr('data-id');
+
+        deleteSubMenu(id);
+        $('#deleteModalSubMenu').modal('hide');
+
+    });
+
+});
+
+function showModalDeleteSubMenu(id) {
+    $('#deleteModalSubMenu').modal('show');
+    $('#delete_submenu_btn').attr('data-id', id);
+}
+
+
+function deleteSubMenu(id) {
     $.ajax(
         {
-            url: urlAjax,
+            url: route('admin.index.submenu.delete'),
             type: "get",
             data: {'id': id},
         }).done(function (response) {
@@ -10,6 +29,8 @@ function deleteSubMenu(urlAjax, id) {
         alert('server not responding...');
     })
 }
+
+
 
 $("#add_submenu_form").validate({
     onfocusout: false,

@@ -76,7 +76,7 @@ Route::namespace('Admin')->prefix('admin')->group(function () {
 
     //background
     Route::post('background/addnew', 'BackgroundController@addNewBackground')->name('admin.background.add');
-    Route::get('background/delete', 'BackgroundController@deleteBackgroundId')->name('admin.background.add.delete');
+    Route::get('background/delete', 'BackgroundController@deleteBackgroundId')->name('admin.background.list_background.delete');
 
     //member
     Route::post('member/addnew', 'MemberController@addNewMember')->name('admin.member.add');

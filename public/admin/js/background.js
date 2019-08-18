@@ -19,7 +19,7 @@ function showModelDeleteEvent(id) {
 function deleteBackground(id) {
     $.ajax(
         {
-            url: route('admin.background.add.delete'),
+            url: route('admin.background.list_background.delete'),
             type: "get",
             data: {'id': id},
         }).done(function (response) {

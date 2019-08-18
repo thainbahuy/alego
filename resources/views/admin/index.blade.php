@@ -79,7 +79,7 @@
                                         <a href="{{route('view.admin.menu.edit',['id'=>$item->menu_id])}}">{{$item->name}}</a>
                                     </td>
                                     <td class='text-center'>
-                                        <button onclick="deleteMenu('{{$item->menu_id}}')"  class="btn btn-danger">Delete</button>
+                                        <button onclick="showModalDeleteMenu('{{$item->menu_id}}')"  class="btn btn-danger">Delete</button>
                                     </td>
                                 </tr>
                             @endforeach
@@ -115,7 +115,7 @@
                                     </td>
                                     <td class='text-center'>{{$item->menu}}</td>
                                     <td class='text-center'>
-                                        <button onclick="deleteSubMenu('{{route('admin.index.submenu.delete')}}',{{$item->sub_menu_id}})" class="btn btn-danger">Delete</button>
+                                        <button onclick="showModalDeleteSubMenu({{$item->sub_menu_id}})" class="btn btn-danger">Delete</button>
                                     </td>
                                 </tr>
                             @endforeach
@@ -157,7 +157,7 @@
                                     <td  style="width: 25%;" class='text-center'>{{$item->author}}</td>
                                     <td style="width: 25%;" class='text-center'>{{$item->subMenu}}</td>
                                     <td style="width: 25%;" class='text-center'>
-                                        <button onclick="deleteEvent('{{route('admin.index.delete')}}',{{$item->id}})"
+                                        <button onclick="showModelDeleteEvent({{$item->id}})"
                                                 class="btn btn-danger">Delete
                                         </button>
                                     </td>
@@ -227,7 +227,45 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                <button type="button" class="btn btn-primary">Yes</button>
+                <button type="button" id="delete_btn" class="btn btn-primary">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="deleteModalSubMenu" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure want to delete this ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                <button type="button" id="delete_submenu_btn" class="btn btn-primary">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="deleteModalMenu" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure want to delete this ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                <button type="button" id="delete_menu_btn" class="btn btn-primary">Yes</button>
             </div>
         </div>
     </div>

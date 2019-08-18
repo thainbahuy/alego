@@ -1,9 +1,24 @@
+$(document).ready(function () {
 
+    $('#delete_btn').on('click', function () {
+        let id = $(this).attr('data-id');
 
-function deleteEvent(urlAjax, id) {
+        deleteEvent(id);
+        $('#deleteModalCenter').modal('hide');
+
+    });
+
+});
+
+function showModelDeleteEvent(id) {
+    $('#deleteModalCenter').modal('show');
+    $('#delete_btn').attr('data-id', id);
+}
+
+function deleteEvent(id) {
     $.ajax(
         {
-            url: urlAjax,
+            url: route('admin.index.delete'),
             type: "get",
             data: {'id': id},
         }).done(function (response) {

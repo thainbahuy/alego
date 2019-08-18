@@ -1,3 +1,21 @@
+
+$(document).ready(function () {
+
+    $('#delete_menu_btn').on('click', function () {
+        let id = $(this).attr('data-id');
+
+        deleteMenu(id);
+        $('#deleteModalMenu').modal('hide');
+
+    });
+
+});
+
+function showModalDeleteMenu(id) {
+    $('#deleteModalMenu').modal('show');
+    $('#delete_menu_btn').attr('data-id', id);
+}
+
 function deleteMenu(id) {
     $.ajax(
         {
