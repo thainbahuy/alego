@@ -3,7 +3,7 @@
 {{--        <div class="item-media background-parallax"--}}
 {{--             data-background="{{asset($item->image_cover)}}">--}}
 {{--        </div>--}}
-        <img class="item-media background-parallax"  src="{{$item->image_cover}}" alt="image">
+        <img class="item-media background-parallax img-thumbnail"  src="{{$item->image_cover}}" alt="{{$item->name}}">
         <figcaption>
             <div class="item-caption-inner">
                 <p class="text-links">
@@ -12,7 +12,7 @@
                 <h5 class="bold uppercase">{{$item->name}}</h5>
                 @php
                     $url= [
-                        'event' => str_slug($item->name)."-".$item->id,
+                        'event' => str_slug($item->name)."-post-".$item->id,
                     ];
                 @endphp
                 <a class="button style-3 border-2" href="{{route('web.event-detail',$url)}}">@lang('Message.Watch now')</a>

@@ -25,6 +25,9 @@ class EventDetailController extends Controller
         $event = explode('-', $event);
         $data['menu'] = $this->getMenu();
         $data['event'] = $this->eventModel->getEventById($event[sizeof($event) - 1]);
+        if ($data['event']->isEmpty()){
+            return redirect()->route('web.first-home');
+        }
         return view('web.event-detail', $data);
     }
 

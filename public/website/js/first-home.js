@@ -8,7 +8,7 @@ function loadMoreEvent(urlAjax) {
         .done(function (data) {
             if ($.trim(data.html) != "") {
                 $("#event").append(data.html);
-                indexPage++
+                indexPage++;
                 loadLazyEventAfterAjax();
 
             }
