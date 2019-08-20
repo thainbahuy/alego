@@ -38,9 +38,9 @@
                 <li class="">
                     <a href="{{url('contact-us')}}"
                        class="ajax-link">@lang('Message.Contact')</a></li>
-                <li class="">
-                    <a href="#">@lang('Message.Price')</a>
-                </li>
+{{--                <li class="">--}}
+{{--                    <a href="#">@lang('Message.Price')</a>--}}
+{{--                </li>--}}
             </ul>
         </li>
 

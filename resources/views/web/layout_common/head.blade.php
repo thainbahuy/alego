@@ -18,9 +18,9 @@
     <link rel='stylesheet' id='google-fonts-css'
           href='https://fonts.googleapis.com/css?family=Playfair+Display%3A400%2C700%2C900' type='text/css'
           media='all'/>
-    <link rel='stylesheet' id='js_composer_front-css'
-          href='{{asset('website/wp-content/plugins/js_composer/assets/css/js_composer.min.css')}}' type='text/css'
-          media='all'/>
+{{--    <link rel='stylesheet' id='js_composer_front-css'--}}
+{{--          href='{{asset('website/wp-content/plugins/js_composer/assets/css/js_composer.min.css')}}' type='text/css'--}}
+{{--          media='all'/>--}}
     <script type='text/javascript' src='{{asset('website/wp-includes/js/jquery/jquery.js')}}'></script>
     <script type='text/javascript' src='{{asset('website/wp-includes/js/jquery/jquery-migrate.min.js')}}'></script>
     <link rel="stylesheet" href="{{asset('website/flags/flags.css')}}">

@@ -27,7 +27,7 @@ class BackgroundRequest extends FormRequest
         if($request->position == null){
             $rule_position = '';
         } else {
-            $rule_position = 'unique:background,position';
+            $rule_position = 'numeric|min:1|max:500';
         }
 
         return [
