@@ -39,7 +39,7 @@ Route::namespace('Website')->group(function () {
 
 });
 
-Route::namespace('Admin')->prefix('admin')->group(function () {
+Route::namespace('Admin')->middleware('guest')->prefix('admin')->group(function () {
     //route show view
     Route::get('dashboard', 'DashboardController@index')->name('view.admin.index');
 

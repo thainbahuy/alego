@@ -19,8 +19,8 @@
   <body class="bg-dark">
 
     <div class="container">
-      <div class="card card-login mx-auto mt-5">
-        <div class="card-header">Login</div>
+      <div style="max-width: 30rem;" class="card card-login mx-auto mt-5">
+        <div class="card-header">Alego Story Admin</div>
         <div class="card-body">
             @if (count($errors) > 0)
                 <div class="alert alert-danger">
@@ -31,6 +31,13 @@
                     </ul>
                 </div>
             @endif
+                @if(Session::has('success'))
+                    <div class="alert alert-success">
+                        <ul>
+                            <li>{{Session::get('success') }}</li>
+                        </ul>
+                    </div>
+                @endif
             <form method="post" action="{{route('admin.Auth.login')}}">
                 @csrf
                 <div class="form-group">
@@ -41,10 +48,10 @@
                     <label for="pwd">Password:</label>
                     <input type="password" name="password" class="form-control" id="pwd">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Login</button>
             </form>
           <div class="text-center">
-            <a class="d-block small" href="#">Forgot Password?</a>
+            <a class="d-block small" href="{{route('view.admin.Auth.forgotpass')}}">Forgot Password?</a>
           </div>
         </div>
       </div>

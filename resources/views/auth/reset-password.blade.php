@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Alego Story Admin  - Forgot Password</title>
+    <title>Alego Story Admin  - Reset Password</title>
 
       <!-- Bootstrap core CSS-->
       <link href="{{asset('admin')}}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -29,8 +29,7 @@
                   <div class="card-header">Reset Password</div>
                   <div class="card-body">
                       <div class="text-center">
-                          <h4>Forgot your password?</h4>
-                          <p>Enter your email address and we will send you instructions on how to reset your password.</p>
+                          <h4>Reset your password</h4>
                       </div>
                       @if (count($errors) > 0)
                           <div class="alert alert-danger">
@@ -49,19 +48,24 @@
                           </div>
                       @endif
 
-                      <form method="post" action="{{route('admin.Auth.forgotpass')}}">
+                      <form method="post" action="{{route('admin.Auth.resetpass')}}">
                           @csrf
+                          <input type="text" style="display: none" name="token" value="{{$token}}">
+                          <input type="text" style="display: none" name="email" value="{{$email}}">
                           <div class="form-group">
                               <div class="form-label-group">
-                                  <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Enter email address" required="required" autofocus="autofocus">
-                                  <label for="inputEmail">Enter email address</label>
+                                  <input type="password" name="password" id="inputEmail" class="form-control" placeholder="Enter New Password" required="required">
+                                  <label for="inputEmail">New Password</label>
                               </div>
                           </div>
-                          <button type="submit" class="btn btn-primary btn-block">Send</button>
+                          <div class="form-group">
+                              <div class="form-label-group">
+                                  <input type="password" name="password_confirmation"  id="inputEmail" class="form-control" placeholder="Enter Confirm Password" required="required" autofocus="autofocus">
+                                  <label for="inputEmail">Confirm Password</label>
+                              </div>
+                          </div>
+                          <button type="submit" class="btn btn-primary btn-block">Reset Password</button>
                       </form>
-                      <div class="text-center">
-                          <a class="d-block small" href="{{route('view.admin.Auth.login')}}">Back to Login</a>
-                      </div>
                   </div>
 
       </div>
