@@ -31,9 +31,8 @@ function loadLazyEventAfterAjax() {
     $('figcaption').addClass('visible');
 }
 
-var indexPage = 1;
+var indexPage = 2;
 $(document).ready(function () {
-    loadMoreEvent(URL);
     $(window).scroll(function () {
         if ($(window).scrollTop() + $(window).height() == $(document).height()) {
             loadMoreEvent(URL);

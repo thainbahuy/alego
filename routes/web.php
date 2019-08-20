@@ -85,3 +85,17 @@ Route::namespace('Admin')->prefix('admin')->group(function () {
 
 });
 
+Route::namespace('Auth')->group(function () {
+    //Auth
+    Route::get('authentication/admin/login', 'LoginController@showLoginForm')->name('view.admin.Auth.login');
+    Route::post('authentication/admin/login', 'LoginController@login')->name('admin.Auth.login');
+    Route::get('authentication/admin/logout', 'LoginController@logout')->name('logout');
+    Route::get('authentication/admin/forgot-password', 'ForgotPasswordController@showLinkRequestForm')->name('view.admin.Auth.forgotpass');
+    Route::post('authentication/admin/forgot-password', 'ForgotPasswordController@sendResetLinkEmail')->name('admin.Auth.forgotpass');
+    Route::post('authentication/admin/forgot-password', 'ForgotPasswordController@sendResetLinkEmail')->name('admin.Auth.forgotpass');
+    Route::get('authentication/admin/reset-password/{token}', 'ResetPasswordController@showResetForm')->name('resetpass');
+    Route::post('authentication/admin/reset-password', 'ResetPasswordController@reset')->name('admin.Auth.resetpass');
+});
+//Route::get('ABC',function(){
+//    echo Hash::make('thaibahuy');
+//});

@@ -27,7 +27,7 @@ class HomeController extends Controller
     {
         $menu = $this->getMenu();
         $listBackground = $this->background->getAllBackground();
-        $listEvent = [];
+        $listEvent = $this->eventModel->getAllEventForHomePage();
         if ($request->ajax()) {
             $listEvent = $this->eventModel->getAllEventForHomePage();
             $view = view('data_event_home',compact('listEvent'))->render();
