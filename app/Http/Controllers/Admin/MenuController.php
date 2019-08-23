@@ -43,9 +43,9 @@ class MenuController extends Controller
         $id = $request->get('id');
         $name = $request->get('name');
         if ($this->menu->editMenuById($id, $name) == 1) {
-            return redirect()->back()->with('message-success', 'Update Menu');
+            return redirect()->route('view.admin.index')->with('message-success', 'Update Menu');
         } else {
-            return redirect()->back()->with('message-fail', 'Update Menu');
+            return redirect()->route('view.admin.index')->with('message-fail', 'Update Menu');
         }
     }
 }

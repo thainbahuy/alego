@@ -53,7 +53,17 @@
                 </li>
                 <li class="breadcrumb-item active">Overview</li>
             </ol>
-
+            @if(session()->has('message-success'))
+                <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Success!</strong> {{session()->get('message-success')}} .
+                </div>
+            @elseif(session()->has('message-fail'))
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>Error!</strong> {{session()->get('message-fail')}} .
+                </div>
+            @endif
             <!-- DataTables menu List -->
             <div class="card mb-3">
                 <div class="card-header">

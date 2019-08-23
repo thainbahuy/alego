@@ -43,7 +43,9 @@ class HomeController extends Controller
 
         $sub_menu = explode('-', $sub_menu);
         $listEvent = $this->eventModel->getEventByIdSubMenu($sub_menu[sizeof($sub_menu) - 1]);
-
+        if($listEvent->total() <= 0){
+            return redirect()->route('web.first-home');
+        }
         if ($request->ajax()) {
             $view = view('data_event_type',compact('listEvent'))->render();
             return response()->json(['html'=>$view]);

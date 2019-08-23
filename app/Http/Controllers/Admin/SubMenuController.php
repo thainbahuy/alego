@@ -45,9 +45,9 @@ class SubMenuController extends Controller
         $name = $request->get('name');
         $menu_id = $request->get('menu_id');
         if($this->SubMenu->updateSubMenu($id,$menu_id,$name) == 1){
-            return redirect()->back()->with('message-success', 'Update SubMenu');
+            return redirect()->route('view.admin.index')->with('message-success', 'Update SubMenu');
         }else{
-            return redirect()->back()->with('message-fail', 'Update SubMenu');
+            return redirect()->route('view.admin.index')->with('message-fail', 'Update SubMenu');
         }
     }
 }

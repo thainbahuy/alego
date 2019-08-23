@@ -77,17 +77,17 @@ class EventController extends Controller
             //update tra ve 1
             if ($this->event->updateEventFilm($id, $name, $sub_menu, $author, $editor, $director,
                     $producer, $description, $image_cover, $video_link, 0) == 1) {
-                return redirect()->back()->with('message-success', 'Update Event');
+                return redirect()->route('view.admin.index')->with('message-success', 'Update Event');
 
             } else {
-                return redirect()->back()->with('message-fail', 'Update Event Fail');
+                return redirect()->route('view.admin.index')->with('message-fail', 'Update Event Fail');
             }
         } else {
             if ($this->event->updateEventFilm($id, $name, $sub_menu, $author, $editor, $director,
                     $producer, $description, $image_cover, $video_link, 1) == 1) {
-                return redirect()->back()->with('message-success', 'Update New Event');
+                return redirect()->route('view.admin.index')->with('message-success', 'Update New Event');
             } else {
-                return redirect()->back()->with('message-fail', 'Update Event Fail');
+                return redirect()->route('view.admin.index')->with('message-fail', 'Update Event Fail');
             }
         }
 

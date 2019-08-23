@@ -9,7 +9,7 @@ class Event extends Model
 {
     protected $table = 'event';
 
-    private $limit = 5;
+    private $limit = 2;
 
     public function getAllEventForHomePage(){
         return DB::table($this->table)
