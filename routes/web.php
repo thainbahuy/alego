@@ -36,6 +36,7 @@ Route::namespace('Website')->group(function () {
 
     Route::get('/about-us', 'AboutUsController@index');
     Route::get('/contact-us', 'ContactController@index');
+    Route::post('/contact-us', 'ContactController@contactToAdmin')->name('web.contact-us');
 
 });
 

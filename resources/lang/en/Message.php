@@ -14,5 +14,28 @@ return [
     'contact-des' => 'We are so happy you are interested in our services! We’d love to answer any questions.',
     'services' => 'SERVICES',
 
+//    contact page
+    'MAKE-AN-APPOINTMENT' => 'Make an Appointment',
+    'Metting' => 'Introduction Metting',
+    'Book' => 'Book online',
+    'Date' => 'Date',
+    'Send' => 'Send',
+
+    'Mail-Required' => 'The Email is Required',
+    'Name-metting-Required' => 'The Metting Name is Required',
+    'Type-metting-Required' => 'The Metting Type is Required',
+    'Phone-Required' => 'The Phone is Required',
+    'Date-Required' => 'The Date is Required',
+    'Name-Required' => 'The Name is Required',
+
+    'Mail-Valid' => 'The Email is not valid',
+    'Date-Valid' => 'The Date is not valid',
+    'Phone-Valid' => 'The Phone is not valid',
+
+    'Phone-Min' => 'The Phone is not valid',
+    'Phone-Max' => 'The Phone is not valid',
+    'Mail-Max' => 'The Mail may not be greater than 100 numbers',
+    'Name-Max' => 'The Name may not be greater than 100 characters',
+
 ];
 
