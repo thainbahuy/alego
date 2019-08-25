@@ -20,6 +20,7 @@ return [
     'Book' => 'Book online',
     'Date' => 'Date',
     'Send' => 'Send',
+    'Contact-Noti-Success' => 'We recevied your appointment,We will contact to you soon',
 
     'Mail-Required' => 'The Email is Required',
     'Name-metting-Required' => 'The Metting Name is Required',

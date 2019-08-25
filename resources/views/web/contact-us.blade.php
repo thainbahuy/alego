@@ -2,10 +2,46 @@
 <html lang="en-US" class="no-js">
 <head>
     @include('web.layout_common.head')
-
     <style>
         .selectbox{
             background-color: transparent;
+        }
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -128,34 +164,33 @@
         </div>
     </section>
 </main>
-<div class="modal fade" id="SendModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                Are you sure want to delete this ?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                <button type="button" id="delete_menu_btn" class="btn btn-primary">Yes</button>
-            </div>
-        </div>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p style="text-align: center" id="content-mess">Some text in the Modal..</p>
     </div>
+
 </div>
 <footer id="footer">
     @include('web.layout_common.footer')
 </footer>
 
 @include('web.layout_common.footerScript')
+
 <script src="{{asset('website/js/jquery_321/jquery-3.2.1.js')}}"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="{{asset('website/js/contact.js')}}"></script>
-
+<script>
+    $( document ).ready(function() {
+        let status = '{{Session::get('success')}}';
+        if (status.length > 0){
+            $('#myModal').show();
+            $('#content-mess').text(status);
+        }
+    });
+</script>
 </body>
 </html>

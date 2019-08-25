@@ -6,9 +6,15 @@ $(function () {
     });
 
     $("#submit_contact_btn").click(function (e) {
-        //alert('ok');
         e.preventDefault(e);
         $("#submit_contact_btn").attr("disabled",true);
         $("#contact_form").submit();
-    })
+    });
+
+    $(document).on("click", ".close", function () {
+        $('#myModal').hide();
+    });
+    $(document).on("click", ".modal", function () {
+        $('#myModal').hide();
+    });
 });

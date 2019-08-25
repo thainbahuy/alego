@@ -20,6 +20,7 @@ return [
     'Book' => 'Đặt lịch quay',
     'Date' => 'Ngày',
     'Send' => 'Gửi',
+    'Contact-Noti-Success' => 'Chúng tôi đã nhận được yêu cầu của bạn',
 
     'Mail-Required' => 'Hãy nhập email',
     'Name-metting-Required' => 'Hãy chọn tên lịch hẹn',
