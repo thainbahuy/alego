@@ -8,7 +8,6 @@ use App\Jobs\SendMailJob;
 use App\Model\Web\Event;
 use App\Model\Web\Menu;
 use App\Model\Web\SubMenu;
-use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {

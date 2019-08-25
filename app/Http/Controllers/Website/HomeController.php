@@ -8,7 +8,6 @@ use App\Model\Web\Background;
 use App\Model\Web\Event;
 use App\Model\Web\Menu;
 use App\Model\Web\SubMenu;
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller

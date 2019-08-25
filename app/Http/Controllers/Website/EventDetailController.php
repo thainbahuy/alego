@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 use App\Model\Web\Event;
 use App\Model\Web\Menu;
 use App\Model\Web\SubMenu;
-use Illuminate\Http\Request;
 
 class EventDetailController extends Controller
 {

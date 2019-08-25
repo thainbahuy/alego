@@ -63,7 +63,7 @@ $config['images'] = array(
 /*=================================== Backends ========================================*/
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html#configuration_options_backends
 $url_local ='http://127.0.0.1:8000/';
-$url_product ='http://127.0.0.1:8000'.'/public';
+$url_product ='http://127.0.0.1:8000'.'/public/';
 $config['backends'][] = array(
     'name'         => 'default',
     'adapter'      => 'local',
