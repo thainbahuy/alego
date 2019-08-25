@@ -14,8 +14,8 @@ error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
 ini_set('display_errors', 0);
 
 // Development
-// error_reporting(E_ALL);
-// ini_set('display_errors', 1);
+ error_reporting(E_ALL);
+ ini_set('display_errors', 1);
 
 /*============================ General Settings =======================================*/
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html
@@ -62,11 +62,11 @@ $config['images'] = array(
 
 /*=================================== Backends ========================================*/
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html#configuration_options_backends
-
+$url ='http://127.0.0.1:8000/';
 $config['backends'][] = array(
     'name'         => 'default',
     'adapter'      => 'local',
-    'baseUrl'      => '/ckfinder/userfiles/',
+    'baseUrl'      => $url.'ckfinder/userfiles/',
 //  'root'         => '', // Can be used to explicitly set the CKFinder user files directory.
     'chmodFiles'   => 0777,
     'chmodFolders' => 0755,
