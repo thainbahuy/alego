@@ -32,4 +32,11 @@ class Background extends Model
             ->where('id', $id)
             ->delete();
     }
+
+    public function getImageByIdBackground($id){
+        return DB::table($this->table)
+            ->select('image_link')
+            ->where('id', $id)
+            ->first();
+    }
 }

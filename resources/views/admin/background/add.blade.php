@@ -104,7 +104,7 @@
                             <div class="form-label-group">
                                 <span><b>Background</b></span>
                                 <br>
-                                <input readonly  maxlength="500" type="text" id="image_cover" name="image_cover" class="form-control">
+                                <input readonly  maxlength="500" type="hidden" id="image_cover" name="image_cover" class="form-control">
                                 <button type="button" id="ckfinder_btn" class="btn btn-primary">Choose Image</button>
                             </div>
                             @error('image_cover')
@@ -135,7 +135,7 @@
 
 <script src="{{asset('admin/js/jquery.validate.min.js')}}"
         type="text/javascript"></script>
-<script src = "{{asset('admin/js/ckfinder/ckfinder.js')}}"></script>
+<script src = "{{asset('ckfinder/ckfinder.js')}}"></script>
 <script src="{{asset('admin/js/background.js')}}"></script>
 <style>
     img {

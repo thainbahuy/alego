@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\BackgroundRequest;
 use App\Model\Admin\Background;
+use Helpers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -43,12 +44,15 @@ class BackgroundController extends Controller
     public function deleteBackgroundId(Request $request)
     {
         $id = $request->get('id');
+        $image = $this->background->getImageByIdBackground($id);
         if ($this->background->deleteBackground($id) == 1) {
+            Helpers::deleteFileInPublicFolder($image->image_link);
             return response()->json(['status' => 'success'], Response::HTTP_OK);
         } else {
             return response()->json(['status' => 'fail'], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
     }
+
 
 
 }

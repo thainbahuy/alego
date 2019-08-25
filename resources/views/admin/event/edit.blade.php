@@ -176,7 +176,7 @@
                             <div class="form-label-group">
                                 <span><b>Image cover name (Recommand :1600 × 1068)</b></span>
                                 <br>
-                                <input value="{{$event->image_cover}}" readonly="readonly" maxlength="255" type="text" id="image_cover" name="image_cover" class="form-control">
+                                <input value="{{$event->image_cover}}" readonly="readonly" maxlength="255" type="hidden" id="image_cover" name="image_cover" class="form-control">
                                 <button type="button" id="ckfinder_btn" class="btn btn-primary">Choose Image</button>
                             </div>
                             <label for="image_cover" generated="true" class="error label-error" style = "color : red"></label>
