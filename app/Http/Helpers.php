@@ -14,7 +14,7 @@ class Helpers
      * @param $jsonVarible
      * @return Array
      */
-    public static function convertToJson($jsonVarible)
+    public static function convertJsonToArray($jsonVarible)
     {
         return json_decode($jsonVarible, true);
     }
@@ -32,7 +32,17 @@ class Helpers
     public static function getConfig()
     {
         $content = file_get_contents(Helpers::getFilePathFromStorage('config.json'));
-        return Helpers::convertToJson($content);
+        return Helpers::convertJsonToArray($content);
+    }
+
+    /**
+     * return path of file in storage folder
+     * @param $patch
+     * @return string
+     */
+    public static function getFilePathFromStorage($patch)
+    {
+        return storage_path($patch);
     }
 
 

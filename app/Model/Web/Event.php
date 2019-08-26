@@ -2,6 +2,7 @@
 
 namespace App\Model\Web;
 
+use Helpers;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
@@ -9,14 +10,12 @@ class Event extends Model
 {
     protected $table = 'event';
 
-    private $limit = 2;
-
     public function getAllEventForHomePage(){
         return DB::table($this->table)
             ->where('show_home','1')
             ->select('id','name','image_cover','author')
             ->orderBy('id','desc')
-            ->paginate($this->limit);
+            ->paginate(Helpers::getConfig()['Quantity_Event_Home']);
     }
 
     public function getEventById($id){
@@ -30,6 +29,6 @@ class Event extends Model
         return DB::table($this->table)
             ->where('sub_menu_id',$id)
             ->select('id','name','image_cover','author')
-            ->paginate($this->limit);
+            ->paginate(Helpers::getConfig()['Quantity_Event_Type']);
     }
 }

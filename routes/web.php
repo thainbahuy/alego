@@ -59,6 +59,8 @@ Route::namespace('Admin')->middleware('guest')->prefix('admin')->group(function 
     Route::get('member', 'MemberController@index')->name('view.admin.member.list_member');
     Route::get('member/addnew', 'MemberController@showAddMember')->name('view.admin.member.add');
 
+    Route::get('config/config-system', 'ConfigController@showConfig')->name('view.admin.config.config');
+
     //route ajax,controller
     //Event
     Route::get('event/delete', 'EventController@deleteEventById')->name('admin.index.delete');
@@ -82,6 +84,9 @@ Route::namespace('Admin')->middleware('guest')->prefix('admin')->group(function 
     //member
     Route::post('member/addnew', 'MemberController@addNewMember')->name('admin.member.add');
     Route::get('member/delete', 'MemberController@deleteBackgroundId')->name('admin.member.list_member.delete');
+
+    //setting
+    Route::post('config/config-system', 'ConfigController@saveConfig')->name('admin.config.config');
 
 
 });

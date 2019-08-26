@@ -31,4 +31,9 @@
             {{--                <i class="fas fa-fw fa-table"></i>--}}
             <span>Background</span></a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('view.admin.config.config')}}">
+            {{--                <i class="fas fa-fw fa-table"></i>--}}
+            <span>Setting System</span></a>
+    </li>
 </ul>

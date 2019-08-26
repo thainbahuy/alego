@@ -8,6 +8,7 @@ use App\Jobs\SendMailJob;
 use App\Model\Web\Event;
 use App\Model\Web\Menu;
 use App\Model\Web\SubMenu;
+use Helpers;
 
 class ContactController extends Controller
 {
@@ -55,7 +56,7 @@ class ContactController extends Controller
             'mess' => $message,
         );
         $Job = (new SendMailJob('contactMail', $data, 'Lịch hẹn '.$name_metting,
-            'alegostory.system@gmail.com', 'Alego Story system', 'thainbahuy@gmail.com'))->delay(60 * 0.5);;
+            'alegostory.system@gmail.com', 'Alego Story system', Helpers::getConfig()['Email']))->delay(60 * 0.5);;
         $this->dispatch($Job);
         return redirect()->back()->with('success', __('Message.Contact-Noti-Success'));
 
