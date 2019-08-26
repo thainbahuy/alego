@@ -3,6 +3,7 @@
 
 <head>
     @include('web.layout_common.head')
+    <title>Alego Story</title>
 </head>
 
 <body

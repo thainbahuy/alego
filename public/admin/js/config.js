@@ -15,11 +15,23 @@ $("#config_form").validate({
             email: true,
         },
         quantity_event_home: {
+            required: {
+                depends: function() {
+                    $(this).val($.trim($(this).val()));
+                    return true;
+                },
+            },
             number: true,
             min: 1,
             max:20,
         },
         quantity_event_type: {
+            required: {
+                depends: function() {
+                    $(this).val($.trim($(this).val()));
+                    return true;
+                },
+            },
             number: true,
             min: 1,
             max:20,

@@ -2,6 +2,7 @@
 <html lang="en-US" class="no-js">
 <head>
     @include('web.layout_common.head')
+    <title>Contact</title>
     <style>
         .selectbox{
             background-color: transparent;
@@ -19,7 +20,6 @@
             background-color: rgb(0,0,0); /* Fallback color */
             background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
         }
-
         /* Modal Content */
         .modal-content {
             background-color: #fefefe;
@@ -28,7 +28,6 @@
             border: 1px solid #888;
             width: 80%;
         }
-
         /* The Close Button */
         .close {
             color: #aaaaaa;
@@ -36,7 +35,6 @@
             font-size: 28px;
             font-weight: bold;
         }
-
         .close:hover,
         .close:focus {
             color: #000;

@@ -2,6 +2,7 @@
 <html lang="en-US" class="no-js">
 <head>
     @include('web.layout_common.head')
+    <title>{{$event[0]->name}}</title>
     <link rel="stylesheet" href="{{asset('website/wp-content/themes/torola/assets/css/event_detail.css')}}">
 </head>
 
