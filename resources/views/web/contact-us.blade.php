@@ -84,7 +84,7 @@
                             <div class="mail-form-message d-none mb-5"></div>
                             <p>
                                 <span class="wpcf7-form-control-wrap your-subject">
-                                    <label for="email" generated="true" class="error label-error" style="color : red">{{ $errors->first('name_metting') }}</label>
+                                    <label for="name_metting" generated="true" class="error label-error" style="color : red">{{ $errors->first('name_metting') }}</label>
                                     <select name="name_metting" class="selectbox">
                                         <option value="Pre Wedding Ceremony">Pre Wedding Ceremony</option>
                                         <option value="Wedding Ceremony">Wedding Ceremony</option>
@@ -93,7 +93,7 @@
                                     </select>
                                 </span><br/>
                                 <span class="wpcf7-form-control-wrap your-subject">
-                                    <label for="email" generated="true" class="error label-error" style="color : red">{{ $errors->first('type_metting') }}</label>
+                                    <label for="type_metting" generated="true" class="error label-error" style="color : red">{{ $errors->first('type_metting') }}</label>
                                     <select name="type_metting" class="selectbox">
                                         <option value="Book online">@lang('Message.Book')</option>
                                         <option value="Metting">@lang('Message.Metting')</option>
@@ -127,7 +127,7 @@
                                            placeholder="Phone:"/>
                                 </span><br/>
                                 <span class="wpcf7-form-control-wrap your-email">
-                                    <label for="date" generated="true" class="error label-error" style="color : red">{{ $errors->first('date') }}</label>
+                                    <label for="datepicker" generated="true" class="error label-error" style="color : red">{{ $errors->first('date') }}</label>
                                     <input readonly id="datepicker" type="text" name="date"
                                            value="{{old('date')}}" size="40"
                                            class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required"
@@ -179,6 +179,11 @@
 
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script type="text/javascript" src="{{asset('website/js/jquery.validate.min.js')}}"></script>
+@if (App::isLocale('vn'))
+    <script type="text/javascript" src="{{asset('website/js/messages_vi.js')}}"></script>
+@endif
+
 <script src="{{asset('website/js/contact.js')}}"></script>
 <script>
     $( document ).ready(function() {
