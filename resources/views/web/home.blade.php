@@ -27,7 +27,6 @@
     @include('web.layout_common.footer')
 </footer>
 @include('web.layout_common.footerScript')
-<script src="{{asset('website/js/jquery_321/jquery-3.2.1.js')}}"></script>
 
 <script>
     var URL = window.location.href;
