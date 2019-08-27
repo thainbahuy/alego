@@ -14,7 +14,7 @@ class Event extends Model
     {
         return DB::table($this->table)
             ->join('sub_menu','sub_menu.sub_menu_id','=','event.sub_menu_id')
-            ->select('id', 'event.name', 'image_cover', 'author','sub_menu.name as subMenu')
+            ->select('id', 'event.name as cname', 'image_cover', 'author','sub_menu.name as subMenu')
             ->get();
     }
 

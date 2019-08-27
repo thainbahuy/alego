@@ -22,7 +22,7 @@ function deleteEvent(id) {
             type: "get",
             data: {'id': id},
         }).done(function (response) {
-        $('#rowEvent' + id).remove();
+        $('#test').DataTable().ajax.reload();
     }).fail(function (response) {
         alert('server not responding...');
     })

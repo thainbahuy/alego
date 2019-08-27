@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Model\Admin\Event;
 use App\Model\Admin\Menu;
 use App\Model\Admin\SubMenu;
+use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
 
 class DashboardController extends Controller
 {
@@ -18,11 +20,26 @@ class DashboardController extends Controller
         $this->menu = $menu;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $listEvent = $this->event->getAllEvent();
         $listMenu = $this->menu->getAllMenu();
         $listSubMenu = $this->subMenu->getAllSubMenu();
+        if ($request->ajax()){
+            $listEvent = $this->event->getAllEvent();
+            return Datatables::of($listEvent)
+                ->editColumn('cname',function ($item){
+                    return '<a href="'.route('view.admin.event.edit',$item->id).'">'.$item->cname.'</a>';
+                })
+                ->editColumn('image_cover',function ($item){
+                    return '<img class="img-thumbnail" src="'.asset($item->image_cover).'" alt="img">';
+                })
+                ->editColumn('action',function ($item){
+                    return '<button onclick="showModelDeleteEvent('."$item->id".')" class="btn btn-danger">Delete</button>';
+                })
+                ->rawColumns(['cname', 'image_cover', 'action'])
+                ->make();
+        }
+
         return view('admin/index', compact('listEvent', 'listMenu', 'listSubMenu'));
     }
 

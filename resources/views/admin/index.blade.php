@@ -141,7 +141,7 @@
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <table class="table table-bordered" id="test" width="100%" cellspacing="0">
                             <thead>
                             <tr>
                                 <th class='text-center'>Name</th>
@@ -151,27 +151,27 @@
                                 <th class='text-center'>Action</th>
                             </tr>
                             </thead>
-                            <tbody>
-                            @foreach($listEvent as $item)
-                                <tr id="rowEvent{{$item->id}}">
-                                    <td style="width: 25%;" class='text-center'>
-                                        <a href="{{route('view.admin.event.edit',['id'=>$item->id])}}">{{$item->name}}</a>
-                                    </td>
-                                    <td style="width: 25%;" class='text-center'>
-                                        <img class="img-thumbnail"
-                                             src="{{asset($item->image_cover)}}" alt="img">
-                                    </td>
-                                    <td  style="width: 25%;" class='text-center'>{{$item->author}}</td>
-                                    <td style="width: 25%;" class='text-center'>{{$item->subMenu}}</td>
-                                    <td style="width: 25%;" class='text-center'>
-                                        <button onclick="showModelDeleteEvent({{$item->id}})"
-                                                class="btn btn-danger">Delete
-                                        </button>
-                                    </td>
+{{--                            <tbody>--}}
+{{--                            @foreach($listEvent as $item)--}}
+{{--                                <tr id="rowEvent{{$item->id}}">--}}
+{{--                                    <td style="width: 25%;" class='text-center'>--}}
+{{--                                        <a href="{{route('view.admin.event.edit',['id'=>$item->id])}}">{{$item->name}}</a>--}}
+{{--                                    </td>--}}
+{{--                                    <td style="width: 25%;" class='text-center'>--}}
+{{--                                        <img class="img-thumbnail"--}}
+{{--                                             src="{{asset($item->image_cover)}}" alt="img">--}}
+{{--                                    </td>--}}
+{{--                                    <td  style="width: 25%;" class='text-center'>{{$item->author}}</td>--}}
+{{--                                    <td style="width: 25%;" class='text-center'>{{$item->subMenu}}</td>--}}
+{{--                                    <td style="width: 25%;" class='text-center'>--}}
+{{--                                        <button onclick="showModelDeleteEvent({{$item->id}})"--}}
+{{--                                                class="btn btn-danger">Delete--}}
+{{--                                        </button>--}}
+{{--                                    </td>--}}
 
-                                </tr>
-                            @endforeach
-                            </tbody>
+{{--                                </tr>--}}
+{{--                            @endforeach--}}
+{{--                            </tbody>--}}
                         </table>
                     </div>
                 </div>
@@ -265,6 +265,7 @@
 <script src="{{asset('admin/js/event.js')}}"></script>
 <script src="{{asset('')}}admin/js/SubMenu.js"></script>
 <script src="{{asset('')}}admin/js/Menu.js"></script>
+<script src="{{asset('')}}admin/js/dashboard.js"></script>
 </body>
 
 </html>
