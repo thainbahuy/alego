@@ -169,7 +169,7 @@
                     <div class="form-row">
                         <div id="thumbnail">
                             <div class="pDiv">
-                                <img class="imgKLIK5" src="{{$event->image_cover}}">
+                                <img class="imgKLIK5" src="{{asset('image_upload/images/'.$event->image_cover)}}">
                             </div>
                         </div>
                         <div class="col-md-6">

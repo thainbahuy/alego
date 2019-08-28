@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Model\Admin\Event;
+use Helpers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Log;
 
 class EventController extends Controller
 {
@@ -19,7 +21,10 @@ class EventController extends Controller
     public function deleteEventById(Request $request)
     {
         $id = $request->get('id');
+        $event = $this->event->getEventById($id);
         if ($this->event->deleteEventById($id) == 1) {
+            Helpers::deleteFileInPublicFolder($event->image_cover);
+            Log::info('delete event success');
             return response()->json(['status' => 'success'], Response::HTTP_OK);
         } else {
             return response()->json(['status' => 'fail'], Response::HTTP_INTERNAL_SERVER_ERROR);
@@ -42,7 +47,8 @@ class EventController extends Controller
         if ($request->get('showhome') == null) {
             //insert tra ve true
             if ($this->event->addNewEventFilm($name, $sub_menu, $author, $editor, $director,
-                    $producer, $description, $image_cover, $video_link, 0) == true) {
+                    $producer, $description, Helpers::getNameImage($image_cover), $video_link, 0) == true) {
+                Log::info('add new event success');
                 return redirect()->back()->with('message-success', 'Add New Event');
 
             } else {
@@ -50,7 +56,8 @@ class EventController extends Controller
             }
         } else {
             if ($this->event->addNewEventFilm($name, $sub_menu, $author, $editor, $director,
-                    $producer, $description, $image_cover, $video_link, 1) == true) {
+                    $producer, $description, Helpers::getNameImage($image_cover), $video_link, 1) == true) {
+                Log::info('add new event success');
                 return redirect()->back()->with('message-success', 'Add New Event');
             } else {
                 return redirect()->back()->with('message-fail', 'Add New Event Fail');
@@ -75,7 +82,8 @@ class EventController extends Controller
         if ($request->get('showhome') == null) {
             //update tra ve 1
             if ($this->event->updateEventFilm($id, $name, $sub_menu, $author, $editor, $director,
-                    $producer, $description, $image_cover, $video_link, 0) == 1) {
+                    $producer, $description, Helpers::getNameImage($image_cover), $video_link, 0) == 1) {
+                Log::info('update event success');
                 return redirect()->route('view.admin.index')->with('message-success', 'Update Event');
 
             } else {
@@ -83,7 +91,8 @@ class EventController extends Controller
             }
         } else {
             if ($this->event->updateEventFilm($id, $name, $sub_menu, $author, $editor, $director,
-                    $producer, $description, $image_cover, $video_link, 1) == 1) {
+                    $producer, $description, Helpers::getNameImage($image_cover), $video_link, 1) == 1) {
+                Log::info('update event success');
                 return redirect()->route('view.admin.index')->with('message-success', 'Update New Event');
             } else {
                 return redirect()->route('view.admin.index')->with('message-fail', 'Update Event Fail');

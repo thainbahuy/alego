@@ -1,7 +1,6 @@
 
 <script type='text/javascript'
         src='{{asset('website/wp-content/plugins/contact-form-7/includes/js/scripts.js')}}'></script>
-<script type='text/javascript' src='{{asset('website/wp-content/themes/torola/assets/js/Retina.js')}}'></script>
 <script type='text/javascript' src='{{asset('website/wp-content/themes/torola/assets/js/Mousewheel.js')}}'></script>
 <script type='text/javascript' src='{{asset('website/wp-content/themes/torola/assets/js/jQueryEasing.js')}}'></script>
 <script type='text/javascript'

@@ -31,7 +31,7 @@ class DashboardController extends Controller
                     return '<a href="'.route('view.admin.event.edit',$item->id).'">'.$item->cname.'</a>';
                 })
                 ->editColumn('image_cover',function ($item){
-                    return '<img class="img-thumbnail" src="'.asset($item->image_cover).'" alt="img">';
+                    return '<img class="img-thumbnail" src="'.asset('image_upload/images/'.$item->image_cover).'" alt="img">';
                 })
                 ->editColumn('action',function ($item){
                     return '<button onclick="showModelDeleteEvent('."$item->id".')" class="btn btn-danger">Delete</button>';
