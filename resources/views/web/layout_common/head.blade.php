@@ -1,7 +1,7 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
-    <link rel="icon" href="{{asset('website/wp-content/uploads/sites/images/alego_logo.png')}}">
+    <link rel="icon" href="{{asset('website/wp-content/uploads/sites/images/alego_logo_icon.png')}}">
     <link rel='dns-prefetch' href='http://maps.googleapis.com'/>
     <link rel='dns-prefetch' href='http://fonts.googleapis.com'/>
 

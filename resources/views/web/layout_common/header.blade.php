@@ -1,4 +1,4 @@
-<a href="{{url('home')}}" class="logo">
+<a href="{{url('/')}}" class="logo">
     <img src="{{asset('website/wp-content/uploads/sites/images/alego_logo.png')}}" alt="Alego Story">
 </a>
 
