@@ -2,7 +2,7 @@
 <html lang="en-US" class="no-js">
 <head>
     @include('web.layout_common.head')
-    <title>Contact</title>
+    <title>@lang('Message.Contact')</title>
     <style>
         .selectbox{
             background-color: transparent;

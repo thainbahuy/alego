@@ -2,7 +2,7 @@
 <html lang="en-US" class="no-js">
 <head>
     @include('web.layout_common.head')
-    <title>About us</title>
+    <title>@lang('Message.About-us')</title>
 </head>
 
 <body

@@ -2,9 +2,9 @@
 return [
     'Home' => 'Trang chủ',
     'About' => 'THÔNG TIN',
-    'About-us' => 'về chúng tôi',
+    'About-us' => 'Về chúng tôi',
     'Price' => 'Giá dịch vụ',
-    'Contact' => 'liên hệ',
+    'Contact' => 'Liên hệ',
     'Contact-us' => 'liên hệ với chúng tôi',
     'Language' => 'Ngôn ngữ',
     'Watch now' => 'Xem ngay',
