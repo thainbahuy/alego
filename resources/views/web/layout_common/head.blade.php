@@ -8,7 +8,7 @@
     <link rel='stylesheet' id='contact-form-7-css'
           href='{{asset('website/wp-content/plugins/contact-form-7/includes/css/styles.css')}}' type='text/css'
           media='all'/>
-    <link rel='stylesheet' id='core-css' href='{{asset('website/wp-content/themes/torola/assets/css/core.css')}}'
+    <link rel='stylesheet' id='core-css' href='{{asset('website/wp-content/themes/torola/assets/css/core.min.css')}}'
           type='text/css' media='all'/>
     <link rel='stylesheet' id='theme-css' href='{{asset('website/wp-content/themes/torola/assets/css/theme.css')}}'
           type='text/css' media='all'/>
@@ -21,7 +21,7 @@
 {{--          href='{{asset('website/wp-content/plugins/js_composer/assets/css/js_composer.min.css')}}' type='text/css'--}}
 {{--          media='all'/>--}}
     <script type='text/javascript' src='{{asset('website/wp-includes/js/jquery/jquery.js')}}'></script>
-    <script type='text/javascript' src='{{asset('website/wp-includes/js/jquery/jquery-migrate.min.js')}}'></script>
+{{--    <script type='text/javascript' src='{{asset('website/wp-includes/js/jquery/jquery-migrate.min.js')}}'></script>--}}
     <link rel="stylesheet" href="{{asset('website/flags/flags.css')}}">
     <!-- Start Drift By WP-Plugin: Drift -->
     <!-- end: Drift Code. -->

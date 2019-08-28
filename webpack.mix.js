@@ -11,5 +11,9 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+// mix.js('resources/js/app.js', 'public/js')
+//     .sass('resources/sass/app.scss', 'public/css');
+// mix.styles([
+//     'public/website/wp-content/themes/torola/assets/css/core.css',
+//
+// ], 'public/website/wp-content/themes/torola/assets/css/core.min.css');

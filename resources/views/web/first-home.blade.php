@@ -49,8 +49,7 @@
                 </div>
                 <div class="col-auto">
                     <a data-animation="fade-in-bottom 500ms 500ms" href="{{url('contact-us')}}"
-                       class="button style-7 mb-0">Contact
-                        Us</a>
+                       class="button style-7 mb-0">@lang('Message.Contact')</a>
                 </div>
             </div>
         </div>
