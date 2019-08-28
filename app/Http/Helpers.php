@@ -66,10 +66,9 @@ class Helpers
         return rand(10000000, 99999999) . "_" . rand(10000000, 99999999) . "_" . rand(10000000, 99999999) . "_" . $nameImage;
     }
 
-    public static function deleteFileInPublicFolder($pathFile){
-        $pathFile = explode("/", $pathFile);
-        $nameFile = end($pathFile);
+    public static function deleteFileInPublicFolder($nameFile){
         if(file_exists(public_path('image_upload/images/'.$nameFile))){
+            Log::info('delete image in server');
             unlink(public_path('image_upload/images/'.$nameFile));
         }
     }

@@ -75,7 +75,7 @@
                                 <tr id="rowBackground{{$item->id}}">
                                     <td style="width: 50%" class='text-center'>
                                         <img class="img-thumbnail"
-                                             src="{{asset($item->image_link)}}" alt="img">
+                                             src="{{asset('image_upload/images/'.$item->image_link)}}" alt="img">
                                     </td>
                                     <td class='text-center'>
                                         {{$item->position}}

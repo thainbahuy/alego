@@ -35,4 +35,11 @@ class Member extends Model
             ->where('id', $id)
             ->delete();
     }
+
+    public function getImageById($id){
+        return DB::table($this->table)
+            ->select('avatar')
+            ->where('id', $id)
+            ->first();
+    }
 }

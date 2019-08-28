@@ -98,7 +98,7 @@
             <div class="row">
                 @foreach($listMember as $item)
                     <div class="col-md-4" data-animation="fade-in-bottom 1.2s .2s"><img
-                            src="{{$item->avatar}}" alt="JORDAN">
+                            src="{{asset('image_upload/images/'.$item->avatar)}}" alt="JORDAN">
                         <h5 class="uppercase mt-5">{{$item->member_name}}
                             <small>{{$item->role}}</small>
                         </h5>
