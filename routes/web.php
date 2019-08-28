@@ -25,7 +25,9 @@ Route::get('language/{locale}', function ($locale) {
 
 Route::namespace('Website')->group(function () {
     //home page
-    Route::get('/home', 'HomeController@index')->name('web.first-home');
+    Route::get('/home', function () {
+        return redirect()->route('web.first-home');
+    });
     Route::get('/', 'HomeController@index')->name('web.first-home');
 
     //event detail page

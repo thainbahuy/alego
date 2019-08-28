@@ -38,3 +38,4 @@
 </script>
 <!--End of Tawk.to Script-->
 <script src="{{asset('website/js/jquery_321/jquery-3.2.1.js')}}"></script>
+<script src="{{asset('website/js/active.js')}}"></script>

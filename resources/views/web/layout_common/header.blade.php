@@ -7,11 +7,11 @@
 </a>
 <nav class="navigation">
     <ul class="main-nav menu">
-        <li class="">
+        <li class="menu-sub">
             <a href="{{route('web.first-home')}}"
                class="ajax-link">@lang('Message.Home')</a></li>
         @foreach($menu as $key => $values)
-            <li class="">
+            <li class="menu-sub">
                 <a href="#" class="ajax-link">{{$key}}</a>
                 <ul>
                     @foreach($values as $submenu)
@@ -21,41 +21,36 @@
                                 'sub_menu' => str_slug($submenu->name).'-'.$submenu->sub_menu_id,
                             ];
                         @endphp
-                        <li class="">
-                            <a href="{{route('web.menu.submenu',$url)}}">{{$submenu->name}}</a>
+                        <li>
+                            <a class="ajax-link-sub" href="{{route('web.menu.submenu',$url)}}">{{$submenu->name}}</a>
                         </li>
                     @endforeach
                 </ul>
 
             </li>
         @endforeach
-        <li class="">
+        <li class="menu-sub">
             <a href="#" class="ajax-link">@lang('Message.About')</a>
             <ul>
-                <li class="">
-                    <a href="{{url('about-us')}}">@lang('Message.About-us')</a>
+                <li>
+                    <a class="ajax-link-sub" href="{{url('about-us')}}">@lang('Message.About-us')</a>
                 </li>
-                <li class="">
-                    <a href="{{url('contact-us')}}"
-                       class="ajax-link">@lang('Message.Contact')</a></li>
-{{--                <li class="">--}}
-{{--                    <a href="#">@lang('Message.Price')</a>--}}
-{{--                </li>--}}
+                <li>
+                    <a class="ajax-link-sub" href="{{url('contact-us')}}">@lang('Message.Contact')</a></li>
             </ul>
         </li>
 
 
-        <li class="">
-        <li class="">
+        <li class="menu-sub">
             <a href="#" disabled class="ajax-link">@lang('Message.Language')</a>
             <ul>
-                <li class="">
+                <li>
                     <a href="{{route('language',['locale'=> 'en'])}}">
                         <div class="flag flag-us"></div>
                         english
                     </a>
                 </li>
-                <li class="">
+                <li>
                     <a href="{{route('language',['locale'=> 'vn'])}}">
                         <div class="flag flag-vn"></div>
                         việt nam

@@ -1,15 +1,14 @@
 $(function($) {
-    let url = location.origin + "/" + location.pathname.split("/")[1];
+    var url = location.href;
     $('.ajax-link').each(function () {
         if (this.href === url) {
             $(this).addClass('active');
         }
     });
 
-    // console.log($('.ajax-link li a'));
-    // $('.ajax-link li a').each(function () {
-    //     if (this.href === url) {
-    //         $(this).closest(this).addClass('active');
-    //     }
-    // });
+    $('.ajax-link-sub').each(function () {
+        if (this.href === url) {
+            $(this).closest('.menu-sub').find('.ajax-link').addClass('active');
+        }
+    });
 })
