@@ -58,7 +58,8 @@ class ContactController extends Controller
         $Job = (new SendMailJob('contactMail', $data, 'Lịch hẹn '.$name_metting,
             'alegostory.system@gmail.com', 'Alego Story system', Helpers::getConfig()['Email']))->delay(60 * 0.5);;
         $this->dispatch($Job);
-        return redirect()->back()->with('success', __('Message.Contact-Noti-Success'));
+        //return redirect()->back()->with('success', __('Message.Contact-Noti-Success'));
+        return response()->json(['success'=>__('Message.Contact-Noti-Success')]);
 
     }
 

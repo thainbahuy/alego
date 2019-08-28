@@ -3,7 +3,7 @@
 
 <head>
     @include('web.layout_common.head')
-    <title>Alego Story</title>
+    <title>{{$nameSubMenu->name}}</title>
 </head>
 
 <body

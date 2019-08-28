@@ -58,7 +58,7 @@
                 <li class="">
                     <a href="{{route('language',['locale'=> 'vn'])}}">
                         <div class="flag flag-vn"></div>
-                        viet nam
+                        việt nam
                     </a>
                 </li>
 

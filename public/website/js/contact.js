@@ -5,17 +5,11 @@ $(function () {
         minDate: dateToday,
     });
 
-    // $("#submit_contact_btn").click(function (e) {
-    //     e.preventDefault(e);
-    //     $("#submit_contact_btn").attr("disabled", true);
-    //     $("#contact_form").submit();
-    // });
-
     $(document).on("click", ".close", function () {
-        $('#myModal').hide();
+        location.reload();
     });
     $(document).on("click", ".modal", function () {
-        $('#myModal').hide();
+        location.reload();
     });
 
     $("#contact_form").validate({
@@ -58,9 +52,25 @@ $(function () {
 
         },
         submitHandler: function (form) {
-            $("#submit_contact_btn").attr("disabled", true);
-            form.submit();
+            sendContact();
         }
 
     });
 });
+
+function sendContact() {
+    $("#submit_contact_btn").attr("disabled", true);
+    $.ajax(
+        {
+            url: $("#contact_form").attr('action'),
+            type: "post",
+            data:  $("#contact_form").serialize(),
+        })
+        .done(function (data) {
+            $('#myModal').show();
+            $('#content-mess').text(data.success);
+        })
+        .fail(function (jqXHR, ajaxOptions, thrownError) {
+            alert('server not responding...');
+        });
+}

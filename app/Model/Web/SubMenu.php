@@ -16,6 +16,12 @@ class SubMenu extends Model
             ->get();
     }
 
+    public function getNameSubMenu($idSubMenu){
+        return DB::table('sub_menu')->select('sub_menu_id','name')
+            ->where('sub_menu_id', $idSubMenu)
+            ->first();
+    }
+
 
 
 }
