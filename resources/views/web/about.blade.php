@@ -31,9 +31,7 @@
         <div class="container p-0">
             <div class="row no-gutters">
                 <div class="columns col-sm-6 col-lg-6 col-md-6 vc_col-xs-12"><h5>@lang('Message.About').</h5></div>
-                <div class="columns col-sm-6 col-lg-6 col-md-6 vc_col-xs-12"><p>Lorem ipsum dolor sit amet, consectetur
-                        adipisicing elit. Eaque quae, totam mollitia sequi vero eum facilis harum rerum nobis, cum ut
-                        quaerat reprehenderit numquam quos, minus perspiciatis perferendis. Enim, perferendis.</p>
+                <div class="columns col-sm-6 col-lg-6 col-md-6 vc_col-xs-12"><p>@lang('Message.infor')</p>
                 </div>
             </div>
         </div>
@@ -46,11 +44,7 @@
                 <section class="row vc_custom_1521461082558">
                     <div class="columns col-sm-12"><h5>THE STORY</h5>
                         <hr class="separator-left">
-                        <p>We take pride in our passion. We revel in our growth. As a team, we are in a relentless quest to raise the bar higher. We are a group of dedicated artists who thrive in your love stories, and we consider it a great honor to be a part of them.
-
-                            We believe that there is importance in every detail and we highlight the beauty that needs to be seen. Every story is worth sharing and that is PARADISE main obsession.
-
-                            We’re a group of passionate young people – photographers, videographers, designers, editors and stylists – working together to create beautiful masterpieces.</p>
+                        <p>@lang('Message.Story-infor')</p>
                     </div>
                 </section>
             </div>
@@ -63,30 +57,22 @@
                 <div class="columns col-sm-6">
                     <div data-animation="fade-in-bottom 1.2s .2s">
                         <h5 class="uppercase">Pre-Wedding</h5>
-                        <p class="serif small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quae,
-                            totam mollitia sequi vero eum facilis harum rerum nobis, cum ut quaerat reprehenderit
-                            numquam quos, minus perspiciatis perferendis. Enim, perferendis.</p>
+                        <p class="serif small">@lang('Message.Prewedding-infor')</p>
                     </div>
                     <hr class="separator-left my-6">
                     <div data-animation="fade-in-bottom 1.2s .2s">
                         <h5 class="uppercase">Wedding ceremony</h5>
-                        <p class="serif small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quae,
-                            totam mollitia sequi vero eum facilis harum rerum nobis, cum ut quaerat reprehenderit
-                            numquam quos, minus perspiciatis perferendis. Enim, perferendis.</p>
+                        <p class="serif small">@lang('Message.Wedding-infor')</p>
                     </div>
                     <hr class="separator-left my-6">
                     <div data-animation="fade-in-bottom 1.2s .4s">
                         <h5 class="uppercase">Event</h5>
-                        <p class="serif small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quae,
-                            totam mollitia sequi vero eum facilis harum rerum nobis, cum ut quaerat reprehenderit
-                            numquam quos, minus perspiciatis perferendis. Enim, perferendis.</p>
+                        <p class="serif small">@lang('Message.Event-infor')</p>
                     </div>
                     <hr class="separator-left my-6">
                     <div data-animation="fade-in-bottom 1.2s .6s">
                         <h5 class="uppercase">TVC</h5>
-                        <p class="serif small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque quae,
-                            totam mollitia sequi vero eum facilis harum rerum nobis, cum ut quaerat reprehenderit
-                            numquam quos, minus perspiciatis perferendis. Enim, perferendis.</p>
+                        <p class="serif small">@lang('Message.TVC-infor')</p>
                     </div>
 
                 </div>

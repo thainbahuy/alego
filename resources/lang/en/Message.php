@@ -38,5 +38,13 @@ return [
     'Mail-Max' => 'The Mail may not be greater than 100 numbers',
     'Name-Max' => 'The Name may not be greater than 100 characters',
 
+    //    about us page
+    'infor' => 'As a Creative Studio starting with the goal of conquering creativity, we appreciate the visual experience built by professional technology, the dedication of the professionals and most importantly - the uniqueness of the team. Looking for the new.',
+    'Prewedding-infor' => 'We listen to your wishes, help you to fly with your personal desires, evoke interesting ideas, make them possible and finally - tell your love story through frames. pictures, unique footage - just for you.',
+    'Wedding-infor' => 'Memorable moments appear only once - we appreciate this as the owner of a big day. We aim to be sophisticated in capturing expensive moments, helping you retain your emotions in the most authentic and vivid way.',
+    'Event-infor' => 'Owning modern equipment and experienced team, our mission is to accurately record the events of the event, and to show professionalism in organizational style, ensuring effective communication. Your wishes for the event.',
+    'TVC-infor' => 'We work with you from sketching, scripting, providing resources, realizing ideas, encapsulating everything in a more professional and unique communication product than you ever expected.',
+    'Story-infor' =>'We take pride in our passion. We revel in our growth. As a team, we are in a relentless quest to raise the bar higher. We are a group of dedicated artists who thrive in your love stories, and we consider it a great honor to be a part of them.
+We believe that there is importance in every detail and we highlight the beauty that needs to be seen. Every story is worth sharing and that is Alego Story main obsession.We’re a group of passionate young people – photographers, videographers, designers, editors and stylists – working together to create beautiful masterpieces.',
 ];
 
