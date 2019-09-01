@@ -40,7 +40,7 @@ class DashboardController extends Controller
                 ->make();
         }
 
-        return view('admin/index', compact('listEvent', 'listMenu', 'listSubMenu'));
+        return view('admin/index', compact( 'listMenu', 'listSubMenu'));
     }
 
     public function showAddNewEvent()

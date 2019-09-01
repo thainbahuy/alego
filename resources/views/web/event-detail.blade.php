@@ -17,7 +17,7 @@
     @include('web.layout_common.header',['data'=>$menu])
 </header>
 
-<div id="preloader"></div>
+{{--<div id="preloader"></div>--}}
 <main id="main">
     <section class="hero hero-fullscreen">
 {{--                <div class="video-background" data-src="{{$event[0]->video_link}}"--}}

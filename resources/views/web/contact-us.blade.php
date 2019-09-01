@@ -55,7 +55,7 @@
     @include('web.layout_common.header',['data'=>$menu])
 </header>
 
-<div id="preloader"></div>
+{{--<div id="preloader"></div>--}}
 <main id="main" class="bg-lines">
 {{--    <section class="hero-min-fullscreen flex-center py-10"--}}
 {{--             data-background="http://torola.fwp.fastwp.net/wp-content/uploads/sites/30/2018/03/211.jpg"--}}
@@ -185,14 +185,5 @@
 @endif
 
 <script src="{{asset('website/js/contact.js')}}"></script>
-<script>
-    $( document ).ready(function() {
-        let status = '{{Session::get('success')}}';
-        if (status.length > 0){
-            $('#myModal').show();
-            $('#content-mess').text(status);
-        }
-    });
-</script>
 </body>
 </html>

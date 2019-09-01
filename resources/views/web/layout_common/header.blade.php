@@ -30,16 +30,12 @@
             </li>
         @endforeach
         <li class="menu-sub">
-            <a href="#" class="ajax-link">@lang('Message.About')</a>
-            <ul>
-                <li>
-                    <a class="ajax-link-sub" href="{{url('about-us')}}">@lang('Message.About-us')</a>
-                </li>
-                <li>
-                    <a class="ajax-link-sub" href="{{url('contact-us')}}">@lang('Message.Contact')</a></li>
-            </ul>
+            <a class="ajax-link" href="{{url('contact-us')}}">@lang('Message.Contact')</a></li>
         </li>
 
+        <li class="menu-sub">
+            <a class="ajax-link-sub" href="{{url('about-us')}}">@lang('Message.About-us')</a>
+        </li>
 
         <li class="menu-sub">
             <a href="#" disabled class="ajax-link">@lang('Message.Language')</a>

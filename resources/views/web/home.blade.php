@@ -17,7 +17,7 @@
     @include('web.layout_common.header',['data'=>$menu])
 </header>
 
-<div id="preloader"></div>
+{{--<div id="preloader"></div>--}}
 <main id="main" class="bg-lines">
     <div class="grid lightbox" data-columns="3" data-gutter="5" data-cell-ratio="5/4" data-filter="#folioFilter">
         @include('data_event_type')

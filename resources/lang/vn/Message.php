@@ -4,7 +4,7 @@ return [
     'About' => 'THÔNG TIN',
     'About-us' => 'Về chúng tôi',
     'Price' => 'Giá dịch vụ',
-    'Contact' => 'Liên hệ',
+    'Contact' => 'Đặt lịch',
     'Contact-us' => 'liên hệ với chúng tôi',
     'Language' => 'Ngôn ngữ',
     'Watch now' => 'Xem ngay',

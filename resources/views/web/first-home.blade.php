@@ -16,7 +16,7 @@
     @include('web.layout_common.header',['data'=>$menu])
 </header>
 
-<div id="preloader"></div>
+{{--<div id="preloader"></div>--}}
 <main id="main" class="bg-lines">
     <section class="hero hero-fullscreen" data-background="#000">
         <div class="swiper" data-pagination="true">
