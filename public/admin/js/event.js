@@ -8,6 +8,7 @@ $(document).ready(function () {
 
     });
 
+
 });
 
 function showModelDeleteEvent(id) {
@@ -29,7 +30,7 @@ function deleteEvent(id) {
 
 }
 
-
+//for form validate
 $("#add_eventfilm_form").validate({
     onfocusout: false,
     onkeyup: false,
@@ -37,7 +38,7 @@ $("#add_eventfilm_form").validate({
     rules: {
         name: {
             required: {
-                depends: function() {
+                depends: function () {
                     $(this).val($.trim($(this).val()));
                     return true;
                 },
@@ -50,7 +51,7 @@ $("#add_eventfilm_form").validate({
         },
         producer: {
             required: {
-                depends: function() {
+                depends: function () {
                     $(this).val($.trim($(this).val()));
                     return true;
                 },
@@ -60,7 +61,7 @@ $("#add_eventfilm_form").validate({
         },
         director: {
             required: {
-                depends: function() {
+                depends: function () {
                     $(this).val($.trim($(this).val()));
                     return true;
                 },
@@ -70,7 +71,7 @@ $("#add_eventfilm_form").validate({
         },
         editor: {
             required: {
-                depends: function() {
+                depends: function () {
                     $(this).val($.trim($(this).val()));
                     return true;
                 },
@@ -80,7 +81,7 @@ $("#add_eventfilm_form").validate({
         },
         description: {
             required: {
-                depends: function() {
+                depends: function () {
                     $(this).val($.trim($(this).val()));
                     return true;
                 },
@@ -90,7 +91,7 @@ $("#add_eventfilm_form").validate({
         },
         author: {
             required: {
-                depends: function() {
+                depends: function () {
                     $(this).val($.trim($(this).val()));
                     return true;
                 },
@@ -98,12 +99,12 @@ $("#add_eventfilm_form").validate({
             maxlength: 30,
             minlength: 5,
         },
-        image_cover: {
+        'image_cover[link]': {
             required: true,
         },
         video_link: {
             required: {
-                depends: function() {
+                depends: function () {
                     $(this).val($.trim($(this).val()));
                     return true;
                 },
@@ -111,10 +112,48 @@ $("#add_eventfilm_form").validate({
             url: true,
         },
     },
-    submitHandler: function(form) {
+    submitHandler: function (form) {
         form.submit();
     }
 
 });
 
 
+$("#image_choose_btn").change(function () {
+
+    if (this.files && this.files[0] && this.files[0].size < 3000000) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            //upload
+            uploadImageToServer(e.target.result,1)
+        }
+        reader.readAsDataURL(this.files[0]);
+
+    } else {
+        alert('file to large or not choose yet !');
+        $("#image_choose_btn").val('');
+    }
+
+});
+
+function uploadImageToServer(image,option) {
+    $.ajax(
+        {
+            url: route('admin.uploadImage.service'),
+            type: "post",
+            data: {
+                'image': image,
+                'option': option,
+            },
+        }).done(function (response) {
+            //preview
+            $('.imgKLIK5').attr('src',image);
+            //set input
+            $('#image_cover').val(response.link);
+            $('#image_cover_key').val(response.deletehash);
+
+    }).fail(function (response) {
+        alert('server not responding...');
+    })
+    $("#image_choose_btn").val('');
+}

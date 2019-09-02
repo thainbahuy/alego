@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class ImageController extends Controller
@@ -27,6 +28,7 @@ class ImageController extends Controller
         );
         $response = (string) $request->getBody();
         $jsonResponse = json_decode($response);
+        Log::info('upload image to imgur success');
         return $jsonResponse;
     }
 
@@ -55,19 +57,20 @@ class ImageController extends Controller
      */
     private function resizeImage($imageFile,$option)
     {
+
         Image::configure(array('driver' => 'gd'));
-        $image =file_get_contents($imageFile->getRealPath());
+        //$image =file_get_contents($imageFile->getRealPath());
         if ($option == 1) {
-            $img = Image::make($image)->resize(1280, 720);
+            $img = Image::make($imageFile)->resize(1280, 720);
             return $img->response('jpg');
         } else {
-            $img = Image::make($image)->resize(1920, 1080);
+            $img = Image::make($imageFile)->resize(1920, 1080);
             return $img->response('jpg');
         }
     }
 
     public function uploadLoadImage (Request $request){
-        $imageFile = $request->file('image');
+        $imageFile = $request->get('image');
         $option = $request->get('option');
 
         $imageResize = $this->resizeImage($imageFile,$option);
