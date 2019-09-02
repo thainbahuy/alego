@@ -80,8 +80,10 @@ class EventController extends Controller
         $editor = trim($request->get('editor'));
         $description = trim($request->get('description'));
         $author = trim($request->get('author'));
-        $image_cover = trim($request->get('image_cover'));
+        $image_cover = $request->get('image_cover');
         $video_link = trim($request->get('video_link'));
+
+        $image_cover=json_encode($image_cover, true);
 
         if ($request->get('showhome') == null) {
             //update tra ve 1
