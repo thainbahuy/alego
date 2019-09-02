@@ -9,7 +9,7 @@
             ];
         @endphp
         <a href="{{route('web.event-detail',$url)}}">
-            <img class="item-media background-parallax img-thumbnail"  src="{{asset('image_upload/images/'.$item->image_cover)}}" alt="{{$item->name}}">
+            <img class="item-media background-parallax img-thumbnail"  src="{{$item->image_cover}}" alt="{{$item->name}}">
         </a>
         <figcaption>
             <div class="item-caption-inner">

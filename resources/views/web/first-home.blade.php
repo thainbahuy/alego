@@ -22,7 +22,7 @@
         <div class="swiper" data-pagination="true">
             @foreach($listBackground as $item)
                 <figure class="swiper-slide"
-                        data-background="{{asset('image_upload/images/'.$item->image_link)}}">
+                        data-background="{{$item->image_link}}">
                 </figure>
             @endforeach
         </div>
