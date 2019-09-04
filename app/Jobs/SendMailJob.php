@@ -50,6 +50,6 @@ class SendMailJob implements ShouldQueue
             $message->to($this->data['to'], $this->data['subject'])->subject($this->data['subject']);
         });
 
-        Log::info('send mail reset password');
+        Log::info('send mail to admin');
     }
 }
