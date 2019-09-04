@@ -5,6 +5,19 @@
 
     @include('admin.layout_common.head')
     <title>Event-Add New</title>
+    <style type="text/css">
+        #loader {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.75) url('{{asset('admin/loading.gif')}}') no-repeat center center;
+            z-index: 10000;
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -46,7 +59,7 @@
     </ul>
 
 </nav>
-
+<div id="loader"></div>
 <div id="wrapper">
 
     @include('admin.layout_common.navbar')

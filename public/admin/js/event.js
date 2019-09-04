@@ -1,3 +1,4 @@
+var spinner = $('#loader');
 $(document).ready(function () {
 
     $('#delete_btn').on('click', function () {
@@ -138,6 +139,7 @@ $("#image_choose_btn").change(function () {
 });
 
 function uploadImageToServer(image,option) {
+    spinner.show();
     $.ajax(
         {
             url: route('admin.uploadImage.service'),
@@ -152,8 +154,10 @@ function uploadImageToServer(image,option) {
             //set input
             $('#image_cover').val(response.link);
             $('#image_cover_key').val(response.deletehash);
+            spinner.hide();
 
     }).fail(function (response) {
+        spinner.hide();
         alert('server not responding...');
     })
     $("#image_choose_btn").val('');
