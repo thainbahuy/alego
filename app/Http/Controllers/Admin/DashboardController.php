@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Model\Admin\Event;
 use App\Model\Admin\Menu;
 use App\Model\Admin\SubMenu;
+use Helpers;
 use Illuminate\Http\Request;
 use Yajra\DataTables\Facades\DataTables;
 
@@ -31,7 +32,7 @@ class DashboardController extends Controller
                     return '<a href="'.route('view.admin.event.edit',$item->id).'">'.$item->cname.'</a>';
                 })
                 ->editColumn('image_cover',function ($item){
-                    return '<img class="img-thumbnail" src="'.asset('image_upload/images/'.$item->image_cover).'" alt="img">';
+                    return '<img class="img-thumbnail" src="'.Helpers::convertJsonToArray($item->image_cover)['link'].'" alt="img">';
                 })
                 ->editColumn('action',function ($item){
                     return '<button onclick="showModelDeleteEvent('."$item->id".')" class="btn btn-danger">Delete</button>';

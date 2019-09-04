@@ -1,5 +1,6 @@
 <?php
 
+use GuzzleHttp\Client;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
@@ -8,6 +9,7 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class Helpers
 {
+
 
     /**
      * convert json file to array
@@ -66,11 +68,31 @@ class Helpers
         return rand(10000000, 99999999) . "_" . rand(10000000, 99999999) . "_" . rand(10000000, 99999999) . "_" . $nameImage;
     }
 
-    public static function deleteFileInPublicFolder($nameFile){
-        if(file_exists(public_path('image_upload/images/'.$nameFile))){
+    public static function deleteFileInPublicFolder($nameFile)
+    {
+        if (file_exists(public_path('image_upload/images/' . $nameFile))) {
             Log::info('delete image in server');
-            unlink(public_path('image_upload/images/'.$nameFile));
+            unlink(public_path('image_upload/images/' . $nameFile));
         }
+    }
+
+    public static function deleteImageInCdn($deleteKey)
+    {
+        $end_ponit = 'https://api.imgur.com/3/image';
+
+        $client = new Client();
+        $request = $client->request(
+            'DELETE',
+            $end_ponit . '/' . $deleteKey,
+            [
+                'headers' => [
+                    'Authorization' => "Client-ID " . env('CLIENT_ID'), // post as anonymous
+                ],
+            ]
+        );
+        $response = (string)$request->getBody();
+        $jsonResponse = json_decode($response);
+        return $jsonResponse->status;
     }
 
 }

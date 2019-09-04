@@ -107,3 +107,6 @@ Route::namespace('Auth')->group(function () {
 //Route::get('ABC',function(){
 //    echo Hash::make('thaibahuy');
 //});
+
+Route::post('api/image/upload', 'ImageController@uploadLoadImage')->name('admin.uploadImage.service');
+

@@ -72,7 +72,7 @@
                 <strong>Error!</strong> Add New Background .
             </div>
         @endif
-        <form id="background_form" action="{{route('admin.background.add')}}" method="post">
+        <form id="backgroundForm" action="{{route('admin.background.add')}}" method="post">
             {{ csrf_field() }}
             <div class="card-body">
                 <div class="form-group">
@@ -86,9 +86,7 @@
                                     </div>
                                 </div>
                             </div>
-                            @error('position')
-                                <label for="position" generated="true" class="error label-error" style = "color : red">{{$message}}</label>
-                            @enderror
+                                <label for="position" generated="true" class="error label-error" style = "color : red"></label>
                             <label for="position" generated="true" class="error label-error" style = "color : red"></label>
                         </div>
                     </div>
@@ -104,12 +102,11 @@
                             <div class="form-label-group">
                                 <span><b>Background</b></span>
                                 <br>
-                                <input readonly  maxlength="500" type="hidden" id="image_cover" name="image_cover" class="form-control">
-                                <button type="button" id="ckfinder_btn" class="btn btn-primary">Choose Image</button>
+                                <input readonly type="hidden"  id="image_cover" name="image_cover[link]" class="form-control">
+                                <input readonly  type="hidden" id="image_cover_key" name="image_cover[keyhash]" class="form-control">
+                                <input type="file" id="image_choose_btn" class="btn btn-primary">
                             </div>
-                            @error('image_cover')
-                                <label for="image_cover" generated="true" class="error label-error" style = "color : red">{{$message}}</label>
-                            @enderror
+                                <label for="image_cover" generated="true" class="error label-error" style = "color : red"></label>
                         </div>
                     </div>
                 </div>
@@ -135,7 +132,6 @@
 
 <script src="{{asset('admin/js/jquery.validate.min.js')}}"
         type="text/javascript"></script>
-<script src = "{{asset('ckfinder/ckfinder.js')}}"></script>
 <script src="{{asset('admin/js/background.js')}}"></script>
 <style>
     img {
@@ -147,36 +143,6 @@
         width:100%
     }
 </style>
-<script>
-    var button1 = document.getElementById( 'ckfinder_btn' );
-
-    button1.onclick = function() {
-        selectFileWithCKFinder( 'image_cover' );
-    };
-
-    function selectFileWithCKFinder( elementId ) {
-        CKFinder.popup( {
-            chooseFiles: true,
-            width: 1000,
-            height: 700,
-            onInit: function( finder ) {
-                finder.on( 'files:choose', function( evt ) {
-                    var file = evt.data.files.first();
-                    var output = document.getElementById( elementId );
-                    output.value = file.getUrl();
-                    //preview
-                    $(".imgKLIK5").attr("src", output.value);
-                } );
-
-                finder.on( 'file:choose:resizedImage', function( evt ) {
-                    var output = document.getElementById( elementId );
-                    output.value = evt.data.resizedUrl;
-                } );
-            }
-        } );
-    }
-
-</script>
 
 </body>
 

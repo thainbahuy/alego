@@ -30,11 +30,13 @@ class BackgroundController extends Controller
         return view('admin/background/add');
     }
 
-    public function addNewBackground(BackgroundRequest $request)
+    public function addNewBackground(Request $request)
     {
         $image_link = $request->get('image_cover');
+        $image_link = json_encode($image_link);
+
         $position = $request->get('position');
-        $image_link = Helpers::getNameImage($image_link);
+
         if ($this->background->addNewBackground($image_link, $position) == true) {
             Log::info('add background success');
             return redirect()->back()->with('message-success', 'Add Background');
@@ -47,8 +49,10 @@ class BackgroundController extends Controller
     {
         $id = $request->get('id');
         $image = $this->background->getImageByIdBackground($id);
+        $keyhash = json_decode($image->image_link,true)['keyhash'];
+
         if ($this->background->deleteBackground($id) == 1) {
-            Helpers::deleteFileInPublicFolder($image->image_link);
+            Helpers::deleteImageInCdn($keyhash);
             Log::info('delete background success');
             return response()->json(['status' => 'success'], Response::HTTP_OK);
         } else {

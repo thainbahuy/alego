@@ -1,6 +1,6 @@
 @foreach($listEvent as $item)
-    <figure class="portfolio-item art design" data-background="{{asset('image_upload/images/'.$item->image_cover)}}">
-        <a href="{{asset('image_upload/images/'.$item->image_cover)}}" class="lightbox-link"
+    <figure class="portfolio-item art design" data-background="{{Helpers::convertJsonToArray($item->image_cover)['link']}}">
+        <a href="{{Helpers::convertJsonToArray($item->image_cover)['link']}}" class="lightbox-link"
            title="{{$item->name}}"></a>
         <figcaption>
             <h5 class="item-title">
