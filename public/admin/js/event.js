@@ -32,6 +32,7 @@ function deleteEvent(id) {
 
 //for form validate
 $("#add_eventfilm_form").validate({
+    ignore: "",
     onfocusout: false,
     onkeyup: false,
     focusInvalid: false,

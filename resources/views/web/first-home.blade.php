@@ -22,7 +22,7 @@
         <div class="swiper" data-pagination="true">
             @foreach($listBackground as $item)
                 <figure class="swiper-slide"
-                        data-background="{{$item->image_link}}">
+                        data-background="{{Helpers::convertJsonToArray($item->image_link)['link']}}">
                 </figure>
             @endforeach
         </div>

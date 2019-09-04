@@ -75,7 +75,7 @@
                                 <tr id="rowBackground{{$item->id}}">
                                     <td style="width: 50%" class='text-center'>
                                         <img class="img-thumbnail"
-                                             src="{{asset('image_upload/images/'.$item->image_link)}}" alt="img">
+                                             src="{{Helpers::convertJsonToArray($item->image_link)['link']}}" alt="img">
                                     </td>
                                     <td class='text-center'>
                                         {{$item->position}}
