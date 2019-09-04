@@ -32,23 +32,23 @@ class ImageController extends Controller
         return $jsonResponse;
     }
 
-//    public function deleteImage(Request $request){
-//        //chi lay ten hinh
-//        $imageLink = $request->get('image');
-//        $client = new Client();
-//        $request = $client->request(
-//            'DELETE',
-//            $this->end_ponit.'/'.$imageLink,
-//            [
-//                'headers' => [
-//                    'Authorization' => "Client-ID ".env('CLIENT_ID'), // post as anonymous
-//                ],
-//            ]
-//        );
-//        $response = (string) $request->getBody();
-//        $jsonResponse = json_decode($response);
-//        return $jsonResponse->status;
-//    }
+    public function deleteImage(Request $request){
+        //chi lay ten hinh
+        $imageLink = $request->get('image');
+        $client = new Client();
+        $request = $client->request(
+            'DELETE',
+            $this->end_ponit.'/'.$imageLink,
+            [
+                'headers' => [
+                    'Authorization' => "Client-ID ".env('CLIENT_ID'), // post as anonymous
+                ],
+            ]
+        );
+        $response = (string) $request->getBody();
+        $jsonResponse = json_decode($response);
+        return $jsonResponse->status;
+    }
 
     /**
      * @param $file

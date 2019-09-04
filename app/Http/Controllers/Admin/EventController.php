@@ -22,8 +22,13 @@ class EventController extends Controller
     {
         $id = $request->get('id');
         $event = $this->event->getEventById($id);
+
+        //get keyhash
+        $keyhash = json_decode($event->image_cover,true)['keyhash'];
+
         if ($this->event->deleteEventById($id) == 1) {
-//            Helpers::deleteFileInPublicFolder($event->image_cover);
+//            delete image in cdn
+            Helpers::deleteImageInCdn($keyhash);
             Log::info('delete event success');
             return response()->json(['status' => 'success'], Response::HTTP_OK);
         } else {
@@ -85,6 +90,7 @@ class EventController extends Controller
 
         $image_cover=json_encode($image_cover, true);
 
+        //update event
         if ($request->get('showhome') == null) {
             //update tra ve 1
             if ($this->event->updateEventFilm($id, $name, $sub_menu, $author, $editor, $director,
