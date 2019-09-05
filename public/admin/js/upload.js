@@ -13,7 +13,6 @@ $("#image_choose_btn").change(function () {
         alert('file to large or not choose yet !');
         $("#image_choose_btn").val('');
     }
-
 });
 
 function uploadImageToServer(image,option) {
