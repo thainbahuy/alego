@@ -146,6 +146,7 @@
 <script src="{{asset('admin/js/jquery.validate.min.js')}}"
         type="text/javascript"></script>
 <script src="{{asset('admin/js/background.js')}}"></script>
+<script src="{{asset('admin/js/upload.js')}}"></script>
 <style>
     img {
         width:30%;
