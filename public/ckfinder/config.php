@@ -63,11 +63,11 @@ $config['images'] = array(
 /*=================================== Backends ========================================*/
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html#configuration_options_backends
 $url_local ='http://127.0.0.1:8000/';
-$url_product ='http://127.0.0.1:8000'.'/public/';
+$url_product ='http://alegostory.com'.'/public/';
 $config['backends'][] = array(
     'name'         => 'default',
     'adapter'      => 'local',
-    'baseUrl'      => $url_local.'image_upload',
+    'baseUrl'      => $url_product.'image_upload',
 //  'root'         => '', // Can be used to explicitly set the CKFinder user files directory.
     'chmodFiles'   => 0777,
     'chmodFolders' => 0755,
