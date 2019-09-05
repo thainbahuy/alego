@@ -1,4 +1,4 @@
-var spinner = $('#loader');
+
 $("#image_choose_btn").change(function () {
 
     if (this.files && this.files[0] && this.files[0].size < 3000000) {
@@ -16,7 +16,7 @@ $("#image_choose_btn").change(function () {
 });
 
 function uploadImageToServer(image,option) {
-    spinner.show();
+    $('#loader').show();
     $.ajax(
         {
             url: route('admin.uploadImage.service'),
@@ -31,11 +31,11 @@ function uploadImageToServer(image,option) {
         //set input
         $('#image_cover').val(response.link);
         $('#image_cover_key').val(response.deletehash);
-        spinner.hide();
+        $('#loader').hide();
 
     }).fail(function (response) {
         alert('server not responding...');
-        spinner.hide();
+        $('#loader').hide();
     })
     $("#image_choose_btn").val('');
 }
