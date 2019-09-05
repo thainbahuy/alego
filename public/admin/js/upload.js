@@ -1,3 +1,4 @@
+var spinner = $('#loader');
 $("#image_choose_btn").change(function () {
 
     if (this.files && this.files[0] && this.files[0].size < 3000000) {
