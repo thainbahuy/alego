@@ -31,29 +31,33 @@ function deleteSubMenu(id) {
 }
 
 
-
-$("#add_submenu_form").validate({
-    onfocusout: false,
-    onkeyup: false,
-    focusInvalid: false,
-    rules: {
-        name: {
-            required: {
-                depends: function() {
-                    $(this).val($.trim($(this).val()));
-                    return true;
+var add_submenu_form = document.getElementById("add_submenu_form");
+if(add_submenu_form != null ){
+    $("#add_submenu_form").validate({
+        onfocusout: false,
+        onkeyup: false,
+        focusInvalid: false,
+        rules: {
+            name: {
+                required: {
+                    depends: function() {
+                        $(this).val($.trim($(this).val()));
+                        return true;
+                    },
                 },
+                maxlength: 50,
+                minlength: 3,
             },
-            maxlength: 50,
-            minlength: 3,
-        },
-        menu_id: {
-            required: true,
-        },
+            menu_id: {
+                required: true,
+            },
 
-    },
-    submitHandler: function(form) {
-        form.submit();
-    }
+        },
+        submitHandler: function(form) {
+            form.submit();
+        }
 
-});
+    });
+}
+
+

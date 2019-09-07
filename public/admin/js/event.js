@@ -32,93 +32,97 @@ function deleteEvent(id) {
 }
 
 //for form validate
-$("#add_eventfilm_form").validate({
-    ignore: "",
-    onfocusout: false,
-    onkeyup: false,
-    focusInvalid: false,
-    rules: {
-        name: {
-            required: {
-                depends: function () {
-                    $(this).val($.trim($(this).val()));
-                    return true;
+var add_eventfilm_form = document.getElementById("add_eventfilm_form");
+if(add_eventfilm_form != null){
+    $("#add_eventfilm_form").validate({
+        ignore: "",
+        onfocusout: false,
+        onkeyup: false,
+        focusInvalid: false,
+        rules: {
+            name: {
+                required: {
+                    depends: function () {
+                        $(this).val($.trim($(this).val()));
+                        return true;
+                    },
                 },
+                maxlength: 101,
+                minlength: 5,
             },
-            maxlength: 101,
-            minlength: 5,
-        },
-        sub_menu: {
-            required: true,
-        },
-        producer: {
-            required: {
-                depends: function () {
-                    $(this).val($.trim($(this).val()));
-                    return true;
+            sub_menu: {
+                required: true,
+            },
+            producer: {
+                required: {
+                    depends: function () {
+                        $(this).val($.trim($(this).val()));
+                        return true;
+                    },
                 },
+                maxlength: 30,
+                minlength: 5,
             },
-            maxlength: 30,
-            minlength: 5,
-        },
-        director: {
-            required: {
-                depends: function () {
-                    $(this).val($.trim($(this).val()));
-                    return true;
+            director: {
+                required: {
+                    depends: function () {
+                        $(this).val($.trim($(this).val()));
+                        return true;
+                    },
                 },
+                maxlength: 30,
+                minlength: 5,
             },
-            maxlength: 30,
-            minlength: 5,
-        },
-        editor: {
-            required: {
-                depends: function () {
-                    $(this).val($.trim($(this).val()));
-                    return true;
+            editor: {
+                required: {
+                    depends: function () {
+                        $(this).val($.trim($(this).val()));
+                        return true;
+                    },
                 },
+                maxlength: 30,
+                minlength: 5,
             },
-            maxlength: 30,
-            minlength: 5,
-        },
-        description: {
-            required: {
-                depends: function () {
-                    $(this).val($.trim($(this).val()));
-                    return true;
+            description: {
+                required: {
+                    depends: function () {
+                        $(this).val($.trim($(this).val()));
+                        return true;
+                    },
                 },
+                maxlength: 500,
+                minlength: 5,
             },
-            maxlength: 500,
-            minlength: 5,
-        },
-        author: {
-            required: {
-                depends: function () {
-                    $(this).val($.trim($(this).val()));
-                    return true;
+            author: {
+                required: {
+                    depends: function () {
+                        $(this).val($.trim($(this).val()));
+                        return true;
+                    },
                 },
+                maxlength: 30,
+                minlength: 5,
             },
-            maxlength: 30,
-            minlength: 5,
-        },
-        'image_cover[link]': {
-            required: true,
-        },
-        video_link: {
-            required: {
-                depends: function () {
-                    $(this).val($.trim($(this).val()));
-                    return true;
+            'image_cover[link]': {
+                required: true,
+            },
+            video_link: {
+                required: {
+                    depends: function () {
+                        $(this).val($.trim($(this).val()));
+                        return true;
+                    },
                 },
+                url: true,
             },
-            url: true,
         },
-    },
-    submitHandler: function (form) {
-        form.submit();
-    }
+        submitHandler: function (form) {
+            form.submit();
+        }
 
-});
+    });
+}
+
 
 
 $("#image_choose_btn").change(function () {

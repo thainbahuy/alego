@@ -26,27 +26,26 @@ function deleteBackground(id) {
     })
 }
 
-
-$("#backgroundForm").validate({
-    ignore: "",
-    onfocusout: false,
-    onkeyup: false,
-    focusInvalid: false,
-    rules: {
-        position :{
-            number:true,
+var backgroundForm = document.getElementById("backgroundForm");
+if(backgroundForm != null ){
+    $("#backgroundForm").validate({
+        ignore: "",
+        onfocusout: false,
+        onkeyup: false,
+        focusInvalid: false,
+        rules: {
+            position :{
+                number:true,
+            },
+            'image_cover[link]': {
+                required: true,
+            },
         },
-        'image_cover[link]': {
-            required: true,
-        },
-
-    },
-    submitHandler: function (form) {
-        form.submit();
-    }
-
-});
-
+        submitHandler: function (form) {
+            form.submit();
+        }
+    });
+}
 
 $("#image_choose_btn").change(function () {
     if (this.files && this.files[0] && this.files[0].size < 3000000) {

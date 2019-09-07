@@ -29,24 +29,28 @@ function deleteMenu(id) {
     })
 }
 
-$("#menu_form").validate({
-    onfocusout: false,
-    onkeyup: false,
-    focusInvalid: false,
-    rules: {
-        name: {
-            required: {
-                depends: function() {
-                    $(this).val($.trim($(this).val()));
-                    return true;
+var menu_form = document.getElementById("menu_form");
+if(menu_form != null ){
+    $("#menu_form").validate({
+        onfocusout: false,
+        onkeyup: false,
+        focusInvalid: false,
+        rules: {
+            name: {
+                required: {
+                    depends: function() {
+                        $(this).val($.trim($(this).val()));
+                        return true;
+                    },
                 },
+                maxlength: 50,
+                minlength: 3,
             },
-            maxlength: 50,
-            minlength: 3,
         },
-    },
-    submitHandler: function(form) {
-        form.submit();
-    }
+        submitHandler: function(form) {
+            form.submit();
+        }
+    });
+}
 
-});
+

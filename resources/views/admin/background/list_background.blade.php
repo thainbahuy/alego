@@ -141,7 +141,7 @@
 </div>
 
 @include('admin.layout_common.footerScript')
-<script src="{{asset('admin/js/background.js')}}"></script>
+<script src="{{asset('admin/js/background_admin.js')}}"></script>
 </body>
 
 </html>
