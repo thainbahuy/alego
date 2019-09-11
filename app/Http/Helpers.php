@@ -1,11 +1,7 @@
 <?php
 
 use GuzzleHttp\Client;
-use Illuminate\Http\File;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Storage;
-use Intervention\Image\ImageManagerStatic as Image;
 
 class Helpers
 {

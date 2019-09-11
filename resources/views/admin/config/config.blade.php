@@ -79,8 +79,8 @@
                     <div class="form-row">
                         <div class="col-md-6">
                             <div class="form-label-group">
-                                <span><b>Email</b></span>
-                                <input value="{{$jsonData['Email']}}" type="text" id="email" name="email" class="form-control" maxlength="100" >
+                                <span><b>Email Book online</b></span>
+                                <input value="{{$jsonData['Email']}}" type="text" id="email" name="Email" class="form-control" maxlength="100" >
                             </div>
                             <label for="email" generated="true" class="error label-error" style = "color : red"></label>
                         </div>
@@ -91,9 +91,35 @@
                         <div class="col-md-6">
                             <div class="form-label-group">
                                 <span><b>Quantity Event Home</b></span>
-                                <input value="{{$jsonData['Quantity_Event_Home']}}" type="text" id="quantity_event_home" name="quantity_event_home" class="form-control" maxlength="100" >
+                                <input value="{{$jsonData['Quantity_Event_Home']}}" type="text" id="quantity_event_home" name="Quantity_Event_Home" class="form-control" >
                             </div>
                             <label for="quantity_event_home" generated="true" class="error label-error" style = "color : red"></label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <span><b>Quantity Event Type</b></span>
+                                <input value="{{$jsonData['Quantity_Event_Type']}}" type="text" id="quantity_event_type" name="Quantity_Event_Type" class="form-control" >
+                            </div>
+                            <label for="quantity_event_type" generated="true" class="error label-error" style = "color : red"></label>
+                        </div>
+                    </div>
+                </div>
+{{--                contact page--}}
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <span><b>Google map</b></span>
+                                <input value="{{$jsonData['Contact']['Google_map']}}" type="text" id="quantity_event_type" name="Contact[Google_map]" class="form-control"  >
+                            </div>
+                            <label for="Contact[Google_map]" generated="true" class="error label-error" style = "color : red"></label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <span><b>location</b></span>
+                                <input value="{{$jsonData['Contact']['location']}}" type="text" id="quantity_event_type" name="Contact[location]" class="form-control"  >
+                            </div>
+                            <label for="Contact[location]" generated="true" class="error label-error" style = "color : red"></label>
                         </div>
                     </div>
                 </div>
@@ -101,10 +127,17 @@
                     <div class="form-row">
                         <div class="col-md-6">
                             <div class="form-label-group">
-                                <span><b>Quantity-Event-Type</b></span>
-                                <input value="{{$jsonData['Quantity_Event_Type']}}" type="text" id="quantity_event_type" name="quantity_event_type" class="form-control" maxlength="100" >
+                                <span><b>Mail</b></span>
+                                <input value="{{$jsonData['Contact']['Mail']}}" type="text" id="quantity_event_type" name="Contact[Mail]" class="form-control" maxlength="100" >
                             </div>
-                            <label for="quantity_event_type" generated="true" class="error label-error" style = "color : red"></label>
+                            <label for="Contact[Mail]" generated="true" class="error label-error" style = "color : red"></label>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-label-group">
+                                <span><b>Phone</b></span>
+                                <input value="{{$jsonData['Contact']['Phone']}}" type="text" id="quantity_event_type" name="Contact[Phone]" class="form-control" maxlength="100" >
+                            </div>
+                            <label for="Contact[Phone]" generated="true" class="error label-error" style = "color : red"></label>
                         </div>
                     </div>
                 </div>

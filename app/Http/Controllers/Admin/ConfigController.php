@@ -17,13 +17,9 @@ class ConfigController extends Controller
 
     public function saveConfig(Request $request)
     {
-        $jsonPaginate = file_get_contents(storage_path('config.json'));
-        $jsonData = json_decode($jsonPaginate, true);
 
-        //update
-        $jsonData['Email'] = $request->email;
-        $jsonData['Quantity_Event_Home'] = $request->quantity_event_home;
-        $jsonData['Quantity_Event_Type'] = $request->quantity_event_type;
+        $jsonData = $request->all();
+        unset($jsonData["_token"]);
 
         //write
         $this->wirteJSonData($jsonData);
@@ -34,6 +30,6 @@ class ConfigController extends Controller
     private function wirteJSonData($jsonData)
     {
         $newJsonData = json_encode($jsonData, JSON_PRETTY_PRINT);
-        file_put_contents(storage_path('config.json'), stripslashes($newJsonData));
+        file_put_contents(storage_path('config.json'),$newJsonData);
     }
 }

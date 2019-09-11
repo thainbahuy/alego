@@ -3,7 +3,7 @@ $("#config_form").validate({
     onkeyup: false,
     focusInvalid: false,
     rules: {
-        email: {
+        Email: {
             required: {
                 depends: function() {
                     $(this).val($.trim($(this).val()));
@@ -14,7 +14,7 @@ $("#config_form").validate({
             minlength: 3,
             email: true,
         },
-        quantity_event_home: {
+        Quantity_Event_Home: {
             required: {
                 depends: function() {
                     $(this).val($.trim($(this).val()));
@@ -23,9 +23,9 @@ $("#config_form").validate({
             },
             number: true,
             min: 1,
-            max:20,
+            max:25,
         },
-        quantity_event_type: {
+        Quantity_Event_Type: {
             required: {
                 depends: function() {
                     $(this).val($.trim($(this).val()));
@@ -34,7 +34,7 @@ $("#config_form").validate({
             },
             number: true,
             min: 1,
-            max:20,
+            max:25,
         },
     },
     submitHandler: function(form) {

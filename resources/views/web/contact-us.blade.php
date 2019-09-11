@@ -71,9 +71,9 @@
             <div class="row no-gutters">
                 <div class="columns col-sm-5"><h5>@lang('Message.contact-infor').</h5>
                     <p class="small serif my-5">@lang('Message.contact-des')</p>
-                    <div><b>Mail:</b> alegostudio@gmail.com</div>
-                    <div><b>@lang('Message.address'):</b> 132 Le Loi, Hai Chau, Da Nang</div>
-                    <div><b>@lang('Message.tel'):</b> 0935011363</div>
+                    <div><b>Mail:</b> {{$contact['Mail']}}</div>
+                    <div><b>@lang('Message.address'):</b> {{$contact['location']}}</div>
+                    <div><b>@lang('Message.tel'):</b> {{$contact['Phone']}}</div>
                 </div>
                 <div class="columns col-sm-7"><h5>@lang('Message.MAKE-AN-APPOINTMENT').</h5>
                     <div role="form" class="wpcf7" id="wpcf7-f558-p84-o1" lang="en-US" dir="ltr">
@@ -156,7 +156,7 @@
         <div class="map-container">
             <div id="map">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3833.836491107283!2d108.21777335011797!3d16.07397248882339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31421830b566a3f3%3A0xf3fdde306733c44e!2zMTMyIEzDqiBM4bujaSwgSOG6o2kgQ2jDonUgMSwgSOG6o2kgQ2jDonUsIMSQw6AgTuG6tW5nIDU1MDAwMCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1563791729168!5m2!1svi!2s"
+                    src="{{$contact['Google_map']}}"
                     width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
         </div>

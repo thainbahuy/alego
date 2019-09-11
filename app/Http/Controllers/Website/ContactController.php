@@ -24,6 +24,7 @@ class ContactController extends Controller
     public function index()
     {
         $data['menu'] = $this->getMenu();
+        $data['contact'] = Helpers::getConfig()['Contact'];
         return view('web.contact-us', $data);
     }
 
