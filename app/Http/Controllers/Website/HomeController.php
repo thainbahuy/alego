@@ -51,7 +51,7 @@ class HomeController extends Controller
             return response()->json(['html'=>$view]);
         }
 
-        return view('web/home', compact('listEvent','menu','nameSubMenu'));
+        return view('web/event-type', compact('listEvent','menu','nameSubMenu'));
     }
 
     private function getMenu()
