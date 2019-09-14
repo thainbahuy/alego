@@ -27,7 +27,7 @@
             @endforeach
         </div>
     </section>
-    <section class="py-lg-13 py-8">
+    <section class="py-lg-9 py-8">
         <div class="container d-flex justify-content-center text-lg-center">
             <div class="col-lg-8">
                 <p class="small uppercase bold mb-4 animated" style="font-size: 15px;animation: 1000ms ease 300ms 1 normal both running fade-in-bottom; opacity: 0;">WELCOM TO ALEGO STORY.</p>

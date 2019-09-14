@@ -48,7 +48,7 @@ if(backgroundForm != null ){
 }
 
 $("#image_choose_btn").change(function () {
-    if (this.files && this.files[0] && this.files[0].size < 3000000) {
+    if (this.files && this.files[0]) {
         var reader = new FileReader();
         reader.onload = function (e) {
             //upload
@@ -56,7 +56,7 @@ $("#image_choose_btn").change(function () {
         }
         reader.readAsDataURL(this.files[0]);
     } else {
-        alert('file to large or not choose yet !');
+        alert('image is not choose yet !');
         $("#image_choose_btn").val('');
     }
 });

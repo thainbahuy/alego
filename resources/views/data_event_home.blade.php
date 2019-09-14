@@ -10,7 +10,7 @@
         @endphp
         <a href="{{route('web.event-detail',$url)}}">
 {{--            {{Helpers::convertJsonToArray($item->image_cover)['link']}}--}}
-            <img class="item-media background-parallax img-thumbnail"  src="{{Helpers::convertJsonToArray($item->image_cover)['link']}}" alt="{{$item->name}}">
+            <img class="item-media background-parallax"  src="{{Helpers::convertJsonToArray($item->image_cover)['link']}}" alt="{{$item->name}}">
         </a>
         <figcaption>
             <div class="item-caption-inner">

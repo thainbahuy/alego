@@ -963,8 +963,8 @@ h6 {
 .parallax-folio-item figcaption {
     width: 40%;
     position: absolute;
-    top: 15%;
-    left: 60%
+    top: 23%;
+    left: 60%;
 }
 
 .parallax-folio-item.tall figcaption {
