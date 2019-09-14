@@ -127,16 +127,16 @@ if(add_eventfilm_form != null){
 
 $("#image_choose_btn").change(function () {
 
-    if (this.files && this.files[0] && this.files[0].size < 3000000) {
+    if (this.files && this.files[0]) {
         var reader = new FileReader();
         reader.onload = function(e) {
             //upload
-            uploadImageToServer(e.target.result,1)
+            uploadImageToServer(e.target.result,2);
         }
         reader.readAsDataURL(this.files[0]);
 
     } else {
-        alert('file to large or not choose yet !');
+        alert('image is not choose yet !');
         $("#image_choose_btn").val('');
     }
 

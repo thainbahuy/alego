@@ -86,10 +86,8 @@
                     <div class="col-md-4" data-animation="fade-in-bottom 1.2s .2s"><img
                             src="{{asset('image_upload/images/'.$item->avatar)}}" alt="JORDAN">
                         <h5 class="uppercase mt-5">{{$item->member_name}}
-                            <small>{{$item->role}}</small>
                         </h5>
-    {{--                    <p class="opacity-05">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem officiis--}}
-    {{--                        soluta.</p>--}}
+                        <p><small>{{$item->role}}</small></p>
                     </div>
                 @endforeach
             </div>
