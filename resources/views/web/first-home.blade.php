@@ -2,7 +2,18 @@
 <html lang="en-US" class="no-js">
 <head>
     @include('web.layout_common.head')
+
+    <link rel="stylesheet" href="{{asset('website/library/swiper/css/swiper.min.css')}}">
     <title>Alego Story</title>
+    <style>
+        #header {
+            height: 100px;
+        }
+
+        .swiper-container {
+            margin-top: 36px;
+        }
+    </style>
 </head>
 
 <body
@@ -16,22 +27,33 @@
     @include('web.layout_common.header',['data'=>$menu])
 </header>
 
-{{--<div id="preloader"></div>--}}
+<div id="preloader"></div>
 <main id="main" class="bg-lines">
-    <section class="hero hero-fullscreen" data-background="#000">
-        <div class="swiper" data-pagination="true">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
             @foreach($listBackground as $item)
-                <figure class="swiper-slide"
-                        data-background="{{Helpers::convertJsonToArray($item->image_link)['link']}}">
-                </figure>
+                <div class="swiper-slide">
+                    <img src="{{Helpers::convertJsonToArray($item->image_link)['link']}}" alt="">
+                </div>
             @endforeach
         </div>
-    </section>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev swiper-button-white"></div>
+        <div class="swiper-button-next swiper-button-white"></div>
+
+    </div>
+
     <section class="py-lg-9 py-8">
         <div class="container d-flex justify-content-center text-lg-center">
             <div class="col-lg-8">
-                <p class="small uppercase bold mb-4 animated" style="font-size: 15px;animation: 1000ms ease 300ms 1 normal both running fade-in-bottom; opacity: 0;">WELCOM TO ALEGO STORY.</p>
-                <h2 class="bold animated" style="animation: 1300ms ease 500ms 1 normal both running fade-in-bottom; opacity: 0;">Tell your story your own way</h2>
+                <p class="small uppercase bold mb-4 animated"
+                   style="font-size: 15px;animation: 1000ms ease 300ms 1 normal both running fade-in-bottom; opacity: 0;">
+                    WELCOM TO ALEGO STORY.</p>
+                <h2 class="bold animated"
+                    style="animation: 1300ms ease 500ms 1 normal both running fade-in-bottom; opacity: 0;">Tell your
+                    story your own way</h2>
             </div>
         </div>
     </section>
@@ -60,9 +82,9 @@
 
 @include('web.layout_common.footerScript')
 <script src="{{asset('website/js/first-home.js')}}"></script>
+<script src="{{asset('website/library/swiper/js/swiper.min.js')}}"></script>
 <script>
     var URL = '{{route('web.first-home')}}';
-
 </script>
 </body>
 </html>

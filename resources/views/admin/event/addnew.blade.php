@@ -188,8 +188,8 @@
                             <div class="form-label-group">
                                 <span><b>Image cover name</b></span>
                                 <br>
-                                <input readonly   id="image_cover" name="image_cover[link]" class="form-control">
-                                <input readonly   id="image_cover_key" name="image_cover[keyhash]" class="form-control">
+                                <input readonly type="hidden"  id="image_cover" name="image_cover[link]" class="form-control">
+                                <input readonly type="hidden"  id="image_cover_key" name="image_cover[keyhash]" class="form-control">
                                 <input type="file" id="image_choose_btn" class="btn btn-primary">
                             </div>
                             <label for="image_cover" generated="true" class="error label-error" style = "color : red"></label>
