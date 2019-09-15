@@ -81,8 +81,9 @@
 </footer>
 
 @include('web.layout_common.footerScript')
-<script src="{{asset('website/js/first-home.js')}}"></script>
+
 <script src="{{asset('website/library/swiper/js/swiper.min.js')}}"></script>
+<script src="{{asset('website/js/homepage.js')}}"></script>
 <script>
     var URL = '{{route('web.first-home')}}';
 </script>
