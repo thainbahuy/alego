@@ -188,7 +188,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-label-group">
-                                <span><b>Image cover name</b></span>
+                                <span><b>Image cover name (Recommend size: 1920×1080 or 16x9)</b></span>
                                 <br>
                                 <input readonly type="hidden" value="{{Helpers::convertJsonToArray($event->image_cover)['link']}}" id="image_cover" name="image_cover[link]" class="form-control">
                                 <input readonly type="hidden" value="{{Helpers::convertJsonToArray($event->image_cover)['keyhash']}}" id="image_cover_key" name="image_cover[keyhash]" class="form-control">
