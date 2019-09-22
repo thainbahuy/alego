@@ -75,7 +75,7 @@
                     <div><b>@lang('Message.address'):</b> {{$contact['location']}}</div>
                     <div><b>@lang('Message.tel'):</b> {{$contact['Phone']}}</div>
                 </div>
-                <div class="columns col-sm-7"><h5>@lang('Message.MAKE-AN-APPOINTMENT').</h5>
+                <div class="columns col-sm-7"><h2 data-animation="fade-in-top 800ms 200ms" class="m-0">Let&#039;s work together</h2>
                     <div role="form" class="wpcf7" id="wpcf7-f558-p84-o1" lang="en-US" dir="ltr">
                         <div class="screen-reader-response"></div>
                         <form id="contact_form" action="{{route('web.contact-us')}}" method="post" class="wpcf7-form"
